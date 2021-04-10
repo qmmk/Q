@@ -406,3 +406,107 @@
 09/04/2021 17:27:20 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
 09/04/2021 17:27:20 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test1'
 09/04/2021 17:27:20 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:21:01 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:21:01 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test1'
+10/04/2021 04:21:01 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:22:17 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:22:17 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test1'
+10/04/2021 04:22:17 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:23:41 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:23:41 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test2'
+10/04/2021 04:23:41 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:24:59 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:24:59 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test2'
+10/04/2021 04:24:59 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:25:42 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:25:42 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 04:25:42 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:28:36 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:28:36 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 04:28:36 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:34:19 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:34:19 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 04:34:19 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:40:14 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:40:14 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 04:40:14 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 04:47:35 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 04:47:35 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 04:47:35 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:02:02 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 05:02:02 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 05:02:02 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:03:30 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 05:03:30 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 05:03:30 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:09:20 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+10/04/2021 05:09:20 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Test3, value: 2
+10/04/2021 05:09:20 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:09:59 - [DEBUG] :: [kali]: HONEYFILE: start called because of'/home/kali/Test3/' and mask 0x40000020 - [DIRECTORY]
+10/04/2021 05:11:41 - [WARNING] :: [kali]: HONEYFILE: ['IN_OPEN', 'IN_ISDIR'] '/home/kali/Test3' has been DIRECTORY! (no audit log available)
+10/04/2021 05:14:18 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 05:14:18 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 05:14:18 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:18:45 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 05:18:45 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 05:18:45 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:20:13 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 05:20:13 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 05:20:13 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 05:22:01 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 05:22:01 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 05:22:01 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 06:17:45 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 06:17:45 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 06:17:45 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:03:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:03:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:03:07 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:05:29 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:05:29 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:05:29 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:07:24 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:07:24 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:07:24 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:12:42 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:12:42 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:12:42 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:13:40 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:13:40 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:13:40 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:15:05 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:15:05 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:15:05 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:15:42 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:15:42 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:15:42 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:17:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:17:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:17:27 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:18:32 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:18:32 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:18:32 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 07:24:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 07:24:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 07:24:07 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 08:11:31 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 08:11:31 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 08:11:31 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 08:12:13 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 08:12:13 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 08:12:13 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 08:38:24 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+10/04/2021 08:38:24 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+10/04/2021 08:38:24 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 08:38:24 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 08:38:24 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 08:40:27 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+10/04/2021 08:40:27 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+10/04/2021 08:40:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 08:40:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 08:40:27 - [INFO] :: [kali]: HONEYFILE: finished initialization
+10/04/2021 08:41:07 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+10/04/2021 08:41:07 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+10/04/2021 08:41:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+10/04/2021 08:41:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+10/04/2021 08:41:07 - [INFO] :: [kali]: HONEYFILE: finished initialization

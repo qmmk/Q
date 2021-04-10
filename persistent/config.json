@@ -45,7 +45,7 @@
         "class": "Cryptolocked",
         "type": "fs",
         "method": "just_log",
-        "params": ["/data"]
+        "params": ["/home/kali/data"]
     },
 
     "tool_7": {
@@ -53,6 +53,6 @@
         "class": "Honeyfile",
         "type": "fs",
         "method": "just_log",
-        "params": ["/home/kali/Documents", "/home/kali/Test1"]
+        "params": ["/home/kali/Documents", "/home/kali/Test3"]
     }
 }

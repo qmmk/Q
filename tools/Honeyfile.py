@@ -31,46 +31,49 @@ class Honeyfile(Core):
             super().log(Core.INFO, "HONEYFILE", "Added inotify watch to: {0}, value: {1}".format(path, wd))
         return
 
-    def start(self):  # paramtri precedenti --> mask, name, target, type)
-        print("Honeyfile running..\n")
-        try:
-            for event in self.fd.event_gen():
-                if event is not None:
-                    (header, type, target, name) = event
+    def run(self, loop, tools):
+        output = loop.run_until_complete(asyncio.gather(self.start(tools)))
 
-                    mask = header.mask
-                    action = self.return_action(mask)
-                    super().log(Core.DEBUG, "HONEYFILE", "start called because of'{}/{}' and mask 0x{:8X} - [{}]"
-                                .format(target, name, mask, action))
+    async def start(self, tools):
+        while True:
+            try:
+                for event in self.fd.event_gen():
+                    if event is not None:
+                        (header, type, target, name) = event
 
-                    if mask & Core.IN_ISDIR or len(name) == 0:
-                        print("auditing", target)
-                        audit_info, ppid, comm, user = check_audit(target)
-                    if len(name) > 0:
-                        # TODO: should be target, but ausearch sometimes doesnt work when providing entire path
-                        audit_info, ppid, comm, user = check_audit(name)
+                        mask = header.mask
+                        action = self.return_action(mask)
+                        super().log(Core.DEBUG, "HONEYFILE", "start called because of'{}/{}' and mask 0x{:8X} - [{}]"
+                                    .format(target, name, mask, action))
 
-                    if comm != "adarch":  # execute action only if the event was not caused by adarch itself
-                        if len(
-                                name) > 1:  # if name has content, it means that it is a file inside a monitored directory
-                            super().log(Core.WARNING, "HONEYFILE",
-                                        "file '{}/{}' has been {}! {}".format(target, name, action, audit_info))
-                            filename = target + '/' + name
-                        else:
-                            super().log(Core.WARNING, "HONEYFILE",
-                                        "{} '{}' has been {}! {}".format(type, target, action, audit_info))
-                            print("HONEYFILE {} '{}' has been {}! {}".format(type, target, action, audit_info))
-                            filename = target
+                        if mask & Core.IN_ISDIR or len(name) == 0:
+                            print("auditing", target)
+                            audit_info, ppid, comm, user = check_audit(target)
+                        if len(name) > 0:
+                            # TODO: should be target, but ausearch sometimes doesnt work when providing entire path
+                            audit_info, ppid, comm, user = check_audit(name)
 
-                        if self.action == Core.SAVE_DATA:  # we save data only when the file has been closed
-                            if action == "CLOSED" and (
-                                    not mask & Core.IN_ISDIR):  # and when it's not the entire directory
+                        # execute action only if the event was not caused by adarch itself
+                        if comm != "adarch":
+                            # if name has content, it means that it is a file inside a monitored directory
+                            if len(name) > 1:
+                                super().log(Core.WARNING, "HONEYFILE",
+                                            "file '{}/{}' has been {}! {}".format(target, name, action, audit_info))
+                                filename = target + '/' + name
+                            else:
+                                super().log(Core.WARNING, "HONEYFILE",
+                                            "{} '{}' has been {}! {}".format(type, target, action, audit_info))
+                                print("HONEYFILE {} '{}' has been {}! {}".format(type, target, action, audit_info))
+                                filename = target
+
+                            if self.action == Core.SAVE_DATA:  # we save data only when the file has been closed
+                                if action == "CLOSED" and (
+                                        not mask & Core.IN_ISDIR):  # and when it's not the entire directory
+                                    execute_action(self, "HONEYFILE", self.action, ppid, user, filename)
+                            else:
                                 execute_action(self, "HONEYFILE", self.action, ppid, user, filename)
-                        else:
-                            execute_action(self, "HONEYFILE", self.action, ppid, user, filename)
-        finally:
-            time.sleep(1)
-        return
+            finally:
+                time.sleep(1)
 
     # <editor-fold desc="ACTION">
 
@@ -106,16 +109,6 @@ class Honeyfile(Core):
         self.action = Core.LOG_EVENT
         self.start(mask, name, target)
 
-    # </editor-fold>
-
-    # <editor-fold desc="THREAD">
-
-    def get_events(self):
-        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-            executor.submit(self.start)
-            # executor.shutdown()
-        return
-
     def return_action(self, mask):
         if mask & self.const.IN_ISDIR:
             return "DIRECTORY"
@@ -138,32 +131,9 @@ class Honeyfile(Core):
         if mask & self.const.IN_ATTRIB:
             return "ATTRIBUTE CHANGED"
 
-"""
+    # </editor-fold>
 
-    def get_events(self):
-        future = asyncio.create_task(self.start())
-        return future 
-        
-        
-    def get_events(self, loop, pool):
-        # loop = asyncio.get_running_loop()
-        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-            # Process the directory in a thread or locally. Not sure if it
-            # is safe to submit to the executor from within one its workers.
-            # Seems like it should be.
-            # result = await loop.run_in_executor(executor, )
 
-            while self.status:
-                print("Honeyfile running..\n")
-                try:
-                    for event in self.fd.event_gen():
-                        if event is not None:
-                            (header, type_names, watch_path, filename) = event
-                            executor.submit(self.start, header.mask,
-                                            filename, watch_path, type_names)
-                except KeyboardInterrupt:
-                    pass
-                time.sleep(1)
-        return
 
-"""
+
+

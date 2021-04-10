@@ -1,11 +1,11 @@
 import asyncio
 import json
+from multiprocessing import Manager, Process
+
+from tools.Cryptolocked import Cryptolocked
 from tools.Honeyfile import Honeyfile, time
 from tools.Core import Core
 from enum import Enum
-from core import pool
-from asyncio import run_coroutine_threadsafe, AbstractEventLoop
-
 
 
 class ToolsType(Enum):
@@ -30,6 +30,8 @@ class Tool:
         self.name = params["class"]
         self.method = params["method"]
         self.attr = params["params"]
+        self.status = "NOT INIT"
+        self.proc = ""
 
 
 class Environment:
@@ -37,33 +39,73 @@ class Environment:
         # Read initial configuration
         self.Tools = []
         self.Core = Core
+        self.manager = Manager()
+        self.shared = self.manager.dict()
+        self.loop = asyncio.get_event_loop()
 
         with open('persistent/config.json') as c:
             config = json.load(c)
         for i in config:
-            self.Tools.append(Tool(i, config[i]))
-            asyncio.get_event_loop().run_until_complete(self.start(config[i]["class"], config[i]["params"]))
+            t = Tool(i, config[i])
+            self.Tools.append(t)
+            self.init(config[i]["class"], config[i]["params"], t)
+
+        self.print_status()
+        print("starting..")
+        self.start("Honeyfile")
+        time.sleep(5)
+        self.print_status()
+        time.sleep(5)
+        print("stopping..")
+        self.stop("Honeyfile")
+        time.sleep(5)
+        self.print_status()
+        
+
+
         return
 
-    async def start(self, c, p):
+    def __del__(self):
+        self.loop.close()
+        self.manager.shutdown()
+        return
+
+    def print_status(self):
+        for tool in self.Tools:
+            print("Tool {} is {}".format(tool.name, tool.status))
+
+    def init(self, c, p, t):
+        self.loop = asyncio.get_event_loop()
+
         if c == "Honeyfile":
-            print("Initialization of HoneyFile")
             h = Honeyfile(p)
-
-            print("START threading -->\n")
-
-            # run_coroutine_threadsafe(h.get_events(), loop=AbstractEventLoop.run_forever())
-
-            f = h.get_events()
-            #time.sleep(30)
-            print("STOP threading -->\n")
-
-            """
-            f.cancel()
-            try:
-                await f
-            except asyncio.CancelledError:
-                pass
-            print("STOPPED. -->\n")
-            """
+            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
+            t.status = "STARTED"
+        if c == "Cryptolocked":
+            h = Cryptolocked(p)
+            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
+            t.status = "STARTED"
         return
+
+    def start(self, name):
+        t = self.get_current_tool(name)
+        try:
+            t.proc.start()
+            t.status = "RUNNING"
+        except ValueError as e:
+            print(e)
+        return
+
+    def stop(self, name):
+        t = self.get_current_tool(name)
+        try:
+            t.proc.terminate()
+            t.proc.join(timeout=1.0)
+            t.proc.close()
+            t.status = "STOPPED"
+        except ValueError as e:
+            print(e)
+        return
+
+    def get_current_tool(self, name):
+        return [tool for tool in self.Tools if tool.name == name][0]
