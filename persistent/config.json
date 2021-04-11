@@ -36,7 +36,7 @@
         "class": "StealthCryptolocked",
         "type": "fs",
         "method": "just_log",
-        "params": ["/data/us", "/home"]
+        "params": ["/home/kali/stealth"]
     },
 
 

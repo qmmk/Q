@@ -10,13 +10,133 @@ import tarfile
 import os.path
 import calendar
 import time
-#import scripts.userlocker
+# import scripts.userlocker
+from sqlite3 import Error
+import inotify.constants
 from tools.Core import Core
 
 
-# ------ Utility methods ----------------------------------
+# <editor-fold desc="GENERAL">
 
-# this function is used by filesystem-based tools to execute custom actions
+def get_method(method):
+    if method == "save_data":
+        return Core.LOG_EVENT | Core.SAVE_DATA
+    if method == "shutdown_host":
+        return Core.LOG_EVENT | Core.SHUTDOWN_HOST
+    if method == "kill_pid":
+        return Core.LOG_EVENT | Core.KILL_PID
+    if method == "kill_user":
+        return Core.LOG_EVENT | Core.KILL_USER
+    if method == "lock_user":
+        return Core.LOG_EVENT | Core.LOCK_USER
+    if method == "kill_pid_kill_user":
+        return Core.LOG_EVENT | Core.KILL_USER | Core.KILL_PID
+    if method == "kill_pid_lock_user":
+        return Core.LOG_EVENT | Core.LOCK_USER | Core.KILL_USER | Core.KILL_PID
+    if method == "just_log":
+        return Core.LOG_EVENT
+
+
+def get_action(mask):
+    if mask & inotify.constants.IN_ISDIR:
+        return "DIRECTORY"
+    if mask & inotify.constants.IN_MODIFY:
+        return "MODIFIED"
+    if mask & inotify.constants.IN_ACCESS:
+        return "ACCESSED"
+    if mask & inotify.constants.IN_CREATE:
+        return "CREATED"
+    if mask & inotify.constants.IN_OPEN:
+        return "OPENED"
+    if (mask & inotify.constants.IN_MOVED_TO) or (mask & inotify.constants.IN_MOVED_FROM):
+        return "MOVED"
+    if mask & inotify.constants.IN_CLOSE:
+        return "CLOSED"
+    if mask & inotify.constants.IN_DELETE:
+        return "DELETED"
+    if mask & inotify.constants.IN_DELETE_SELF:
+        return "DELETED (SELF)"
+    if mask & inotify.constants.IN_ATTRIB:
+        return "ATTRIBUTE CHANGED"
+    if mask & inotify.constants.IN_CLOSE_WRITE:
+        return "CLOSED AFTER BEING MODIFIED"
+    if (mask & inotify.constants.IN_MOVED_TO) or (mask & inotify.constants.IN_MOVED_FROM):
+        return "MOVED"
+    if (mask & inotify.constants.IN_DELETE) or (mask & inotify.constants.IN_DELETE_SELF):
+        return "DELETED"
+    if mask & inotify.constants.IN_ATTRIB:
+        return "subject to an ATTRIBUTE CHANGE"
+
+
+def check_mask(mask):
+    return (mask & (Core.IN_MODIFY | Core.IN_ACCESS | Core.IN_CLOSE_WRITE | Core.IN_ATTRIB | Core.IN_DELETE |
+                    Core.IN_DELETE_SELF | Core.IN_MOVE))
+
+
+# </editor-fold>
+
+# <editor-fold desc="DATABASE">
+
+def create_connection(db_file):
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        return conn
+    except sqlite3.Error as e:
+        print(e)
+    return conn
+
+
+def random_date(start, end, prop):
+    stime = start
+    etime = end
+    ptime = stime + prop * (etime - stime)
+    return ptime
+
+
+def create_table_files(conn):
+    create_table_sql = ''' CREATE TABLE IF NOT EXISTS files (
+                                        filename text NOT NULL
+                    ); '''
+    try:
+        c = conn.cursor()
+        c.execute(create_table_sql)
+    except Error as e:
+        print(e)
+
+
+def db_insert_file_entry(conn, filename):
+    cur = conn.cursor()
+    cur.execute('INSERT INTO files VALUES(?)', [filename])
+    conn.commit()
+    return cur.lastrowid
+
+
+def cryptolocked_clean(conn):
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM files")
+
+    rows = cur.fetchall()
+
+    for row in rows:
+        if file_exists(row[0]):
+            destroy_file(row[0])
+
+    cur = conn.cursor()
+    cur.execute('DELETE FROM files')
+    conn.commit()
+
+
+def is_trip_file(conn, filename):
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM files WHERE filename=?", (filename,))
+    if len(cur.fetchall()) > 0:
+        return True
+    return False
+
+
+# </editor-fold>
+
 def execute_action(self, toolname, action, ppid, user, source_filename):
     if action & Core.SHUTDOWN_HOST:
         self.log(Core.CRITICAL, toolname, "shutting down host...")
@@ -187,20 +307,10 @@ def generate_digest(content):
     return hashlib.md5(content.encode('utf-8')).hexdigest()
 
 
-def create_connection(db_file):
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        return conn
-    except sqlite3.Error as e:
-        print(e)
-    return conn
-
-
 def check_audit(filename):
     try:
         result = subprocess.check_output("ausearch -f {} -i".format(filename), shell=True)
-    except Exception as e:
+    except subprocess.SubprocessError as e:
         print("Check audit exception {}".format(e))
         return "(no audit log available)", None, None, None
     record = result.decode().split("----")
@@ -214,10 +324,6 @@ def check_audit(filename):
             for attribute in attributes:
                 if re.search(attribute + "=", element):
                     d[attribute] = element.split("=", 1)[1]
-        audit_info = "(last audit record: proctitle={} | comm={} | exe={} | euid={} | ppid={})".format(d['proctitle'],
-                                                                                                       d['comm'],
-                                                                                                       d['exe'],
-                                                                                                       d['euid'],
-                                                                                                       d['ppid'])
+        audit_info = "(last audit record: proctitle={} | comm={} | exe={} | euid={} | ppid={})".format(d['proctitle'], d['comm'], d['exe'], d['euid'], d['ppid'])
         return audit_info, d['ppid'], d['comm'], d['euid']
     return "", None, None, None

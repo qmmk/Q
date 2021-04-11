@@ -7,6 +7,8 @@ from tools.Honeyfile import Honeyfile, time
 from tools.Core import Core
 from enum import Enum
 
+from tools.StealthCryptolocked import StealthCryptolocked
+
 
 class ToolsType(Enum):
     ArtilleryIntegrity = "ArtilleryIntegrity"
@@ -48,20 +50,20 @@ class Environment:
         for i in config:
             t = Tool(i, config[i])
             self.Tools.append(t)
-            self.init(config[i]["class"], config[i]["params"], t)
+            self.init(t)
 
         self.print_status()
         print("starting..")
         self.start("Honeyfile")
+        self.start("Cryptolocked")
+        self.start("StealthCryptolocked")
         time.sleep(5)
         self.print_status()
         time.sleep(5)
         print("stopping..")
-        self.stop("Honeyfile")
+        # self.stop("Honeyfile")
         time.sleep(5)
         self.print_status()
-        
-
 
         return
 
@@ -74,15 +76,19 @@ class Environment:
         for tool in self.Tools:
             print("Tool {} is {}".format(tool.name, tool.status))
 
-    def init(self, c, p, t):
+    def init(self, t):
         self.loop = asyncio.get_event_loop()
 
-        if c == "Honeyfile":
-            h = Honeyfile(p)
+        if t.name == "Honeyfile":
+            h = Honeyfile(t)
             t.proc = Process(target=h.run, args=(self.loop, self.shared,))
             t.status = "STARTED"
-        if c == "Cryptolocked":
-            h = Cryptolocked(p)
+        if t.name == "Cryptolocked":
+            h = Cryptolocked(t)
+            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
+            t.status = "STARTED"
+        if t.name == "StealthCryptolocked":
+            h = StealthCryptolocked(t)
             t.proc = Process(target=h.run, args=(self.loop, self.shared,))
             t.status = "STARTED"
         return
