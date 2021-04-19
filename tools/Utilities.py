@@ -310,7 +310,10 @@ def generate_digest(content):
 def check_audit(filename):
     try:
         result = subprocess.check_output("ausearch -f {} -i".format(filename), shell=True)
-    except subprocess.SubprocessError as e:
+        # result = subprocess.check_output("ls -l {}".format(filename), shell=True)
+        # print(result)
+    # except subprocess.SubprocessError as e:
+    except Exception as e:
         print("Check audit exception {}".format(e))
         return "(no audit log available)", None, None, None
     record = result.decode().split("----")

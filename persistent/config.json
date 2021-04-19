@@ -7,7 +7,7 @@
         "params": [1999]
     },
 
-      "tool_2": {
+    "tool_2": {
         "file": "Portspoof",
         "class": "Portspoof",
         "type": "net",
@@ -36,16 +36,15 @@
         "class": "StealthCryptolocked",
         "type": "fs",
         "method": "just_log",
-        "params": ["/home/kali/stealth"]
+        "params": ["/home/kali/Q_Testing/stealth"]
     },
-
 
     "tool_6": {
         "file": "Cryptolocked",
         "class": "Cryptolocked",
         "type": "fs",
         "method": "just_log",
-        "params": ["/home/kali/data"]
+        "params": ["/home/kali/Q_Testing/data"]
     },
 
     "tool_7": {
@@ -53,6 +52,6 @@
         "class": "Honeyfile",
         "type": "fs",
         "method": "just_log",
-        "params": ["/home/kali/Documents", "/home/kali/Test3"]
+        "params": ["/home/kali/Documents", "/home/kali/Q_Testing"]
     }
 }

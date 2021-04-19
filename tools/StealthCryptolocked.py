@@ -31,7 +31,7 @@ class StealthCryptolocked(Core):
             if os.path.isdir(path):
                 super().log(Core.DEBUG, "STEALTH CRYPTOLOCKED", "will monitor '{}'".format(path))
                 for i in range(N_TENTACTLES):
-                    # why while loop? we do not want to have duplicates in dict, so if duplicate do it again
+                    # while for no duplicate
                     while True:
                         name = "." + str(hex(random.randint(1, 10000))[2:])
                         filename = path + '/' + name
@@ -86,7 +86,6 @@ class StealthCryptolocked(Core):
                 for event in self.fd.event_gen():
                     if event is not None:
                         executor.submit(self.process, event)
-
             finally:
                 time.sleep(1)
 

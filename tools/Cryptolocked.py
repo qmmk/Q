@@ -103,7 +103,7 @@ class Cryptolocked(Core):
                     _, name = ntpath.split(target)
 
                 if is_trip_file(conn, target):
-                    audit_info, ppid, comm, user = check_audit(name)
+                    audit_info, ppid, comm, user = check_audit(target)
                     # TODO: check audit should look for path+name, but for unknown reasons sometimes
                     #  it doesn't work by providing the entire path
 

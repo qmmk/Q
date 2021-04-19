@@ -1,4 +1,3 @@
-from core.pool import CancellablePool
 from tools import Core
 from tools.Utilities import *
 import inotify.adapters
@@ -20,11 +19,15 @@ class Honeyfile(Core):
         for path in self.paths:
             try:
                 print("auditing", path)
-                subprocess.check_output("auditctl -w {} -p war".format(path), shell=True)
                 self.add_watch(path)
+                subprocess.check_output("auditctl -w {} -p war".format(path), shell=True)
             except subprocess.CalledProcessError as e:
                 super().log(Core.DEBUG, "HONEYFILE", "auditctl error: {} for '{}'".format(e.output, path))
         super().log(Core.INFO, "HONEYFILE", "finished initialization")
+
+    def __del__(self):
+        for path in self.paths:
+            self.fd.remove_watch(path)
 
     def add_watch(self, path):
         wd = self.fd.add_watch(path)

@@ -960,3 +960,561 @@
 11/04/2021 06:44:23 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
 11/04/2021 06:44:23 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
 11/04/2021 06:44:23 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 06:55:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.111d, value: 1
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.7e4, value: 2
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1acd, value: 3
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.19ce, value: 4
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.23d3, value: 5
+11/04/2021 06:57:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/86c, value: 1
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/7d8, value: 2
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/205e, value: 3
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1186, value: 4
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: auditctl error: b''
+11/04/2021 06:57:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1d1b, value: 5
+11/04/2021 06:57:57 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+11/04/2021 06:57:57 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+11/04/2021 06:57:57 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 14:19:28 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 14:19:28 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.9a5, value: 1
+11/04/2021 14:19:28 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1920, value: 2
+11/04/2021 14:19:28 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.2294, value: 3
+11/04/2021 14:19:28 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.207, value: 4
+11/04/2021 14:19:28 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1ed1, value: 5
+11/04/2021 14:19:28 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 14:19:28 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 14:19:28 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/b88, value: 1
+11/04/2021 14:19:28 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/20b6, value: 2
+11/04/2021 14:19:28 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/13ae, value: 3
+11/04/2021 14:19:28 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/15ff, value: 4
+11/04/2021 14:19:28 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/21f9, value: 5
+11/04/2021 14:19:28 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 14:19:28 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+11/04/2021 14:19:28 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Test3, value: 2
+11/04/2021 14:19:28 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 14:20:07 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/13ae' has been CLOSED! (no audit log available)
+11/04/2021 14:20:07 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/13ae' has been CLOSED! (no audit log available)
+11/04/2021 14:27:22 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 14:27:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.16d0, value: 1
+11/04/2021 14:27:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.db8, value: 2
+11/04/2021 14:27:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1ba0, value: 3
+11/04/2021 14:27:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.2175, value: 4
+11/04/2021 14:27:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1058, value: 5
+11/04/2021 14:27:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 14:27:22 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 14:27:22 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1877, value: 1
+11/04/2021 14:27:22 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1562, value: 2
+11/04/2021 14:27:22 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/26e0, value: 3
+11/04/2021 14:27:22 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/162c, value: 4
+11/04/2021 14:27:22 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/3b7, value: 5
+11/04/2021 14:27:22 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 14:27:22 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+11/04/2021 14:27:22 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+11/04/2021 14:27:22 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 14:38:55 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 14:38:55 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.3cd, value: 1
+11/04/2021 14:38:55 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.728, value: 2
+11/04/2021 14:38:55 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.23fb, value: 3
+11/04/2021 14:38:56 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1d56, value: 4
+11/04/2021 14:38:56 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1a52, value: 5
+11/04/2021 14:38:56 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 14:38:56 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 14:38:56 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/689, value: 1
+11/04/2021 14:38:56 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1d65, value: 2
+11/04/2021 14:38:56 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/24de, value: 3
+11/04/2021 14:38:56 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/6c6, value: 4
+11/04/2021 14:38:56 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/19fc, value: 5
+11/04/2021 14:38:56 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 14:38:56 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+11/04/2021 14:38:56 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+11/04/2021 14:38:56 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 14:42:38 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 14:42:38 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.6ce, value: 1
+11/04/2021 14:42:38 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.104a, value: 2
+11/04/2021 14:42:38 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.10db, value: 3
+11/04/2021 14:42:38 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1c61, value: 4
+11/04/2021 14:42:38 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.24b, value: 5
+11/04/2021 14:42:38 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 14:42:38 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 14:42:38 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1451, value: 1
+11/04/2021 14:42:38 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/c04, value: 2
+11/04/2021 14:42:38 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/23ad, value: 3
+11/04/2021 14:42:38 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1f8a, value: 4
+11/04/2021 14:42:38 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/21f1, value: 5
+11/04/2021 14:42:38 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 14:42:38 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+11/04/2021 14:42:38 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+11/04/2021 14:42:38 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 14:46:11 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 14:46:11 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.25a4, value: 1
+11/04/2021 14:46:11 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.b48, value: 2
+11/04/2021 14:46:11 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.214a, value: 3
+11/04/2021 14:46:11 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.2c8, value: 4
+11/04/2021 14:46:11 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.214, value: 5
+11/04/2021 14:46:11 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 14:46:11 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 14:46:11 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/d0, value: 1
+11/04/2021 14:46:11 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/165b, value: 2
+11/04/2021 14:46:11 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/873, value: 3
+11/04/2021 14:46:11 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1dca, value: 4
+11/04/2021 14:46:11 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/152e, value: 5
+11/04/2021 14:46:11 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 14:46:11 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+11/04/2021 14:46:11 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+11/04/2021 14:46:11 - [INFO] :: [kali]: HONEYFILE: finished initialization
+11/04/2021 14:46:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/d0' has been CLOSED! (no audit log available)
+11/04/2021 14:46:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/d0' has been CLOSED! (no audit log available)
+11/04/2021 14:48:12 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+11/04/2021 14:48:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.22fe, value: 1
+11/04/2021 14:48:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1cc, value: 2
+11/04/2021 14:48:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.758, value: 3
+11/04/2021 14:48:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.124e, value: 4
+11/04/2021 14:48:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.7a4, value: 5
+11/04/2021 14:48:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+11/04/2021 14:48:12 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+11/04/2021 14:48:12 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1071, value: 1
+11/04/2021 14:48:12 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/30e, value: 2
+11/04/2021 14:48:12 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/95d, value: 3
+11/04/2021 14:48:12 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/f7f, value: 4
+11/04/2021 14:48:12 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/a20, value: 5
+11/04/2021 14:48:12 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+11/04/2021 14:48:12 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+11/04/2021 14:48:12 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Test3'
+11/04/2021 14:48:12 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:06:49 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+13/04/2021 12:06:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.21df, value: 1
+13/04/2021 12:06:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1832, value: 2
+13/04/2021 12:06:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.5f2, value: 3
+13/04/2021 12:06:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.47b, value: 4
+13/04/2021 12:06:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1ccc, value: 5
+13/04/2021 12:06:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+13/04/2021 12:06:49 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+13/04/2021 12:06:49 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/17bc, value: 1
+13/04/2021 12:06:49 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/aff, value: 2
+13/04/2021 12:06:49 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/144a, value: 3
+13/04/2021 12:06:49 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1682, value: 4
+13/04/2021 12:06:49 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/9ce, value: 5
+13/04/2021 12:06:49 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+13/04/2021 12:06:49 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+13/04/2021 12:06:49 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Honey, value: 2
+13/04/2021 12:06:49 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:07:52 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Honey/' and mask 0x40000010 - [DIRECTORY]
+13/04/2021 12:08:07 - [WARNING] :: [kali]: HONEYFILE: IN_CLOSE_NOWRITE - IN_ISDIR '/home/kali/Honey' has been DIRECTORY! (no audit log available)
+13/04/2021 12:08:23 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Honey/' and mask 0x40000001 - [DIRECTORY]
+13/04/2021 12:08:23 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Honey/' and mask 0x40000020 - [DIRECTORY]
+13/04/2021 12:09:10 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+13/04/2021 12:09:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.18d7, value: 1
+13/04/2021 12:09:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1874, value: 2
+13/04/2021 12:09:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.a1c, value: 3
+13/04/2021 12:09:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.b4f, value: 4
+13/04/2021 12:09:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1712, value: 5
+13/04/2021 12:09:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+13/04/2021 12:09:10 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+13/04/2021 12:09:10 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/d72, value: 1
+13/04/2021 12:09:10 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/167a, value: 2
+13/04/2021 12:09:10 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/527, value: 3
+13/04/2021 12:09:10 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1041, value: 4
+13/04/2021 12:09:10 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/eb7, value: 5
+13/04/2021 12:09:10 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+13/04/2021 12:09:10 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+13/04/2021 12:09:10 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey'
+13/04/2021 12:09:10 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:11:09 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+13/04/2021 12:11:09 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.e4f, value: 1
+13/04/2021 12:11:09 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1fd5, value: 2
+13/04/2021 12:11:09 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1eb9, value: 3
+13/04/2021 12:11:09 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.24fb, value: 4
+13/04/2021 12:11:09 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.c85, value: 5
+13/04/2021 12:11:09 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+13/04/2021 12:11:09 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+13/04/2021 12:11:09 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/91b, value: 1
+13/04/2021 12:11:09 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1fa2, value: 2
+13/04/2021 12:11:09 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1a98, value: 3
+13/04/2021 12:11:09 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/841, value: 4
+13/04/2021 12:11:09 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1a9d, value: 5
+13/04/2021 12:11:09 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+13/04/2021 12:11:09 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+13/04/2021 12:11:09 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey'
+13/04/2021 12:11:09 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:12:07 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+13/04/2021 12:12:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.22d, value: 1
+13/04/2021 12:12:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.729, value: 2
+13/04/2021 12:12:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.70d, value: 3
+13/04/2021 12:12:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1ecc, value: 4
+13/04/2021 12:12:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.715, value: 5
+13/04/2021 12:12:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+13/04/2021 12:12:07 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+13/04/2021 12:12:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/948, value: 1
+13/04/2021 12:12:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/793, value: 2
+13/04/2021 12:12:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1783, value: 3
+13/04/2021 12:12:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/eee, value: 4
+13/04/2021 12:12:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1c7d, value: 5
+13/04/2021 12:12:07 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+13/04/2021 12:12:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+13/04/2021 12:12:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey'
+13/04/2021 12:12:07 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:13:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+13/04/2021 12:13:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.75a, value: 1
+13/04/2021 12:13:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1b20, value: 2
+13/04/2021 12:13:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.100a, value: 3
+13/04/2021 12:13:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.10b0, value: 4
+13/04/2021 12:13:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1d5c, value: 5
+13/04/2021 12:13:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+13/04/2021 12:13:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+13/04/2021 12:13:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1f69, value: 1
+13/04/2021 12:13:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/245a, value: 2
+13/04/2021 12:13:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1667, value: 3
+13/04/2021 12:13:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/5a6, value: 4
+13/04/2021 12:13:57 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/59, value: 5
+13/04/2021 12:13:57 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+13/04/2021 12:13:57 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+13/04/2021 12:13:57 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Honey1, value: 1
+13/04/2021 12:13:57 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:15:07 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Honey1/' and mask 0x40000020 - [DIRECTORY]
+13/04/2021 12:15:07 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Honey1/' and mask 0x40000010 - [DIRECTORY]
+13/04/2021 12:15:07 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Honey1/' and mask 0x40000001 - [DIRECTORY]
+13/04/2021 12:16:13 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/stealth'
+13/04/2021 12:16:13 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.abc, value: 1
+13/04/2021 12:16:13 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1869, value: 2
+13/04/2021 12:16:13 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.240d, value: 3
+13/04/2021 12:16:13 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1c80, value: 4
+13/04/2021 12:16:13 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/stealth/.1119, value: 5
+13/04/2021 12:16:13 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+13/04/2021 12:16:13 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/data'
+13/04/2021 12:16:13 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/15f5, value: 1
+13/04/2021 12:16:13 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/24a9, value: 2
+13/04/2021 12:16:13 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1bb7, value: 3
+13/04/2021 12:16:13 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/1862, value: 4
+13/04/2021 12:16:13 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/data/3f6, value: 5
+13/04/2021 12:16:13 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+13/04/2021 12:16:13 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+13/04/2021 12:16:13 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey1'
+13/04/2021 12:16:13 - [INFO] :: [kali]: HONEYFILE: finished initialization
+13/04/2021 12:16:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/1862' has been ACCESSED! (no audit log available)
+13/04/2021 12:16:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/3f6' has been ACCESSED! (no audit log available)
+13/04/2021 12:16:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/15f5' has been ACCESSED! (no audit log available)
+13/04/2021 12:16:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/24a9' has been ACCESSED! (no audit log available)
+13/04/2021 12:16:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/1bb7' has been ACCESSED! (no audit log available)
+13/04/2021 12:16:56 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/data/3f6' has been CLOSED! (no audit log available)
+19/04/2021 10:21:30 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:21:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:21:30 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:21:30 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:21:30 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:21:30 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey1'
+19/04/2021 10:21:30 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:22:06 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:22:06 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:22:06 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:22:06 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:22:06 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:22:06 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey1'
+19/04/2021 10:22:06 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:25:12 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:25:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:25:12 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:25:12 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:25:12 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 10:26:19 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:26:19 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:26:19 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:26:19 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:26:19 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:26:19 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey1'
+19/04/2021 10:26:19 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:27:53 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:27:53 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:27:53 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:27:53 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:27:53 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:27:53 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey1'
+19/04/2021 10:27:53 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:29:27 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:29:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:29:27 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:29:27 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:29:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:29:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Honey1'
+19/04/2021 10:29:27 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:34:20 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:34:20 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:34:20 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:34:20 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:34:20 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:34:20 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/homr/kali/Q_Testing'
+19/04/2021 10:34:20 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:37:43 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 10:37:43 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:37:43 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 10:37:43 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:37:43 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:37:43 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/homr/kali/Q_Testing'
+19/04/2021 10:37:43 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:39:27 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 10:39:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2b, value: 1
+19/04/2021 10:39:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.15d1, value: 2
+19/04/2021 10:39:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.196a, value: 3
+19/04/2021 10:39:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.13d6, value: 4
+19/04/2021 10:39:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2236, value: 5
+19/04/2021 10:39:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:39:27 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 10:39:27 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/76a, value: 1
+19/04/2021 10:39:27 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/8ba, value: 2
+19/04/2021 10:39:27 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/e58, value: 3
+19/04/2021 10:39:27 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/231, value: 4
+19/04/2021 10:39:27 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1e87, value: 5
+19/04/2021 10:39:27 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:39:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 10:39:27 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 1
+19/04/2021 10:39:27 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:39:37 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/' and mask 0x    8000 - [None]
+19/04/2021 10:39:37 - [WARNING] :: [kali]: HONEYFILE: IN_IGNORED '/home/kali/Q_Testing' has been None! 
+19/04/2021 10:43:40 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 10:43:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.bd8, value: 1
+19/04/2021 10:43:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.23c0, value: 2
+19/04/2021 10:43:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.20c, value: 3
+19/04/2021 10:43:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.25f2, value: 4
+19/04/2021 10:43:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.16d6, value: 5
+19/04/2021 10:43:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:43:41 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 10:43:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/2b7, value: 1
+19/04/2021 10:43:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/265e, value: 2
+19/04/2021 10:43:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/14fb, value: 3
+19/04/2021 10:43:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1893, value: 4
+19/04/2021 10:43:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/22dd, value: 5
+19/04/2021 10:43:41 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:43:41 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents/Q, value: 1
+19/04/2021 10:43:41 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 10:43:41 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:43:44 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Documents/Q/' and mask 0x    8000 - [None]
+19/04/2021 10:43:44 - [WARNING] :: [kali]: HONEYFILE: IN_IGNORED '/home/kali/Documents/Q' has been None! 
+19/04/2021 10:45:07 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 10:45:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.15b1, value: 1
+19/04/2021 10:45:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.870, value: 2
+19/04/2021 10:45:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1e99, value: 3
+19/04/2021 10:45:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1d4, value: 4
+19/04/2021 10:45:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2da, value: 5
+19/04/2021 10:45:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 10:45:07 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 10:45:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/b2b, value: 1
+19/04/2021 10:45:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/212d, value: 2
+19/04/2021 10:45:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/2192, value: 3
+19/04/2021 10:45:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/eb8, value: 4
+19/04/2021 10:45:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/e, value: 5
+19/04/2021 10:45:07 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 10:45:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents/Q'
+19/04/2021 10:45:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 10:45:07 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 10:46:46 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/e' has been OPENED! 
+19/04/2021 10:46:46 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/eb8' has been OPENED! 
+19/04/2021 10:46:47 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/b2b' has been CLOSED! 
+19/04/2021 10:46:48 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/212d' has been OPENED! 
+19/04/2021 10:46:48 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/2192' has been OPENED! 
+19/04/2021 10:47:17 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/e' has been ACCESSED! 
+19/04/2021 10:47:17 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/eb8' has been ACCESSED! 
+19/04/2021 10:47:18 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/b2b' has been OPENED! 
+19/04/2021 10:47:18 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/212d' has been ACCESSED! 
+19/04/2021 10:47:19 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/2192' has been ACCESSED! 
+19/04/2021 11:14:16 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 11:14:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.349, value: 1
+19/04/2021 11:14:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.eb3, value: 2
+19/04/2021 11:14:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.e0e, value: 3
+19/04/2021 11:14:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.7d0, value: 4
+19/04/2021 11:14:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.70f, value: 5
+19/04/2021 11:14:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 11:14:16 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 11:14:16 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/6ce, value: 1
+19/04/2021 11:14:16 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/3e0, value: 2
+19/04/2021 11:14:16 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/22f0, value: 3
+19/04/2021 11:14:16 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/a58, value: 4
+19/04/2021 11:14:16 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/c27, value: 5
+19/04/2021 11:14:16 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 11:14:16 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 11:14:16 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 11:14:16 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 11:26:04 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 11:26:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.a5d, value: 1
+19/04/2021 11:26:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.10ea, value: 2
+19/04/2021 11:26:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1722, value: 3
+19/04/2021 11:26:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1aee, value: 4
+19/04/2021 11:26:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.9eb, value: 5
+19/04/2021 11:26:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 11:26:04 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 11:26:04 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/fcc, value: 1
+19/04/2021 11:26:04 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1681, value: 2
+19/04/2021 11:26:04 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/237a, value: 3
+19/04/2021 11:26:04 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/18df, value: 4
+19/04/2021 11:26:04 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1729, value: 5
+19/04/2021 11:26:04 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 11:26:04 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents''
+19/04/2021 11:26:04 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 11:26:04 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 11:26:26 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 11:26:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.121, value: 1
+19/04/2021 11:26:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1f5d, value: 2
+19/04/2021 11:26:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.172d, value: 3
+19/04/2021 11:26:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.126a, value: 4
+19/04/2021 11:26:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1fc1, value: 5
+19/04/2021 11:26:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 11:26:26 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 11:26:26 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/2692, value: 1
+19/04/2021 11:26:26 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/2459, value: 2
+19/04/2021 11:26:26 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1d3c, value: 3
+19/04/2021 11:26:26 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1f1f, value: 4
+19/04/2021 11:26:26 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/af4, value: 5
+19/04/2021 11:26:26 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 11:26:26 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 11:26:26 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 11:26:26 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 11:28:07 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 11:28:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1e8e, value: 1
+19/04/2021 11:28:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2446, value: 2
+19/04/2021 11:28:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.9c0, value: 3
+19/04/2021 11:28:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.20c6, value: 4
+19/04/2021 11:28:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2470, value: 5
+19/04/2021 11:28:07 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 11:28:07 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 11:28:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/209a, value: 1
+19/04/2021 11:28:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/f7f, value: 2
+19/04/2021 11:28:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1aeb, value: 3
+19/04/2021 11:28:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/11bf, value: 4
+19/04/2021 11:28:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/9d7, value: 5
+19/04/2021 11:28:07 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 11:28:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 11:28:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 11:28:07 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 11:28:40 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 11:28:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.19af, value: 1
+19/04/2021 11:28:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2460, value: 2
+19/04/2021 11:28:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2677, value: 3
+19/04/2021 11:28:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1450, value: 4
+19/04/2021 11:28:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1c9c, value: 5
+19/04/2021 11:28:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 11:28:40 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 11:28:40 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1ed1, value: 1
+19/04/2021 11:28:40 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/e7d, value: 2
+19/04/2021 11:28:40 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/15d7, value: 3
+19/04/2021 11:28:40 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/5bb, value: 4
+19/04/2021 11:28:40 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/2642, value: 5
+19/04/2021 11:28:40 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 11:30:04 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 11:30:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2295, value: 1
+19/04/2021 11:30:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.88f, value: 2
+19/04/2021 11:30:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.10e5, value: 3
+19/04/2021 11:30:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2a6, value: 4
+19/04/2021 11:30:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.15cf, value: 5
+19/04/2021 11:30:04 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 11:30:07 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 11:30:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/ec5, value: 1
+19/04/2021 11:30:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1bc6, value: 2
+19/04/2021 11:30:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1a3f, value: 3
+19/04/2021 11:30:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/436, value: 4
+19/04/2021 11:30:07 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/13bc, value: 5
+19/04/2021 11:30:07 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 11:35:24 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 11:35:24 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 11:35:24 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 11:35:27 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Documents/' and mask 0x    8000 - [None]
+19/04/2021 11:35:27 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/' and mask 0x    8000 - [None]
+19/04/2021 11:35:27 - [WARNING] :: [kali]: HONEYFILE: IN_IGNORED '/home/kali/Documents' has been None! 
+19/04/2021 11:35:27 - [WARNING] :: [kali]: HONEYFILE: IN_IGNORED '/home/kali/Q_Testing' has been None! 
+19/04/2021 12:02:26 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:02:26 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:02:26 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:02:26 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:02:26 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:04:07 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:04:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:04:07 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:04:07 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:04:07 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:07:26 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 12:07:26 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 12:07:26 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 12:07:26 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 12:07:26 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:07:26 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:07:26 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:07:26 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:07:26 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:08:40 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, '/home/kali/stealth' is not a directory
+19/04/2021 12:08:40 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 12:08:40 - [ERROR] :: [kali]: CRYPTOLOCKED: error, '/home/kali/data' is not a directory
+19/04/2021 12:08:40 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 12:08:40 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:08:40 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:08:40 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:08:40 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:08:40 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:11:58 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 12:11:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1a5c, value: 1
+19/04/2021 12:11:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.d54, value: 2
+19/04/2021 12:11:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.13b8, value: 3
+19/04/2021 12:11:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.132c, value: 4
+19/04/2021 12:11:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1f1c, value: 5
+19/04/2021 12:11:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 12:11:58 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 12:11:58 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/718, value: 1
+19/04/2021 12:11:58 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/947, value: 2
+19/04/2021 12:11:58 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/10a8, value: 3
+19/04/2021 12:11:58 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/123, value: 4
+19/04/2021 12:11:58 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/2b1, value: 5
+19/04/2021 12:11:58 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 12:11:58 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:11:58 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:11:58 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:11:58 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:11:58 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:13:41 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 12:13:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2303, value: 1
+19/04/2021 12:13:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.23bc, value: 2
+19/04/2021 12:13:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.35e, value: 3
+19/04/2021 12:13:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.15a2, value: 4
+19/04/2021 12:13:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.1796, value: 5
+19/04/2021 12:13:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 12:13:41 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 12:13:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/130f, value: 1
+19/04/2021 12:13:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/16b7, value: 2
+19/04/2021 12:13:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/f52, value: 3
+19/04/2021 12:13:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1757, value: 4
+19/04/2021 12:13:41 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1536, value: 5
+19/04/2021 12:13:41 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 12:13:41 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:13:41 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:13:41 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:13:41 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:13:41 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:17:30 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+19/04/2021 12:17:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.206, value: 1
+19/04/2021 12:17:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.25fe, value: 2
+19/04/2021 12:17:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.2577, value: 3
+19/04/2021 12:17:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.12fe, value: 4
+19/04/2021 12:17:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/stealth/.b1e, value: 5
+19/04/2021 12:17:30 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+19/04/2021 12:17:30 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+19/04/2021 12:17:30 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/426, value: 1
+19/04/2021 12:17:30 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/be8, value: 2
+19/04/2021 12:17:30 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/205e, value: 3
+19/04/2021 12:17:30 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/16b3, value: 4
+19/04/2021 12:17:30 - [INFO] :: [kali]: CRYPTOLOCKED: Added inotify watch to: /home/kali/Q_Testing/data/1a99, value: 5
+19/04/2021 12:17:30 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+19/04/2021 12:17:30 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Documents, value: 1
+19/04/2021 12:17:30 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Documents'
+19/04/2021 12:17:30 - [INFO] :: [kali]: HONEYFILE: Added inotify watch to: /home/kali/Q_Testing, value: 2
+19/04/2021 12:17:30 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing'
+19/04/2021 12:17:30 - [INFO] :: [kali]: HONEYFILE: finished initialization
+19/04/2021 12:18:56 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/426' has been ACCESSED! (no audit log available)
+19/04/2021 12:18:56 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/be8' has been ACCESSED! (no audit log available)

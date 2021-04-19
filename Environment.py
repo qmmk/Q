@@ -54,15 +54,15 @@ class Environment:
 
         self.print_status()
         print("starting..")
-        self.start("Honeyfile")
+        # self.start("Honeyfile")
         self.start("Cryptolocked")
-        self.start("StealthCryptolocked")
-        time.sleep(5)
-        self.print_status()
-        time.sleep(5)
-        print("stopping..")
+        # self.start("StealthCryptolocked")
+        # time.sleep(5)
+        # self.print_status()
+        # time.sleep(5)
+        # print("stopping..")
         # self.stop("Honeyfile")
-        time.sleep(5)
+        # time.sleep(5)
         self.print_status()
 
         return
