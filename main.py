@@ -1,18 +1,12 @@
 import sys
-import traceback
 import subprocess
 from Environment import Environment
+import inotify.adapters
 
 
 def main():
-    print("Exec subprocess")
-    #r = subprocess.Popen("ausearch -f /home/kali/Q_Testing/data/426 -i", shell=True, stdout=subprocess.PIPE)
+    env = Environment()
 
-    p = subprocess.Popen("ausearch -f /home/kali/Q_Testing/data/426 -i", shell=True, stdout=subprocess.PIPE)
-    res = p.stdout.read().decode()
-    print(res)
-
-    #env = Environment()
 
     while True:
         if input() == "":

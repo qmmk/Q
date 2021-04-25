@@ -19,10 +19,13 @@ def load_blacklist(filename):
 
 def exists(file, ip_address):
     try:
-        with open(file) as f:
-            s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
-            if s.find(format(b"{0}", ip_address)) != -1:
-                return True
+        with open(file, "wb") as f:
+            try:
+                s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
+                if s.find(format(b"{0}", ip_address)) != -1:
+                    return True
+            except ValueError as e:
+                print(e)
     except FileNotFoundError as e:
         print(e)
     return False
@@ -51,8 +54,24 @@ def remove(file, ip_address):
 
 def write(file, ip_address):
     try:
-        with open(file, 'a') as f:
-            f.write(format("{0}\n", ip_address))
+        with open(file, 'wb') as f:
+            f.write(ip_address + b"\n")
     except FileNotFoundError as e:
         print(e)
     return
+
+
+def add_to_blacklist(ip_address):
+    return add(BLACKLIST, ip_address)
+
+
+def add_to_whitelist(ip_address):
+    return add(WHITELIST, ip_address)
+
+
+def is_blacklisted(ip_address):
+    return exists(BLACKLIST, ip_address.encode('utf-8'))
+
+
+def is_whitelisted(ip_address):
+    return exists(WHITELIST, ip_address.encode('utf-8'))

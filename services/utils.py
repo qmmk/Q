@@ -2,7 +2,6 @@ import random
 import hashlib
 import subprocess
 import re
-from collections import defaultdict
 import sqlite3
 import os
 import signal
@@ -11,9 +10,11 @@ import os.path
 import calendar
 import time
 # import scripts.userlocker
-from sqlite3 import Error
 import inotify.constants
-from tools.Core import Core
+from sqlite3 import Error
+from services.core import Core
+from services import log
+from collections import defaultdict
 
 
 # <editor-fold desc="GENERAL">
@@ -38,8 +39,6 @@ def get_method(method):
 
 
 def get_action(mask):
-    if mask & inotify.constants.IN_ISDIR:
-        return "DIRECTORY"
     if mask & inotify.constants.IN_MODIFY:
         return "MODIFIED"
     if mask & inotify.constants.IN_ACCESS:
@@ -66,6 +65,8 @@ def get_action(mask):
         return "DELETED"
     if mask & inotify.constants.IN_ATTRIB:
         return "subject to an ATTRIBUTE CHANGE"
+    if mask & inotify.constants.IN_ISDIR:
+        return "DIRECTORY"
 
 
 def check_mask(mask):
@@ -127,7 +128,7 @@ def cryptolocked_clean(conn):
     conn.commit()
 
 
-def is_trip_file(conn, filename):
+def is_in_file(conn, filename):
     cur = conn.cursor()
     cur.execute("SELECT * FROM files WHERE filename=?", (filename,))
     if len(cur.fetchall()) > 0:
@@ -135,41 +136,85 @@ def is_trip_file(conn, filename):
     return False
 
 
+def update_db(db, ip, port):
+    with open(db, "r+") as file:
+        for line in file:
+            x = line.split(";")
+            if ip == x[0] and str(port) == x[1]:
+                break
+        else:  # not found, we are at the eof
+            file.write("{};{};\n".format(ip, port))
+
+
+def is_first_time(db, ip, port):
+    open(db, 'a').close()  # create file if it does not exist
+    with open(db, "r+") as file:
+        for line in file:
+            x = line.split(";")
+            print(x, ip, port, ip == x[0], port == x[1])
+            if ip == x[0] and str(port) == x[1]:
+                print("MATCHED", ip, "on", port)
+                return False
+        print("NEVER FOUND", ip, "on", port)
+        return True
+
+
+
+
+def artillery_clean(conn):
+    cur = conn.cursor()
+    cur.execute('DELETE FROM files')
+    conn.commit()
+
+
+def db_get_file_digest(conn, filename):
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM files WHERE filename=?", (filename,))
+
+    rows = cur.fetchall()
+    if len(rows) > 0:
+        return rows[0][1]
+    return None
+
+
+
 # </editor-fold>
 
-def execute_action(self, toolname, action, ppid, user, source_filename):
+# <editor-fold desc="FIXED ACTION">
+
+def execute_action(toolname, action, ppid, user, source_filename):
     if action & Core.SHUTDOWN_HOST:
-        self.log(Core.CRITICAL, toolname, "shutting down host...")
+        log.sintetic_write(log.CRITICAL, toolname, "shutting down host...")
         os.system('systemctl poweroff')
 
     if action & Core.KILL_USER:
         if user is not None and user != "admin" and user != "root":  # insert your exceptions...
-            self.log(Core.CRITICAL, toolname, "killing user {}".format(user))
+            log.sintetic_write(log.CRITICAL, toolname, "killing user {}".format(user))
             try:
                 os.system("pkill -KILL -u {}".format(user))
                 # subprocess.run(['pkill', '-KILL -u {}'.format(user)], check = True)
-                self.log(Core.INFO, toolname, "user {} killed!".format(user))
+                log.sintetic_write(log.INFO, toolname, "user {} killed!".format(user))
             except subprocess.CalledProcessError:
-                self.log(Core.ERROR, toolname, "can't kill user {}".format(user))
+                log.sintetic_write(log.ERROR, toolname, "can't kill user {}".format(user))
 
     if action & Core.LOCK_USER:
         if user is not None and user != "admin" and user != "root":  # insert your exceptions...
-            self.log(Core.CRITICAL, toolname, "locking user {}".format(user))
+            log.sintetic_write(log.CRITICAL, toolname, "locking user {}".format(user))
             try:
                 # os.system("usermod --lock {}".format(user))
                 # scripts.userlocker.lockuser(user)
-                self.log(Core.INFO, toolname, "user {} locked!".format(user))
+                log.sintetic_write(log.INFO, toolname, "user {} locked!".format(user))
             except subprocess.CalledProcessError:
-                self.log(Core.ERROR, toolname, "can't lock user {}".format(user))
+                log.sintetic_write(log.ERROR, toolname, "can't lock user {}".format(user))
 
     if action & Core.SAVE_DATA:
         title = source_filename.replace("/", "")
         output_filename = "/var/adarch/" + title + "-" + str(calendar.timegm(time.gmtime())) + ".tar.gz"
-        self.log(Core.DEBUG, toolname, "saving {}...".format(output_filename))
+        log.sintetic_write(log.DEBUG, toolname, "saving {}...".format(output_filename))
         with tarfile.open(output_filename, "w:gz") as tar:
             tar.add(source_filename, arcname=os.path.basename(source_filename))
             tar.close()
-            self.log(Core.INFO, toolname, "saved compressed file {}".format(output_filename))
+            log.sintetic_write(log.INFO, toolname, "saved compressed file {}".format(output_filename))
 
     if action & Core.KILL_PID:
         if ppid is not None:
@@ -187,23 +232,49 @@ def execute_action(self, toolname, action, ppid, user, source_filename):
                     clean.append(el)
             print("clean", clean)
 
-            self.log(Core.CRITICAL, toolname, "killing PID {} and its parents: {}".format(ppid, record))
+            log.sintetic_write(log.CRITICAL, toolname, "killing PID {} and its parents: {}".format(ppid, record))
             for r in clean:
                 malicious_pid = int(r)
                 try:
                     if int(r) != mypid:
                         print("check2", malicious_pid, mypid)
                         os.kill(int(r), signal.SIGKILL)  # or signal.SIGKILL
-                        self.log(Core.INFO, toolname, "Parent PID {} killed!".format(r))
+                        log.sintetic_write(log.INFO, toolname, "Parent PID {} killed!".format(r))
                 except Exception as e:
-                    self.log(Core.ERROR, toolname, "can't kill malicious parent process {}! {}".format(r, e))
+                    log.sintetic_write(log.ERROR, toolname, "can't kill malicious parent process {}! {}".format(r, e))
             try:
                 os.kill(int(ppid), signal.SIGKILL)  # or signal.SIGKILL
-                self.log(Core.INFO, toolname, "Original PPID {} killed!".format(ppid))
+                log.sintetic_write(log.INFO, toolname, "Original PPID {} killed!".format(ppid))
             except Exception as e:
-                self.log(Core.ERROR, toolname, "can't kill malicious parent process! {}".format(e))
+                log.sintetic_write(log.ERROR, toolname, "can't kill malicious parent process! {}".format(e))
         else:
-            self.log(Core.ERROR, toolname, "can't kill malicious process, no ppid available!")
+            log.sintetic_write(log.ERROR, toolname, "can't kill malicious process, no ppid available!")
+
+
+def check_audit(filename):
+    try:
+        result = subprocess.check_output("ausearch -f {} -i".format(filename), shell=True)
+    except subprocess.SubprocessError as e:
+        print("Check audit exception {}".format(e))
+        return "(no audit log available)", None, None, None
+    record = result.decode().split("----")
+    idx = len(record) - 1
+    d = {}
+    d = defaultdict(lambda: "", d)
+    attributes = ["proctitle", "syscall", "ppid", "euid", "comm", "exe"]
+    if idx >= 1:
+        elements = record[idx].split(" ")
+        for element in elements:
+            for attribute in attributes:
+                if re.search(attribute + "=", element):
+                    d[attribute] = element.split("=", 1)[1]
+        audit_info = "(last audit record: proctitle={} | comm={} | exe={} | euid={} | ppid={})" \
+            .format(d['proctitle'], d['comm'], d['exe'], d['euid'], d['ppid'])
+        return audit_info, d['ppid'], d['comm'], d['euid']
+    return "", None, None, None
+
+
+# </editor-fold>
 
 
 def is_valid_ipv4(ip):
@@ -305,28 +376,3 @@ def destroy_file(filename):
 
 def generate_digest(content):
     return hashlib.md5(content.encode('utf-8')).hexdigest()
-
-
-def check_audit(filename):
-    try:
-        result = subprocess.check_output("ausearch -f {} -i".format(filename), shell=True)
-        # result = subprocess.check_output("ls -l {}".format(filename), shell=True)
-        # print(result)
-    # except subprocess.SubprocessError as e:
-    except Exception as e:
-        print("Check audit exception {}".format(e))
-        return "(no audit log available)", None, None, None
-    record = result.decode().split("----")
-    idx = len(record) - 1
-    d = {}
-    d = defaultdict(lambda: "", d)
-    attributes = ["proctitle", "syscall", "ppid", "euid", "comm", "exe"]
-    if idx >= 1:
-        elements = record[idx].split(" ")
-        for element in elements:
-            for attribute in attributes:
-                if re.search(attribute + "=", element):
-                    d[attribute] = element.split("=", 1)[1]
-        audit_info = "(last audit record: proctitle={} | comm={} | exe={} | euid={} | ppid={})".format(d['proctitle'], d['comm'], d['exe'], d['euid'], d['ppid'])
-        return audit_info, d['ppid'], d['comm'], d['euid']
-    return "", None, None, None

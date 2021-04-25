@@ -1,6 +1,4 @@
-from Core import Core
-from Utilities import *
-from random import randint
+from services.utils import *
 
 
 class Tcprooter(Core):

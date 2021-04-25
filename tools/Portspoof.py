@@ -1,7 +1,5 @@
-from Core import Core
-from Utilities import *
+from services.utils import *
 from rstr import xeger
-import gc
 
 
 class Portspoof(Core):
@@ -13,10 +11,10 @@ class Portspoof(Core):
                 with open(filename, "r") as f:
                     raw_signatures = f.readlines()
                 if len(raw_signatures) > 0:
-                    #print(raw_signatures[self.__port_to_signature(port, len(raw_signatures))])
-                    #print(xeger(raw_signatures[self.__port_to_signature(port, len(raw_signatures))]))
+                    # print(raw_signatures[self.__port_to_signature(port, len(raw_signatures))])
+                    # print(xeger(raw_signatures[self.__port_to_signature(port, len(raw_signatures))]))
                     self.__signature = xeger(raw_signatures[self.__port_to_signature(port, len(raw_signatures))])
-                    #print(len(raw_signatures))
+                    # print(len(raw_signatures))
                 t = self.__signature.encode('utf-8')
             except (IOError, OSError, ValueError) as ex:
                 self.__signature = ''
@@ -46,11 +44,12 @@ class Portspoof(Core):
     def __init__(self, sock, port, active_sock, ip, malicious_ip):
         super().__init__(sock, port, active_sock, ip, malicious_ip)
         self.malicious_ip = malicious_ip
-        self._sig = Portspoof.Signature('portspoof_signatures', port)
+        self._sig = Portspoof.Signature('../persistent/portspoof_signatures', port)
         self.answer = self._sig.get_signature()
         del self._sig
 
     def start(self, b):
-        super().log(Core.WARNING, "PORTSPOOF" , "detected activity from IP {} - content: {}".format(self.malicious_ip, b))
+        log.sintetic_write(log.WARNING, "PORTSPOOF",
+                           "detected activity from IP {} - content: {}".format(self.malicious_ip, b))
         super().send(self.answer)
         super().shutdown()

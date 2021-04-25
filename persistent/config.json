@@ -20,7 +20,7 @@
         "class": "Endlessh",
         "type": "net",
         "method": "delayed_action",
-        "params": [1999, 2001, 2223]
+        "params": [2001, 2223]
     },
 
     "tool_4": {
@@ -52,6 +52,14 @@
         "class": "Honeyfile",
         "type": "fs",
         "method": "just_log",
-        "params": ["/home/kali/Documents", "/home/kali/Q_Testing"]
+        "params": ["/home/kali/Q_Testing/honey"]
+    },
+
+    "tool_8": {
+        "file": "ArtilleryIntegrity",
+        "class": "ArtilleryIntegrity",
+        "type": "fs",
+        "method": "just_log",
+        "params": ["/home/kali/Q_Testing/artillery"]
     }
 }

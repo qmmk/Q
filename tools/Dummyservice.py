@@ -1,7 +1,5 @@
-from Core import Core
-from Utilities import *
-import subprocess
-import os
+from services.utils import *
+
 
 class Dummyservice(Core):
 

@@ -1,71 +1,56 @@
-from Core import Core
-from Utilities import *
-import subprocess
 import threading
+from services import bwlist
+from services.utils import *
 
-
+PORTS = [21, 80, 445]
 
 
 class Invisiport(Core):
-
-
-    IMMEDIATE = 0
-    WAIT = 1
-    action = IMMEDIATE
-
-    malicious_ip = ""
-    port = -1
-
     # The ports to show up to the attacker after he triggered the defenses by connecting to port specified in config
-    PORTS = [21, 80, 445]
 
     # As soon as Invisiport detects a connection, it then drops connections to all listening ports except to 'port'.
     # Essentially, when an attacker triggers Invisiport, all he sees is 'port' and Invisiport ports.
     # The legitimate ports are no more visible.
     # ...what the attacker is going to think after seeing different profiles before and after a scan?
 
+    # sock, port, active_sock, ip, malicious_ip
+    def __init__(self):
+        super().__init__()
 
-    def __init__(self, sock, port, active_sock, ip, malicious_ip):
+    async def run(self, writer, port, malicious_ip, msg, mode):
+        mode = Core.WAIT if mode == "delayed_action" else Core.IMMEDIATE
+        log.sintetic_write(log.WARNING, "INVISIPORT",
+                           "detectected activity by the following IP: {} - content: {}".format(malicious_ip, msg))
+        writer.write("Protocol mismatch.\n".encode(Core.FORMAT))
+        writer.close()
 
-        super().__init__(sock, port, active_sock, ip, malicious_ip)
-        self.malicious_ip = malicious_ip
-        self.port = port
+        print("Conn lost:", writer.transport._conn_lost)
 
-
-    def act(self):
-
-        if not super().is_whitelisted(self.malicious_ip) and not super().is_blacklisted(self.malicious_ip):
-
-            super().add_to_blacklist(self.malicious_ip)
-            super().log(Core.INFO, "INVISIPORT" , "blacklisted the following IP: {}".format(self.malicious_ip))
-
-            subprocess.check_output("iptables -A ADARCH_EXCEPTION -s {} -p tcp --destination-port {} -j ACCEPT"
-                                    .format(self.malicious_ip, self.port), shell=True)
-            super().log(Core.INFO, "INVISIPORT" , "added 'exception rule': allow {} for dst_port {}"
-                        .format(self.malicious_ip, self.port))
-
-            for _PORT in self.PORTS:
-                subprocess.check_output(
-                    "iptables -t nat -A ADARCH -s {} -p tcp --dport {} -j REDIRECT --to-port {} -m comment --comment \"{}\"".
-                        format(self.malicious_ip, _PORT, self.port, "added by INVISIPORT"), shell=True)
-                super().log(Core.INFO, "INVISIPORT" , "added 'prerouting rule' for {}".format(self.malicious_ip))
-
-
-    def start(self, b):
-        super().log(Core.WARNING, "INVISIPORT" , "detectected activity by the following IP: {} - content: ".format(self.malicious_ip, b))
-        super().send("Protocol mismatch.\n")
-        super().shutdown()
-        if self.action == self.WAIT:
-            if not super().is_whitelisted(self.malicious_ip) and not super().is_blacklisted(self.malicious_ip):
-                super().log(Core.INFO, "INVISIPORT" , "waiting 180 seconds before blacklisting..".format(self.malicious_ip))
+        if mode == Core.WAIT:
+            if not bwlist.is_whitelisted(malicious_ip) and not bwlist.is_blacklisted(malicious_ip):
+                log.sintetic_write(log.INFO, "INVISIPORT",
+                                   "waiting 180 seconds before blacklisting..".format(malicious_ip))
                 event = threading.Event()
                 event.wait(180)
-        self.act()
 
-    def immediate_action(self, b):
-        self.action = self.IMMEDIATE
-        self.start(b)
+        # function act()
+        if not bwlist.is_whitelisted(malicious_ip) and not bwlist.is_blacklisted(malicious_ip):
+            bwlist.add_to_blacklist(malicious_ip.encode(Core.FORMAT))
+            log.sintetic_write(log.INFO, "INVISIPORT", "blacklisted the following IP: {}".format(malicious_ip))
+            try:
+                subprocess.check_output("iptables -A ADARCH_EXCEPTION -s {} -p tcp --destination-port {} -j ACCEPT"
+                                        .format(malicious_ip, port), shell=True)
+            except subprocess.CalledProcessError as e:
+                print(e)
+            log.sintetic_write(log.INFO, "INVISIPORT", "added 'exception rule': allow {} for dst_port {}"
+                               .format(malicious_ip, port))
 
-    def delayed_action(self, b):
-        self.action = self.WAIT
-        self.start(b)
+            for _p in PORTS:
+                try:
+                    subprocess.check_output("iptables -t nat -A ADARCH -s {} -p tcp --dport {} -j "
+                                            "REDIRECT --to-port {} -m comment --comment \"{}\""
+                                            .format(malicious_ip, _p, port, "added by INVISIPORT"), shell=True)
+                except subprocess.CalledProcessError as e:
+                    print(e)
+                log.sintetic_write(log.INFO, "INVISIPORT", "added 'prerouting rule' for {}".format(malicious_ip))
+        return
