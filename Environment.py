@@ -3,6 +3,7 @@ import json
 from multiprocessing import Manager, Process
 
 from tools.ArtilleryIntegrity import ArtilleryIntegrity
+from tools.ArtillerySSHBFM import ArtillerySSHBFM
 from tools.Cryptolocked import Cryptolocked
 from tools.Endlessh import Endlessh
 from tools.Honeyfile import Honeyfile, time
@@ -41,10 +42,8 @@ class Tool:
 
 class Environment:
     def __init__(self):
-        # Read initial configuration
         self.Tools = []
         self.Tasks = []
-        # self.Core = Core
         self.manager = Manager()
         self.server = Server()
         self.shared = self.manager.dict()
@@ -67,6 +66,7 @@ class Environment:
         # print("server output -> {}\n".format(output))
 
         self.start("ArtilleryIntegrity")
+
 
         """
         self.print_status()
@@ -123,6 +123,10 @@ class Environment:
             t.proc = Process(target=h.run, args=(self.loop, self.shared,))
             t.status = "STARTED"
 
+        if t.name == "ArtillerySSHBFM":
+            h = ArtillerySSHBFM(t)
+            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
+            t.status = "STARTED"
         return
 
     def start(self, name):

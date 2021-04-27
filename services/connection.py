@@ -4,6 +4,8 @@ import socket
 from tools.Endlessh import Endlessh
 from tools.Honeyports import Honeyports
 from tools.Invisiport import Invisiport
+from tools.Portspoof import Portspoof
+from tools.Tcprooter import Tcprooter
 
 SERVER = socket.gethostbyname(socket.gethostname())
 
@@ -71,20 +73,13 @@ class Server(asyncio.Protocol):
                     # loop.create_task(t.run(writer, in_port, malicious_ip, msg, param[1]))
                 if name == "Honeyports" and in_port in param[0]:
                     print("Enable Honeyports..\n")
-                    await Honeyports().run(writer, in_port, malicious_ip, msg)
+                    await Honeyports().run(writer, malicious_ip, msg)
                 if name == "Portspoof" and in_port in param[0]:
                     print("Enable Portspoof..\n")
+                    await Portspoof(in_port).run(writer, malicious_ip, msg)
+                if name == "Tcprooter":
+                    print("Enable Tcprooter..\n")
+                    await Tcprooter().run(writer, malicious_ip, msg)
                 else:
                     writer.close()
         return
-        """
-
-
-            # if name == "Honeyports" and i in ports:
-            # if name == "Portspoof" and i in ports:
-            #
-        """
-
-
-
-

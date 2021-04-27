@@ -2,15 +2,11 @@ from services.utils import *
 
 
 class Dummyservice(Core):
+    def __init__(self):
+        super().__init__()
 
-	MSG = ""
-	#malicious_ip = ""
-
-	def __init__(self, sock, port, active_sock, ip, malicious_ip):
-		super().__init__(sock, port, active_sock, ip, malicious_ip)
-		#self.malicious_ip = malicious_ip
-
-	def start(self, b):
-		super().log(Core.INFO, "DUMMYSERVICE" , "detected activity from IP {} - content: {}".format(super().malicious_ip, b))
-		super().send("Protocol error\n")
-		super().shutdown()
+    async def run(self, writer, malicious_ip, msg):
+        log.sintetic_write(log.INFO, "DUMMYSERVICE",
+                           "detected activity from IP {} - content: {}".format(malicious_ip, msg))
+        writer.write("Protocol error\n".encode(Core.FORMAT))
+        writer.close()

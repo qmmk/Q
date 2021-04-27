@@ -8,7 +8,7 @@ class Honeyports(Core):
     def __init__(self):
         super().__init__()
 
-    async def run(self, writer, port, malicious_ip, msg):
+    async def run(self, writer, malicious_ip, msg):
         if MSG != "":
             writer.write(MSG.encode(Core.FORMAT))
         writer.close()

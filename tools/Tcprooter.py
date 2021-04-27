@@ -1,3 +1,5 @@
+from random import randint
+
 from services.utils import *
 
 
@@ -115,12 +117,14 @@ class Tcprooter(Core):
 
     SEND = True
 
-    def __init__(self, sock, port, active_sock, ip, malicious_ip):
-        super().__init__(sock, port, active_sock, ip, malicious_ip)
-        if Tcprooter.SEND:
-            # super().send(Tcprooter.PAYLOADS[randint(0, len(Tcprooter.PAYLOADS)-1)])
-            super().send(Tcprooter.PAYLOADS[1])
-        super().shutdown()
+    def __init__(self):
+        super().__init__()
 
-    def start(self, b):
-        super().shutdown()
+    async def run(self, writer, malicious_ip, msg):
+        log.sintetic_write(log.WARNING, "TCPROOTER",
+                           "detected activity from IP {} - content: {}".format(malicious_ip, msg))
+        if Tcprooter.SEND:
+            # Random version
+            writer.write(Tcprooter.PAYLOADS[randint(0, len(Tcprooter.PAYLOADS) - 1)].encode(Core.FORMAT))
+            # writer.write(Tcprooter.PAYLOADS[1].encode(Core.FORMAT)) # Static version
+        writer.close()

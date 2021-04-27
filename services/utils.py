@@ -9,7 +9,7 @@ import tarfile
 import os.path
 import calendar
 import time
-# import scripts.userlocker
+import scripts.userlocker
 import inotify.constants
 from sqlite3 import Error
 from services.core import Core
@@ -159,8 +159,6 @@ def is_first_time(db, ip, port):
         return True
 
 
-
-
 def artillery_clean(conn):
     cur = conn.cursor()
     cur.execute('DELETE FROM files')
@@ -175,7 +173,6 @@ def db_get_file_digest(conn, filename):
     if len(rows) > 0:
         return rows[0][1]
     return None
-
 
 
 # </editor-fold>
@@ -276,49 +273,7 @@ def check_audit(filename):
 
 # </editor-fold>
 
-
-def is_valid_ipv4(ip):
-    # if IP is cidr, strip net
-    if "/" in ip:
-        ipparts = ip.split("/")
-        ip = ipparts[0]
-    if not ip.startswith("#"):
-        pattern = re.compile(r"""
-    ^
-    (?:
-      # Dotted variants:
-      (?:
-        # Decimal 1-255 (no leading 0's)
-        [3-9]\d?|2(?:5[0-5]|[0-4]?\d)?|1\d{0,2}
-      |
-        0x0*[0-9a-f]{1,2}  # Hexadecimal 0x0 - 0xFF (possible leading 0's)
-      |
-        0+[1-3]?[0-7]{0,2} # Octal 0 - 0377 (possible leading 0's)
-      )
-      (?:                  # Repeat 0-3 times, separated by a dot
-        \.
-        (?:
-          [3-9]\d?|2(?:5[0-5]|[0-4]?\d)?|1\d{0,2}
-        |
-          0x0*[0-9a-f]{1,2}
-        |
-          0+[1-3]?[0-7]{0,2}
-        )
-      ){0,3}
-    |
-      0x0*[0-9a-f]{1,8}    # Hexadecimal notation, 0x0 - 0xffffffff
-    |
-      0+[0-3]?[0-7]{0,10}  # Octal notation, 0 - 037777777777
-    |
-      # Decimal notation, 1-4294967295:
-      429496729[0-5]|42949672[0-8]\d|4294967[01]\d\d|429496[0-6]\d{3}|
-      42949[0-5]\d{4}|4294[0-8]\d{5}|429[0-3]\d{6}|42[0-8]\d{7}|
-      4[01]\d{8}|[1-3]\d{0,9}|[4-9]\d{0,8}
-    )
-    $
-    """, re.VERBOSE | re.IGNORECASE)
-        return pattern.match(ip) is not None
-
+# <editor-fold desc="FILE MANAGER">
 
 def file_integrity(filename, hash):
     try:
@@ -376,3 +331,48 @@ def destroy_file(filename):
 
 def generate_digest(content):
     return hashlib.md5(content.encode('utf-8')).hexdigest()
+
+
+# </editor-fold>
+
+def is_valid_ipv4(ip):
+    # if IP is cidr, strip net
+    if "/" in ip:
+        ipparts = ip.split("/")
+        ip = ipparts[0]
+    if not ip.startswith("#"):
+        pattern = re.compile(r"""
+    ^
+    (?:
+      # Dotted variants:
+      (?:
+        # Decimal 1-255 (no leading 0's)
+        [3-9]\d?|2(?:5[0-5]|[0-4]?\d)?|1\d{0,2}
+      |
+        0x0*[0-9a-f]{1,2}  # Hexadecimal 0x0 - 0xFF (possible leading 0's)
+      |
+        0+[1-3]?[0-7]{0,2} # Octal 0 - 0377 (possible leading 0's)
+      )
+      (?:                  # Repeat 0-3 times, separated by a dot
+        \.
+        (?:
+          [3-9]\d?|2(?:5[0-5]|[0-4]?\d)?|1\d{0,2}
+        |
+          0x0*[0-9a-f]{1,2}
+        |
+          0+[1-3]?[0-7]{0,2}
+        )
+      ){0,3}
+    |
+      0x0*[0-9a-f]{1,8}    # Hexadecimal notation, 0x0 - 0xffffffff
+    |
+      0+[0-3]?[0-7]{0,10}  # Octal notation, 0 - 037777777777
+    |
+      # Decimal notation, 1-4294967295:
+      429496729[0-5]|42949672[0-8]\d|4294967[01]\d\d|429496[0-6]\d{3}|
+      42949[0-5]\d{4}|4294[0-8]\d{5}|429[0-3]\d{6}|42[0-8]\d{7}|
+      4[01]\d{8}|[1-3]\d{0,9}|[4-9]\d{0,8}
+    )
+    $
+    """, re.VERBOSE | re.IGNORECASE)
+        return pattern.match(ip) is not None

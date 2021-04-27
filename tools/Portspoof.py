@@ -1,6 +1,8 @@
 from services.utils import *
 from rstr import xeger
 
+SIGNATURES = "persistent/portspoof_signatures"
+
 
 class Portspoof(Core):
     class Signature:
@@ -39,17 +41,14 @@ class Portspoof(Core):
         def get_signature(self):
             return self.__signature
 
-    malicious_ip = ""
-
-    def __init__(self, sock, port, active_sock, ip, malicious_ip):
-        super().__init__(sock, port, active_sock, ip, malicious_ip)
-        self.malicious_ip = malicious_ip
-        self._sig = Portspoof.Signature('../persistent/portspoof_signatures', port)
+    def __init__(self, port):
+        super().__init__()
+        self._sig = Portspoof.Signature(SIGNATURES, port)
         self.answer = self._sig.get_signature()
         del self._sig
 
-    def start(self, b):
+    async def run(self, writer, malicious_ip, msg):
         log.sintetic_write(log.WARNING, "PORTSPOOF",
-                           "detected activity from IP {} - content: {}".format(self.malicious_ip, b))
-        super().send(self.answer)
-        super().shutdown()
+                           "detected activity from IP {} - content: {}".format(malicious_ip, msg))
+        writer.write(self.answer.encode(Core.FORMAT))
+        writer.close()
