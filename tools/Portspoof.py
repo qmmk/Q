@@ -1,5 +1,5 @@
 from services.utils import *
-from rstr import xeger
+from tools.rstr import xeger
 
 SIGNATURES = "persistent/portspoof_signatures"
 
@@ -47,7 +47,7 @@ class Portspoof(Core):
         self.answer = self._sig.get_signature()
         del self._sig
 
-    async def run(self, writer, malicious_ip, msg):
+    def run(self, writer, malicious_ip, msg):
         log.sintetic_write(log.WARNING, "PORTSPOOF",
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
         writer.write(self.answer.encode(Core.FORMAT))

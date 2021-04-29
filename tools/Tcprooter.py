@@ -120,11 +120,12 @@ class Tcprooter(Core):
     def __init__(self):
         super().__init__()
 
-    async def run(self, writer, malicious_ip, msg):
+    def run(self, writer, malicious_ip, msg):
         log.sintetic_write(log.WARNING, "TCPROOTER",
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
         if Tcprooter.SEND:
             # Random version
             writer.write(Tcprooter.PAYLOADS[randint(0, len(Tcprooter.PAYLOADS) - 1)].encode(Core.FORMAT))
             # writer.write(Tcprooter.PAYLOADS[1].encode(Core.FORMAT)) # Static version
+        writer.shutdown(2)
         writer.close()

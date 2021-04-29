@@ -53,10 +53,13 @@ class CancellablePool:
 
         loop = asyncio.get_event_loop()
         fut = loop.create_future()
+
         def _on_done(obj):
             loop.call_soon_threadsafe(fut.set_result, obj)
+
         def _on_err(err):
             loop.call_soon_threadsafe(fut.set_exception, err)
+
         pool.apply_async(fn, args, callback=_on_done, error_callback=_on_err)
 
         try:
@@ -73,8 +76,6 @@ class CancellablePool:
         for p in self._working | self._free:
             p.terminate()
         self._free.clear()
-
-
 
 
 """
@@ -129,4 +130,54 @@ if __name__ == '__main__':
         
         
 """
-""""""
+
+"""
+
+    async def accept_client(self, reader, writer):
+        # loop = asyncio.get_running_loop()
+        # with concurrent.futures.ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        while not writer.is_closing():
+
+            data = await reader.read(MAX_LEN)
+            msg = data.decode()
+
+            # get information about socket
+            info = writer.get_extra_info('socket')
+
+            in_port = info.getsockname()[1]
+            malicious_ip = info.getpeername()[0]
+
+            print(f"Received something on: {in_port}, from {malicious_ip!r}")
+            for name, param in self.Conns.items():
+                if name == "Endlessh" and in_port in param[0]:
+                    print("Enable Endlessh..\n")
+                    # loop.run_in_executor(executor, Endlessh().run(writer, in_port, malicious_ip, msg, param[1]))
+                    # executor.submit(Endlessh().run, writer, in_port, malicious_ip, msg, param[1])
+                    await Endlessh().run(writer, in_port, malicious_ip, msg, param[1])
+                    # await t.run(writer, in_port, malicious_ip, msg, param[1])
+                    # loop.create_task(t.run(writer, in_port, malicious_ip, msg, param[1]))
+                    # await loop.run_in_executor(executor, t.run, writer, in_port, malicious_ip, msg, param[1])
+
+                if name == "Invisiport" and in_port in param[0]:
+                    print("Enable Invisiport..\n")
+                    # asyncio.run(Invisiport().run(writer, in_port, malicious_ip, msg, param[1]))
+                    # executor.submit(Invisiport, writer, in_port, malicious_ip, msg, param[1])
+                    await Invisiport().run(writer, in_port, malicious_ip, msg, param[1])
+                    # await t.run(writer, in_port, malicious_ip, msg, param[1])
+                    # await loop.run_in_executor(executor, t.run, writer, in_port, malicious_ip, msg, param[1])
+                    # loop.create_task(t.run(writer, in_port, malicious_ip, msg, param[1]))
+                if name == "Honeyports" and in_port in param[0]:
+                    print("Enable Honeyports..\n")
+                    await Honeyports().run(writer, malicious_ip, msg)
+                if name == "Portspoof" and in_port in param[0]:
+                    print("Enable Portspoof..\n")
+                    await Portspoof(in_port).run(writer, malicious_ip, msg)
+                if name == "Tcprooter":
+                    print("Enable Tcprooter..\n")
+                    await Tcprooter().run(writer, malicious_ip, msg)
+                else:
+                    writer.close()
+        return
+
+
+"""

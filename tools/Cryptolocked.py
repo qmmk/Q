@@ -67,10 +67,11 @@ class Cryptolocked(Core):
             self.files.append(filename)
         log.sintetic_write(log.INFO, "CRYPTOLOCKED", "finished initialization")
 
-    def run(self, loop, shared):
-        output = loop.run_until_complete(asyncio.gather(self.start(shared)))
+    # def run(self, loop, shared):
+    #     output = loop.run_until_complete(asyncio.gather(self.start(shared)))
 
-    async def start(self, shared):
+    # async def start(self, shared):
+    def run(self, loop, shared):
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             try:
                 i = inotify.adapters.Inotify()
@@ -84,7 +85,8 @@ class Cryptolocked(Core):
 
                 for event in i.event_gen():
                     if event is not None:
-                        executor.submit(self.process, event)
+                        # executor.submit(self.process, event)
+                        loop.run_in_executor(executor, self.process(event))
             finally:
                 time.sleep(1)
 

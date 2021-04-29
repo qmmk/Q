@@ -3,7 +3,7 @@ from services import bwlist
 from services.utils import *
 
 PORTS = [21, 80, 445]
-
+MSG = "Protocol mismatch.\n"
 
 class Invisiport(Core):
     # The ports to show up to the attacker after he triggered the defenses by connecting to port specified in config
@@ -17,14 +17,16 @@ class Invisiport(Core):
     def __init__(self):
         super().__init__()
 
-    async def run(self, writer, port, malicious_ip, msg, mode):
+    def run(self, writer, port, malicious_ip, msg, mode):
         mode = Core.WAIT if mode == "delayed_action" else Core.IMMEDIATE
         log.sintetic_write(log.WARNING, "INVISIPORT",
                            "detectected activity by the following IP: {} - content: {}".format(malicious_ip, msg))
-        writer.write("Protocol mismatch.\n".encode(Core.FORMAT))
-        writer.close()
-
-        print("Conn lost:", writer.transport._conn_lost)
+        try:
+            writer.send(MSG.encode(Core.FORMAT))
+            writer.shutdown(2)
+            writer.close()
+        except BrokenPipeError as e:
+            print(e)
 
         if mode == Core.WAIT:
             if not bwlist.is_whitelisted(malicious_ip) and not bwlist.is_blacklisted(malicious_ip):

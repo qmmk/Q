@@ -1,17 +1,21 @@
 import asyncio
 import json
+import socket
 from multiprocessing import Manager, Process
-
+import uvloop
 from tools.ArtilleryIntegrity import ArtilleryIntegrity
 from tools.ArtillerySSHBFM import ArtillerySSHBFM
 from tools.Cryptolocked import Cryptolocked
 from tools.Endlessh import Endlessh
 from tools.Honeyfile import Honeyfile, time
+from tools.StealthCryptolocked import StealthCryptolocked
 from services.core import Core
 from enum import Enum
-from services.connection import Server
+from services.connection import Connection
 
-from tools.StealthCryptolocked import StealthCryptolocked
+# LOOP
+uvloop.install()
+asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
 
 class ToolsType(Enum):
@@ -45,7 +49,7 @@ class Environment:
         self.Tools = []
         self.Tasks = []
         self.manager = Manager()
-        self.server = Server()
+        self.server = Connection()
         self.shared = self.manager.dict()
         self.loop = asyncio.get_event_loop()
 
@@ -60,13 +64,6 @@ class Environment:
         # Server process
         p = Process(target=self.server.run, args=(self.loop, self.shared))
         p.start()
-        # output = self.loop.run_until_complete(asyncio.gather(self.server.start(self.loop, 65432)))
-        # self.Tasks.append(self.server.add(self.loop, 65432))
-        # self.loop.run_until_complete(asyncio.gather(*self.Tasks))
-        # print("server output -> {}\n".format(output))
-
-        self.start("ArtilleryIntegrity")
-
 
         """
         self.print_status()
@@ -74,6 +71,7 @@ class Environment:
         self.start("Honeyfile")
         self.start("Cryptolocked")
         self.start("StealthCryptolocked")
+        self.start("ArtilleryIntegrity")
         time.sleep(15)
         self.print_status()
         time.sleep(15)
@@ -100,8 +98,8 @@ class Environment:
         return
 
     def init_fs(self, t):
-        self.loop = asyncio.get_event_loop()
         self.Tools.append(t)
+        self.loop = asyncio.get_event_loop()
 
         """
         
@@ -117,7 +115,7 @@ class Environment:
             h = StealthCryptolocked(t)
             t.proc = Process(target=h.run, args=(self.loop, self.shared,))
             t.status = "STARTED"       
-        """
+        
         if t.name == "ArtilleryIntegrity":
             h = ArtilleryIntegrity(t)
             t.proc = Process(target=h.run, args=(self.loop, self.shared,))
@@ -127,6 +125,7 @@ class Environment:
             h = ArtillerySSHBFM(t)
             t.proc = Process(target=h.run, args=(self.loop, self.shared,))
             t.status = "STARTED"
+        """
         return
 
     def start(self, name):

@@ -11,6 +11,7 @@ from services.utils import *
 
 ADMISSIBLE_ATTEMPTS = 10
 MAX_WORKERS = 5
+FILELOG = "/var/log/auth.log"
 
 
 class ArtillerySSHBFM(Core):
@@ -46,7 +47,7 @@ class ArtillerySSHBFM(Core):
             failed_attempts = defaultdict(lambda: 0, failed_attempts)
 
             if os.path.isfile(target):
-                fileopen = open(target, "r")
+                fileopen = open(FILELOG, "r")
 
             try:
                 for line in fileopen:

@@ -17470,3 +17470,134 @@
 25/04/2021 17:21:57 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
 25/04/2021 17:21:57 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
 25/04/2021 17:21:57 - [INFO] :: [kali]: ARTILLERY INTEGRITY: Added inotify watch to: /home/kali/Q_Testing/artillery/test.txt, value: 1
+27/04/2021 08:41:44 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+27/04/2021 08:41:44 - [INFO] :: [kali]: ARTILLERY INTEGRITY: Added inotify watch to: /home/kali/Q_Testing/artillery/test.txt, value: 1
+27/04/2021 08:42:29 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+27/04/2021 08:42:29 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+27/04/2021 08:42:40 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+27/04/2021 08:42:40 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+27/04/2021 08:47:32 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+27/04/2021 08:47:32 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+27/04/2021 08:47:32 - [INFO] :: [kali]: ARTILLERY INTEGRITY: Added inotify watch to: /home/kali/Q_Testing/artillery/test.txt, value: 1
+27/04/2021 08:47:46 - [INFO] :: [kali]: HONEYPORTS: IP 127.0.0.1 has been blacklisted
+27/04/2021 08:47:46 - [WARNING] :: [kali]: HONEYPORTS: detected activity from IP 127.0.0.1 - content: rrrrrrrr
+
+28/04/2021 11:02:54 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeee
+
+28/04/2021 11:02:54 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:03:41 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 11:03:41 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:07:13 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeeee
+
+28/04/2021 11:07:13 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:08:47 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeee
+
+28/04/2021 11:08:47 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:10:56 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+28/04/2021 11:10:56 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:15:20 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeee
+
+28/04/2021 11:15:20 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:22:52 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeee
+
+28/04/2021 11:22:52 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:23:46 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeee
+
+28/04/2021 11:23:46 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:29:19 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+28/04/2021 11:29:19 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:41:00 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+28/04/2021 11:44:23 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeee
+
+28/04/2021 11:44:23 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 11:52:55 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 12:16:19 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeee
+
+28/04/2021 12:16:19 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 12:16:33 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeee
+
+28/04/2021 12:16:33 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 12:16:41 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 12:30:25 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 127.0.0.1 - content: eeee
+
+28/04/2021 12:31:01 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+28/04/2021 12:31:01 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 12:31:10 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 15:12:34 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: b'eeeeeee\n'
+28/04/2021 15:12:34 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+28/04/2021 15:18:12 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: b'SSH-\n'
+28/04/2021 15:23:03 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: b'eeeeeeee\n'
+28/04/2021 15:23:48 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: b'eeeeee\n'
+28/04/2021 15:23:58 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: b'SSH-\n'
+28/04/2021 15:25:23 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: SSh-
+
+28/04/2021 15:25:34 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 15:28:50 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 16:49:12 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: 
+28/04/2021 16:50:50 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:02:15 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: 
+28/04/2021 17:04:04 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: 
+28/04/2021 17:05:02 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:07:02 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:09:11 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:15:18 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:19:03 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:19:10 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 6 seconds
+28/04/2021 17:21:07 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:21:12 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 4 seconds
+28/04/2021 17:21:28 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: SSH_
+
+28/04/2021 17:21:33 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:21:43 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 5 seconds
+28/04/2021 17:21:43 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+28/04/2021 17:22:08 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 20 seconds
+29/04/2021 04:34:26 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeee
+
+29/04/2021 04:36:57 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+29/04/2021 04:37:05 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 7 seconds
+29/04/2021 04:46:26 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeeeee
+
+29/04/2021 04:48:58 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+29/04/2021 05:15:27 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+29/04/2021 05:15:33 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+29/04/2021 05:15:41 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 7 seconds
+29/04/2021 05:15:47 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 15 seconds
+29/04/2021 05:36:07 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eee
+
+29/04/2021 05:37:14 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeee
+
+29/04/2021 05:40:11 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeee
+
+29/04/2021 05:40:16 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeee
+
+29/04/2021 05:59:11 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+29/04/2021 05:59:16 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+29/04/2021 05:59:20 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 3 seconds
+29/04/2021 05:59:36 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 20 seconds

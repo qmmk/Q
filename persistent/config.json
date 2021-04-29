@@ -61,5 +61,13 @@
         "type": "fs",
         "method": "just_log",
         "params": ["/home/kali/Q_Testing/artillery"]
+    },
+
+    "tool_9": {
+        "file": "ArtillerySSHBFM",
+        "class": "ArtillerySSHBFM",
+        "type": "fs",
+        "method": "just_log",
+        "params": ["/home/kali/Q_Testing/sshbfm"]
     }
 }
