@@ -11,5 +11,5 @@ class Dummyservice(Core):
         log.sintetic_write(log.INFO, "DUMMYSERVICE",
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
         writer.write(MSG.encode(Core.FORMAT))
-        writer.shutdown(2)
+        writer.shutdown(Core.SHUT_RDWR)
         writer.close()

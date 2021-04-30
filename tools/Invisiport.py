@@ -5,6 +5,7 @@ from services.utils import *
 PORTS = [21, 80, 445]
 MSG = "Protocol mismatch.\n"
 
+
 class Invisiport(Core):
     # The ports to show up to the attacker after he triggered the defenses by connecting to port specified in config
 
@@ -23,7 +24,7 @@ class Invisiport(Core):
                            "detectected activity by the following IP: {} - content: {}".format(malicious_ip, msg))
         try:
             writer.send(MSG.encode(Core.FORMAT))
-            writer.shutdown(2)
+            writer.shutdown(Core.SHUT_RDWR)
             writer.close()
         except BrokenPipeError as e:
             print(e)

@@ -50,5 +50,6 @@ class Portspoof(Core):
     def run(self, writer, malicious_ip, msg):
         log.sintetic_write(log.WARNING, "PORTSPOOF",
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
-        writer.write(self.answer.encode(Core.FORMAT))
+        writer.send(self.answer.encode(Core.FORMAT))
+        writer.shutdown(Core.SHUT_RDWR)
         writer.close()

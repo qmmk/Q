@@ -1,71 +1,91 @@
 import asyncio
 import json
-import socket
-from multiprocessing import Manager, Process
+import time
 import uvloop
-from tools.ArtilleryIntegrity import ArtilleryIntegrity
-from tools.ArtillerySSHBFM import ArtillerySSHBFM
-from tools.Cryptolocked import Cryptolocked
-from tools.Endlessh import Endlessh
-from tools.Honeyfile import Honeyfile, time
-from tools.StealthCryptolocked import StealthCryptolocked
-from services.core import Core
-from enum import Enum
-from services.connection import Connection
+from multiprocessing import Manager, Process
+from services.filesystem import Filesystem
+from services.connection import Server
 
 # LOOP
 uvloop.install()
 asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
 
-class ToolsType(Enum):
-    ArtilleryIntegrity = "ArtilleryIntegrity"
-    ArtillerySSHBFM = "ArtillerySSHBFM"
-    Cryptolocked = "Cryptolocked"
-    Dummyservice = "Dummyservice"
-    Endlessh = "Endlessh"
-    Honeyfile = "Honeyfile"
-    Honeyports = "Honeyports"
-    Invisiport = "Invisiport"
-    Portspoof = "Portspoof"
-    StealthCryptolocked = "StealthCryptolocked"
-    Tcprooter = "Tcprooter"
-
-
-class Tool:
-    def __init__(self, id, params):
-        self.id = id
-        self.type = params["type"]
-        self.file = params["file"]
-        self.name = params["class"]
-        self.method = params["method"]
-        self.attr = params["params"]
-        self.status = "NOT INIT"
-        self.proc = ""
-
-
 class Environment:
     def __init__(self):
-        self.Tools = []
-        self.Tasks = []
-        self.manager = Manager()
-        self.server = Connection()
-        self.shared = self.manager.dict()
         self.loop = asyncio.get_event_loop()
+        self.manager = Manager()
+        self.conn = Server(self.loop)
+        self.fs = Filesystem(self.loop)
+        self.shared = self.manager.dict()
+
+        self.p1 = None  # SERVER (P1)
+        self.p2 = None  # FILESYSTEM (P2)
 
         with open('persistent/config.json') as c:
             config = json.load(c)
         for i in config:
             if config[i]["type"] == "net":
-                self.init_net(Tool(i, config[i]))
+
+                self.conn.extend(config[i]["class"], config[i]["params"], config[i]["method"])
             if config[i]["type"] == "fs":
-                self.init_fs(Tool(i, config[i]))
+                self.fs.extend(config[i]["class"], config[i]["params"], config[i]["method"])
 
-        # Server process
-        p = Process(target=self.server.run, args=(self.loop, self.shared))
-        p.start()
+        # DUE MAIN PROCESS: SERVER (P1) & FILESYSTEM (P2)
+        self.start_net()
+        self.start_fs()
 
-        """
+
+        # testing
+        # self.testing()
+
+        return
+
+    def __del__(self):
+        self.stop_fs()
+        self.stop_net()
+        self.loop.close()
+        self.manager.shutdown()
+        return
+
+    @staticmethod
+    def process_status(p):
+        status = ""
+        try:
+            if not p._closed:
+                status = "started"
+        except ValueError as e:
+            status = "stopped"
+        return status
+
+    def testing(self):
+
+        print("Uno")
+        self.start_net()
+        self.stop_net()
+        print("Due")
+        self.start_net()
+        self.stop_net()
+
+        print("Tre_1")
+        self.stop_net()
+        print("Tre_2")
+        self.start_net()
+        print("Quattro_1")
+        self.start_net()
+
+        self.stop_net()
+
+        self.start_net()
+
+        print("First pause..")
+        time.sleep(10)
+        # self.conn.reduce([1999, 2001])
+        self.del_server([1999, 2001])
+
+        print("Second pause..")
+        time.sleep(10)
+
         self.print_status()
         print("starting..")
         self.start("Honeyfile")
@@ -79,74 +99,95 @@ class Environment:
         self.stop("Honeyfile")
         # time.sleep(5)
         self.print_status()
-        """
-
         return
 
-    def __del__(self):
-        self.loop.close()
-        self.manager.shutdown()
+    # <editor-fold desc="FILESYSTEM">
+
+    def start_fs(self):
+        if self.p2 is None or self.process_status(self.p2) != "started":
+            try:
+                self.p2 = Process(target=self.fs.run, args=(self.shared,))
+                self.p2.start()
+            except ValueError as e:
+                print(e)
+        else:
+            print("Filesystem already running.")
         return
 
-    def print_status(self):
-        for tool in self.Tools:
-            print("Tool {} is {}".format(tool.name, tool.status))
-
-    def init_net(self, t):
-        self.Tools.append(t)
-        self.server.extend(t.name, t.attr, t.method)
+    def stop_fs(self):
+        if self.p2 is not None and self.process_status(self.p2) != "stopped":
+            try:
+                self.p2.terminate()
+                self.p2.join(timeout=1.0)
+                self.p2.close()
+            except ValueError as e:
+                print(e)
+        else:
+            print("Filesystem already stopped.")
         return
 
-    def init_fs(self, t):
-        self.Tools.append(t)
-        self.loop = asyncio.get_event_loop()
-
-        """
-        
-        if t.name == "Honeyfile":
-            h = Honeyfile(t)
-            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
-            t.status = "STARTED"
-        if t.name == "Cryptolocked":
-            h = Cryptolocked(t)
-            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
-            t.status = "STARTED"
-        if t.name == "StealthCryptolocked":
-            h = StealthCryptolocked(t)
-            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
-            t.status = "STARTED"       
-        
-        if t.name == "ArtilleryIntegrity":
-            h = ArtilleryIntegrity(t)
-            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
-            t.status = "STARTED"
-
-        if t.name == "ArtillerySSHBFM":
-            h = ArtillerySSHBFM(t)
-            t.proc = Process(target=h.run, args=(self.loop, self.shared,))
-            t.status = "STARTED"
-        """
+    def extend_fs(self, name, paths, method):
+        self.stop_fs()
+        self.conn.extend(name, paths, method)
+        self.start_fs()
         return
 
-    def start(self, name):
-        t = self.get_current_tool(name)
-        try:
-            t.proc.start()
-            t.status = "RUNNING"
-        except ValueError as e:
-            print(e)
+    def reduce_fs(self, paths):
+        self.stop_fs()
+        self.conn.reduce(paths)
+        self.start_fs()
         return
 
-    def stop(self, name):
-        t = self.get_current_tool(name)
-        try:
-            t.proc.terminate()
-            t.proc.join(timeout=1.0)
-            t.proc.close()
-            t.status = "STOPPED"
-        except ValueError as e:
-            print(e)
+    def remove_fs(self, name):
+        self.stop_fs()
+        self.conn.remove(name)
+        self.start_fs()
+
+    # </editor-fold>
+
+    # <editor-fold desc="SERVER">
+
+    def start_net(self):
+        if self.p1 is None or self.process_status(self.p1) != "started":
+            try:
+                self.p1 = Process(target=self.conn.run, args=(self.shared,))
+                self.p1.start()
+            except ValueError as e:
+                print(e)
+        else:
+            print("Server already running.")
         return
 
-    def get_current_tool(self, name):
-        return [tool for tool in self.Tools if tool.name == name][0]
+    def stop_net(self):
+        if self.p1 is not None and self.process_status(self.p1) != "stopped":
+            try:
+                self.p1.terminate()
+                self.p1.join(timeout=1.0)
+                self.p1.close()
+            except ValueError as e:
+                print("Server already stopped.")
+        else:
+            print("Server already stopped.")
+        return
+
+    def extend_net(self, name, ports, method):
+        self.stop_net()
+        self.conn.extend(name, ports, method)
+        self.start_net()
+        return
+
+    def reduce_net(self, ports):
+        self.stop_net()
+        self.conn.reduce(ports)
+        self.start_net()
+        return
+
+    def remove_net(self, name):
+        self.stop_net()
+        self.conn.remove(name)
+        self.start_net()
+        return
+
+    # </editor-fold>
+
+

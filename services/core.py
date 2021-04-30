@@ -1,18 +1,6 @@
-# import log
-# import connection
-# import bwlist
-
-
-import socket
-from datetime import datetime
-
-import os.path
-
-from services import bwlist, log
-
-
 class Core:
-
+    def __init__(self):
+        pass
 
     # <editor-fold desc="FIELD">
     FORMAT = 'utf-8'
@@ -41,79 +29,13 @@ class Core:
     LOCK_USER = 0x00000010  # lock the user account
     SHUTDOWN_HOST = 0x00000020  # shutdown host
 
+    # Active mode ----------------------
     IMMEDIATE = 0
     WAIT = 1
 
-    # </editor-fold>
-
-    def __init__(self, sock=None, port=None, active_sock=None, ip=None, malicious_ip=None, data=None):
-        self.__sock = -1
-        self.__port = -1
-        self.__active_sock = -1
-        self.__ip = ''
-        self.__malicious_ip = ''
-        self.__data = []
-        self.sock = sock
-        self.port = port
-        self.active_sock = active_sock
-        self.ip = ip
-        self.malicious_ip = malicious_ip
-        self.data = data
-
-    # <editor-fold desc="PROPERTY">
-
-    @property
-    def sock(self):
-        return self.__sock
-
-    @property
-    def port(self):
-        return self.__port
-
-    @property
-    def active_sock(self):
-        return self.__active_sock
-
-    @property
-    def ip(self):
-        return self.__ip
-
-    @property
-    def malicious_ip(self):
-        return self.__malicious_ip
-
-    @sock.setter
-    def sock(self, val):
-        if self.__sock < 0:
-            self.__sock = val
-
-    @port.setter
-    def port(self, val):
-        if self.__port < 0:
-            self.__port = val
-
-    @active_sock.setter
-    def active_sock(self, val):
-        if self.__active_sock < 0:
-            self.__active_sock = val
-
-    @ip.setter
-    def ip(self, val):
-        if self.__ip == '':
-            self.__ip = val
-
-    @malicious_ip.setter
-    def malicious_ip(self, val):
-        if self.__malicious_ip == '':
-            self.__malicious_ip = val
-
-    @property
-    def data(self):
-        return self.__data
-
-    @data.setter
-    def data(self, val):
-        if not self.__data:
-            self.__data = val
+    # Socket shutdown mode -----------------
+    SHUT_RD = 0
+    SHUT_WR = 1
+    SHUT_RDWR = 2
 
     # </editor-fold>

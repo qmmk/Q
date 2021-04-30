@@ -1,13 +1,6 @@
-import concurrent.futures
-import inotify.adapters
-import inotify.constants
-from services.core import *
 from services.utils import *
-import subprocess
 from os import listdir
 from os.path import isfile, join
-import os.path
-
 
 MAX_WORKERS = 5
 DATABASE = "persistent/artillery_integrity.db"
@@ -17,10 +10,11 @@ class ArtilleryIntegrity(Core):
     def __init__(self, tool):
         super().__init__()
         self.files = []
-        self.paths = tool.attr
+        self.paths = tool.paths
         self.method = get_method(tool.method)
         self.action = ""
 
+    def initialization(self):
         # DB initialization
         conn = create_connection(DATABASE)
         if conn is not None:
@@ -48,24 +42,7 @@ class ArtilleryIntegrity(Core):
             else:
                 log.sintetic_write(log.ERROR, "ARTILLERY INTEGRITY", "error, '{}' is not a directory".format(path))
         log.sintetic_write(log.INFO, "ARTILLERY INTEGRITY", "finished initialization")
-
-    def run(self, loop, shared):
-        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            try:
-                i = inotify.adapters.Inotify()
-                for filename in self.files:
-                    wd = i.add_watch(filename)
-                    if wd == -1:
-                        log.sintetic_write(log.INFO, "ARTILLERY INTEGRITY", "Couldn't add watch to {0}".format(filename))
-                    else:
-                        log.sintetic_write(log.INFO, "ARTILLERY INTEGRITY",
-                                           "Added inotify watch to: {0}, value: {1}".format(filename, wd))
-
-                for event in i.event_gen():
-                    if event is not None:
-                        loop.run_in_executor(executor, self.process(event))
-            finally:
-                time.sleep(1)
+        return self.files
 
     def process(self, event):
         (header, types, target, name) = event

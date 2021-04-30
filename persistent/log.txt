@@ -17601,3 +17601,100 @@
 
 29/04/2021 05:59:20 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 3 seconds
 29/04/2021 05:59:36 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 20 seconds
+30/04/2021 05:17:31 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 127.0.0.1 - content: eeeeeeeee
+
+30/04/2021 05:26:08 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 127.0.0.1 - content: eeeeeeee
+
+30/04/2021 08:30:35 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 08:31:19 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 08:31:19 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 08:33:06 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 08:33:06 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 08:56:33 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 08:56:33 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:03:29 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:03:29 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:03:29 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:03:29 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:04:08 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:04:08 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:04:08 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:04:08 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:04:08 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 16:04:08 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 16:04:08 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:04:08 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:04:08 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:04:08 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:08:12 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:08:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:08:12 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:08:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:08:12 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 16:08:12 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 16:08:12 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 16:08:12 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:08:12 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:08:12 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:08:12 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:08:12 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:10:06 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:10:06 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:10:06 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 16:10:06 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 16:10:06 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 16:10:06 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:10:06 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:10:06 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:11:05 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:11:05 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:11:05 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 16:11:05 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 16:11:05 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 16:11:05 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:11:05 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:11:05 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:12:17 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:12:17 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:12:17 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 16:12:17 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 16:12:17 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 16:12:17 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:12:17 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:12:17 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:29:58 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:29:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:52:27 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 16:52:27 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: auditctl error: b''
+30/04/2021 16:52:27 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 16:52:27 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 16:52:27 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 16:52:27 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 16:52:27 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 16:52:27 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 16:52:27 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 16:52:46 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000020 - [OPENED]
+30/04/2021 17:24:36 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 17:24:36 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 17:24:36 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 17:24:36 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 17:24:36 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 17:24:36 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 17:24:36 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 17:24:36 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 17:25:31 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 17:25:31 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 17:25:31 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 17:25:31 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 17:25:31 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 17:25:31 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 17:25:31 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 17:25:31 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+30/04/2021 19:06:22 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+30/04/2021 19:06:22 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+30/04/2021 19:06:22 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+30/04/2021 19:06:22 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+30/04/2021 19:06:22 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+30/04/2021 19:06:22 - [INFO] :: [kali]: HONEYFILE: finished initialization
+30/04/2021 19:06:22 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+30/04/2021 19:06:22 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization

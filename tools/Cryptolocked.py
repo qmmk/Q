@@ -1,14 +1,6 @@
-import asyncio
-import concurrent.futures
 import ntpath
-import inotify.adapters
-import inotify.constants
-from services.utils import *
-import random
-import subprocess
-import os
 import os.path
-import time
+from services.utils import *
 from datetime import datetime, timedelta
 
 N_TENTACTLES = 5
@@ -20,10 +12,11 @@ class Cryptolocked(Core):
     def __init__(self, tool):
         super().__init__()
         self.files = []
-        self.paths = tool.attr
+        self.paths = tool.paths
         self.method = get_method(tool.method)
         self.action = ""
 
+    def initialization(self):
         filenames = {}
         # create a list of random filenames in the given paths
         for path in self.paths:
@@ -66,29 +59,7 @@ class Cryptolocked(Core):
             db_insert_file_entry(conn, filename)
             self.files.append(filename)
         log.sintetic_write(log.INFO, "CRYPTOLOCKED", "finished initialization")
-
-    # def run(self, loop, shared):
-    #     output = loop.run_until_complete(asyncio.gather(self.start(shared)))
-
-    # async def start(self, shared):
-    def run(self, loop, shared):
-        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            try:
-                i = inotify.adapters.Inotify()
-                for filename in self.files:
-                    wd = i.add_watch(filename)
-                    if wd == -1:
-                        log.sintetic_write(log.INFO, "CRYPTOLOCKED", "Couldn't add watch to {0}".format(filename))
-                    else:
-                        log.sintetic_write(log.INFO, "CRYPTOLOCKED",
-                                           "Added inotify watch to: {0}, value: {1}".format(filename, wd))
-
-                for event in i.event_gen():
-                    if event is not None:
-                        # executor.submit(self.process, event)
-                        loop.run_in_executor(executor, self.process(event))
-            finally:
-                time.sleep(1)
+        return self.files
 
     def process(self, event):
         (header, types, target, name) = event

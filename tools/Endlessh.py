@@ -18,7 +18,7 @@ class Endlessh(Core):
                                "detected activity from IP {} - content: {}".format(malicious_ip, msg))
             try:
                 writer.send(MSG.encode(Core.FORMAT))
-                writer.shutdown(2)
+                writer.shutdown(Core.SHUT_RDWR)
                 writer.close()
             except BrokenPipeError as e:
                 self.is_closing = True
@@ -43,7 +43,7 @@ class Endlessh(Core):
             if mode == Core.WAIT and count == 0 and is_first_time(DATABASE, malicious_ip, port):
                 try:
                     writer.send(MSG.encode(Core.FORMAT))
-                    writer.shutdown(2)
+                    writer.shutdown(Core.SHUT_RDWR)
                     writer.close()
                 except BrokenPipeError as e:
                     self.is_closing = True
@@ -74,5 +74,6 @@ class Endlessh(Core):
         elapsed_time = end - start - delay
         log.sintetic_write(log.INFO, "ENDLESSH",
                            "IP {} stopped activity after {} seconds".format(malicious_ip, int(elapsed_time)))
+        writer.shutdown(Core.SHUT_RDWR)
         writer.close()
         return

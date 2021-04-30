@@ -1,8 +1,5 @@
 from services.utils import *
-import inotify.adapters
-import inotify.constants
-import concurrent.futures
-import asyncio
+
 
 MAX_WORKERS = 5
 
@@ -10,7 +7,7 @@ MAX_WORKERS = 5
 class Honeyfile(Core):
     def __init__(self, tool):
         super().__init__()
-        self.paths = tool.attr
+        self.paths = tool.paths
         self.method = get_method(tool.method)
         self.action = ""
 
@@ -21,29 +18,6 @@ class Honeyfile(Core):
             except subprocess.CalledProcessError as e:
                 log.sintetic_write(log.DEBUG, "HONEYFILE", "auditctl error: {} for '{}'".format(e.output, path))
         log.sintetic_write(log.INFO, "HONEYFILE", "finished initialization")
-
-    # def run(self, loop, shared):
-    #    output = loop.run_until_complete(asyncio.gather(self.start(shared)))
-
-    # async def start(self, shared):
-    def run(self, loop, shared):
-        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            try:
-                i = inotify.adapters.Inotify()
-                for path in self.paths:
-                    wd = i.add_watch(path)
-                    if wd == -1:
-                        log.sintetic_write(log.INFO, "HONEYFILE", "Couldn't add watch to {0}".format(path))
-                    else:
-                        log.sintetic_write(log.INFO, "HONEYFILE",
-                                           "Added inotify watch to: {0}, value: {1}".format(path, wd))
-
-                for event in i.event_gen():
-                    if event is not None:
-                        # executor.submit(self.process, event)
-                        loop.run_in_executor(executor, self.process(event))
-            finally:
-                time.sleep(1)
 
     def process(self, event):
         (header, types, target, name) = event
