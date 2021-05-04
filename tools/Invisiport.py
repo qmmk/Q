@@ -24,7 +24,7 @@ class Invisiport(Core):
                            "detectected activity by the following IP: {} - content: {}".format(malicious_ip, msg))
         try:
             writer.send(MSG.encode(Core.FORMAT))
-            writer.shutdown(Core.SHUT_RDWR)
+            # writer.shutdown(Core.SHUT_RDWR)
             writer.close()
         except BrokenPipeError as e:
             print(e)

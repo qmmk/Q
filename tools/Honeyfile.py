@@ -13,7 +13,8 @@ class Honeyfile(Core):
 
         for path in self.paths:
             try:
-                print("auditing", path)
+                # print("auditing", path)
+                log.sintetic_write(log.DEBUG, "HONEYFILE", "Auditing {}".format(path))
                 subprocess.check_output("auditctl -w {} -p war".format(path), shell=True)
             except subprocess.CalledProcessError as e:
                 log.sintetic_write(log.DEBUG, "HONEYFILE", "auditctl error: {} for '{}'".format(e.output, path))

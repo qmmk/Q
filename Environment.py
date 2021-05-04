@@ -35,7 +35,7 @@ class Environment:
         self.start_net()
         self.start_fs()
 
-
+        time.sleep(5)
         # testing
         # self.testing()
 
@@ -60,10 +60,15 @@ class Environment:
 
     def testing(self):
 
-        print("Uno")
-        self.start_net()
-        self.stop_net()
-        print("Due")
+        print("Reducing port")
+        # self.start_net()
+        # self.stop_net()
+
+        self.reduce_net([1999, 2001])
+
+
+        """
+                print("Due")
         self.start_net()
         self.stop_net()
 
@@ -81,7 +86,7 @@ class Environment:
         print("First pause..")
         time.sleep(10)
         # self.conn.reduce([1999, 2001])
-        self.del_server([1999, 2001])
+        
 
         print("Second pause..")
         time.sleep(10)
@@ -99,6 +104,8 @@ class Environment:
         self.stop("Honeyfile")
         # time.sleep(5)
         self.print_status()
+        """
+
         return
 
     # <editor-fold desc="FILESYSTEM">

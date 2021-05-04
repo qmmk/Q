@@ -51,5 +51,5 @@ class Portspoof(Core):
         log.sintetic_write(log.WARNING, "PORTSPOOF",
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
         writer.send(self.answer.encode(Core.FORMAT))
-        writer.shutdown(Core.SHUT_RDWR)
+        # writer.shutdown(Core.SHUT_RDWR)
         writer.close()

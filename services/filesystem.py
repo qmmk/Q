@@ -1,3 +1,4 @@
+import inotify
 import inotify.adapters
 import inotify.constants
 import concurrent.futures

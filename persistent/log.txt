@@ -17698,3 +17698,185 @@
 30/04/2021 19:06:22 - [INFO] :: [kali]: HONEYFILE: finished initialization
 30/04/2021 19:06:22 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
 30/04/2021 19:06:22 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+03/05/2021 11:08:47 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+03/05/2021 11:08:47 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+03/05/2021 11:08:47 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+03/05/2021 11:08:47 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+03/05/2021 11:08:47 - [INFO] :: [kali]: HONEYFILE: finished initialization
+03/05/2021 11:08:47 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+03/05/2021 11:09:19 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+03/05/2021 11:09:19 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+03/05/2021 11:09:19 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+03/05/2021 11:09:19 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+03/05/2021 11:09:19 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+03/05/2021 11:09:19 - [INFO] :: [kali]: HONEYFILE: finished initialization
+03/05/2021 11:09:19 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+03/05/2021 11:09:19 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+03/05/2021 11:11:51 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000020 - [OPENED]
+03/05/2021 11:11:53 - [WARNING] :: [kali]: HONEYFILE: IN_OPEN - IN_ISDIR '/home/kali/Q_Testing/honey' has been OPENED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1118)
+03/05/2021 11:11:53 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000001 - [ACCESSED]
+03/05/2021 11:11:55 - [WARNING] :: [kali]: HONEYFILE: IN_ACCESS - IN_ISDIR '/home/kali/Q_Testing/honey' has been ACCESSED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1118)
+03/05/2021 11:11:55 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000010 - [CLOSED]
+03/05/2021 11:11:56 - [WARNING] :: [kali]: HONEYFILE: IN_CLOSE_NOWRITE - IN_ISDIR '/home/kali/Q_Testing/honey' has been CLOSED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1118)
+03/05/2021 11:13:12 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeee
+
+03/05/2021 11:16:13 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+03/05/2021 11:16:17 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 3 seconds
+03/05/2021 11:19:48 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+03/05/2021 11:19:48 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+03/05/2021 11:19:48 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+03/05/2021 11:19:48 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+03/05/2021 11:19:48 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+03/05/2021 11:19:48 - [INFO] :: [kali]: HONEYFILE: finished initialization
+03/05/2021 11:19:48 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+03/05/2021 11:19:48 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+03/05/2021 11:19:55 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+03/05/2021 11:20:00 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 4 seconds
+04/05/2021 09:41:58 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 09:41:58 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 09:41:58 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 09:41:58 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 09:41:58 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 09:41:58 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 09:43:21 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 09:43:21 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 09:43:21 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 09:43:21 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 09:43:21 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+04/05/2021 09:43:21 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 09:43:21 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+04/05/2021 09:43:21 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 09:44:16 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 09:44:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 09:44:16 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 09:44:16 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 09:44:16 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+04/05/2021 09:44:16 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 09:44:16 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+04/05/2021 09:44:16 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 09:44:36 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+04/05/2021 09:45:21 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 35 seconds
+04/05/2021 09:45:21 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+
+04/05/2021 09:45:22 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 0 seconds
+04/05/2021 11:14:10 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 11:14:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 11:14:10 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 11:14:10 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 11:14:10 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 11:14:10 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 11:14:41 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+04/05/2021 11:15:06 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 20 seconds
+04/05/2021 11:15:06 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+04/05/2021 11:15:26 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 15 seconds
+04/05/2021 11:16:08 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 11:16:08 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 11:16:08 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 11:16:08 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 11:16:08 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+04/05/2021 11:16:08 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 11:16:08 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+04/05/2021 11:16:08 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 11:16:19 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+04/05/2021 11:16:25 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+04/05/2021 11:16:45 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 15 seconds
+04/05/2021 11:16:49 - [INFO] :: [kali]: ENDLESSH: IP 127.0.0.1 stopped activity after 25 seconds
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1999 on socket 16
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 2511 on socket 17
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 3711 on socket 18
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 5471 on socket 19
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1025 on socket 20
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1026 on socket 21
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1027 on socket 22
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1351 on socket 23
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1352 on socket 24
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1769 on socket 25
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 1770 on socket 26
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 2009 on socket 27
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 2001 on socket 28
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 2223 on socket 29
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 5401 on socket 30
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 5403 on socket 31
+04/05/2021 11:40:43 - [INFO] :: [kali]: SERVER: Serving port: 5404 on socket 32
+04/05/2021 11:40:43 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 11:40:43 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 11:40:43 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 11:40:43 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 11:40:43 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+04/05/2021 11:40:43 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 11:40:43 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+04/05/2021 11:40:43 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 11:41:19 - [INFO] :: [kali]: SERVER: New Connection from ('127.0.0.1', 33758)
+04/05/2021 11:41:26 - [WARNING] :: [kali]: SERVER: Receive something..SSH-
+ from 127.0.0.1:33758 and we reply with 127.0.1.1:2001
+04/05/2021 11:41:26 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 127.0.0.1 - content: SSH-
+
+04/05/2021 11:41:50 - [INFO] :: [kali]: SERVER: New Connection from ('127.0.0.1', 49468)
+04/05/2021 11:41:54 - [WARNING] :: [kali]: SERVER: Receive something..eeeeee
+ from 127.0.0.1:49468 and we reply with 127.0.1.1:2009
+04/05/2021 11:41:54 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 127.0.0.1 - content: eeeeee
+
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 17
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 18
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 19
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 20
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 21
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 22
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 23
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 24
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 25
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 26
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 27
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+04/05/2021 11:43:48 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+04/05/2021 11:43:48 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 11:43:49 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 11:43:49 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 11:43:49 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 11:43:49 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+04/05/2021 11:43:49 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 11:43:49 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+04/05/2021 11:43:49 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 11:44:01 - [INFO] :: [kali]: SERVER: New Connection from ('127.0.0.1', 33766)
+04/05/2021 11:44:12 - [WARNING] :: [kali]: SERVER: Receive something..eeeeeeeeee from 127.0.0.1:33766 and we reply with 127.0.1.1:2001
+04/05/2021 11:44:12 - [WARNING] :: [kali]: ENDLESSH: detected activity from IP 127.0.0.1 - content: eeeeeeeeee
+04/05/2021 11:44:22 - [INFO] :: [kali]: SERVER: Closing connection to
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 17
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 18
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 19
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 20
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 21
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 22
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 23
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 24
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 25
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 26
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 27
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+04/05/2021 11:44:41 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+04/05/2021 11:44:41 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+04/05/2021 11:44:41 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+04/05/2021 11:44:41 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+04/05/2021 11:44:41 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+04/05/2021 11:44:41 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+04/05/2021 11:44:41 - [INFO] :: [kali]: HONEYFILE: finished initialization
+04/05/2021 11:44:41 - [DEBUG] :: [kali]: ARTILLERY INTEGRITY: auditctl error: b'' for 'test.txt'
+04/05/2021 11:44:41 - [INFO] :: [kali]: ARTILLERY INTEGRITY: finished initialization
+04/05/2021 11:44:45 - [INFO] :: [kali]: SERVER: New Connection from ('127.0.0.1', 33768)
+04/05/2021 11:44:46 - [INFO] :: [kali]: SERVER: Closing connection to ('127.0.0.1', 33768)

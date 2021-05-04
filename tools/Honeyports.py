@@ -14,7 +14,7 @@ class Honeyports(Core):
                 writer.send(MSG.encode(Core.FORMAT))
             except BrokenPipeError as e:
                 print(e)
-        writer.shutdown(Core.SHUT_RDWR)
+        # writer.shutdown(Core.SHUT_RDWR)
         writer.close()
 
         if not bwlist.is_whitelisted(malicious_ip):

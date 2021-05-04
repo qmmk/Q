@@ -1,12 +1,10 @@
 import sys
 import subprocess
 from Environment import Environment
-import inotify.adapters
 
 
 def main():
     env = Environment()
-
 
     while True:
         if input() == "":

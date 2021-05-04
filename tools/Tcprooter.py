@@ -127,5 +127,5 @@ class Tcprooter(Core):
             # Random version
             writer.write(Tcprooter.PAYLOADS[randint(0, len(Tcprooter.PAYLOADS) - 1)].encode(Core.FORMAT))
             # writer.write(Tcprooter.PAYLOADS[1].encode(Core.FORMAT)) # Static version
-        writer.shutdown(2)
+        # writer.shutdown(2)
         writer.close()

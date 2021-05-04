@@ -4,7 +4,7 @@
         "class": "Honeyports",
         "type": "net",
         "method": "start",
-        "params": [1999]
+        "params": [1999, 1352, 1769, 1770, 2009]
     },
 
     "tool_2": {
@@ -12,7 +12,7 @@
         "class": "Portspoof",
         "type": "net",
         "method": "start",
-        "params": [2511, 3711, 5471, 1025, 1026, 1027, 1351, 1352, 1769, 1770, 2009]
+        "params": [2511, 3711, 5471, 1025, 1026, 1027, 1351]
     },
 
     "tool_3": {
@@ -55,15 +55,8 @@
         "params": ["/home/kali/Q_Testing/honey"]
     },
 
-    "tool_8": {
-        "file": "ArtilleryIntegrity",
-        "class": "ArtilleryIntegrity",
-        "type": "fs",
-        "method": "just_log",
-        "params": ["/home/kali/Q_Testing/artillery"]
-    },
 
-    "tool_9": {
+    "tool_8": {
         "file": "ArtillerySSHBFM",
         "class": "ArtillerySSHBFM",
         "type": "fs",
