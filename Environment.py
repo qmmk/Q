@@ -26,18 +26,50 @@ class Environment:
             config = json.load(c)
         for i in config:
             if config[i]["type"] == "net":
-
                 self.conn.extend(config[i]["class"], config[i]["params"], config[i]["method"])
             if config[i]["type"] == "fs":
                 self.fs.extend(config[i]["class"], config[i]["params"], config[i]["method"])
 
         # DUE MAIN PROCESS: SERVER (P1) & FILESYSTEM (P2)
+        print("Start the net")
         self.start_net()
         self.start_fs()
 
+        """
+        
+        time.sleep(60)
+        print("Start the filesystemn\n\n\n")
+        
+
+        # stoppo 30 per testare:
+        # la doppia connessione ssh
+        # il log su honey file
+
+        time.sleep(45)
+        print("Update the net with port 2005 for Endlessh in mode delayed_action\n\n\n")
+        self.extend_net("Endlessh", [2005], "delayed_action")
+        time.sleep(45)
+        print("Update the filesystem by removing auditing of honey directory from Honeyfile\n\n\n")
+        self.reduce_fs("Honeyfile", "/home/kali/Q_Testing/honey")
+
+        time.sleep(60)
+        print("Stopping the net\n\n\n")
+        self.stop_net()
+
         time.sleep(5)
+        print("Stopping the filesystem\n\n\n")
+
+        self.stop_fs()
+
+        time.sleep(15)
+        print("Can restart all or single anytime \n\n\n")
+        self.start_net()
+        self.start_fs()
         # testing
         # self.testing()
+        
+        """
+
 
         return
 
@@ -57,56 +89,6 @@ class Environment:
         except ValueError as e:
             status = "stopped"
         return status
-
-    def testing(self):
-
-        print("Reducing port")
-        # self.start_net()
-        # self.stop_net()
-
-        self.reduce_net([1999, 2001])
-
-
-        """
-                print("Due")
-        self.start_net()
-        self.stop_net()
-
-        print("Tre_1")
-        self.stop_net()
-        print("Tre_2")
-        self.start_net()
-        print("Quattro_1")
-        self.start_net()
-
-        self.stop_net()
-
-        self.start_net()
-
-        print("First pause..")
-        time.sleep(10)
-        # self.conn.reduce([1999, 2001])
-        
-
-        print("Second pause..")
-        time.sleep(10)
-
-        self.print_status()
-        print("starting..")
-        self.start("Honeyfile")
-        self.start("Cryptolocked")
-        self.start("StealthCryptolocked")
-        self.start("ArtilleryIntegrity")
-        time.sleep(15)
-        self.print_status()
-        time.sleep(15)
-        print("stopping..")
-        self.stop("Honeyfile")
-        # time.sleep(5)
-        self.print_status()
-        """
-
-        return
 
     # <editor-fold desc="FILESYSTEM">
 
@@ -135,19 +117,19 @@ class Environment:
 
     def extend_fs(self, name, paths, method):
         self.stop_fs()
-        self.conn.extend(name, paths, method)
+        self.fs.extend(name, paths, method)
         self.start_fs()
         return
 
-    def reduce_fs(self, paths):
+    def reduce_fs(self, name, paths):
         self.stop_fs()
-        self.conn.reduce(paths)
+        self.fs.reduce(name, paths)
         self.start_fs()
         return
 
     def remove_fs(self, name):
         self.stop_fs()
-        self.conn.remove(name)
+        self.fs.remove(name)
         self.start_fs()
 
     # </editor-fold>
@@ -183,9 +165,9 @@ class Environment:
         self.start_net()
         return
 
-    def reduce_net(self, ports):
+    def reduce_net(self, name, ports):
         self.stop_net()
-        self.conn.reduce(ports)
+        self.conn.reduce(name, ports)
         self.start_net()
         return
 
@@ -196,5 +178,3 @@ class Environment:
         return
 
     # </editor-fold>
-
-

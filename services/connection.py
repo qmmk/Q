@@ -10,7 +10,7 @@ from tools.Invisiport import Invisiport
 from tools.Portspoof import Portspoof
 from tools.Tcprooter import Tcprooter
 
-SERVER = socket.gethostbyname(socket.gethostname())
+SERVER = "192.168.41.129"  # socket.gethostbyname(socket.gethostname())
 MAX_WORKERS = 5
 
 
@@ -29,14 +29,20 @@ class Server:
         self.Ports = []
         return
 
-    def extend(self, name, ports, method):
-        self.Conns[name] = Connection(ports, method)
+    def extend(self, name, ports, method=None):
+        if name in self.Conns:
+            self.Conns[name].ports.extend(ports)
+            if method is not None:
+                self.Conns[name].method = method
+        else:
+            self.Conns[name] = Connection(ports, method)
         self.Ports.extend(ports)
         return
 
-    def reduce(self, ports):
-        for port in ports:
-            self.Ports = [x for x in self.Ports if x != port]
+    def reduce(self, name, ports):
+        # for port in ports:
+        self.Conns[name].ports = [x for x in self.Conns[name].ports if x not in ports]
+        self.Ports = [x for x in self.Ports if x not in ports]
         return
 
     def remove(self, name):
@@ -44,6 +50,7 @@ class Server:
         return
 
     def initialization(self):
+        self.Servers = []
         for port in self.Ports:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -83,14 +90,13 @@ class Server:
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             while connected:
-                msg = conn.recv(1024).decode('utf-8').strip("\n")
+                msg = conn.recv(1024).decode(encoding="utf-8", errors="replace")
                 if msg:
                     log.sintetic_write(log.WARNING, "SERVER", "Receive something..{} from {}:{} and we reply with {}:{}"
                                        .format(msg, mal_ip, out_port, my_ip, in_port))
 
                     # print("Receive something..{} from {}:{} and we reply with {}:{}"
                     #       .format(msg, mal_ip, out_port, my_ip, in_port))
-
                     for name, tool in self.Conns.items():
                         if name == "Endlessh" and in_port in tool.ports:
                             # print("Enable Endlessh..")

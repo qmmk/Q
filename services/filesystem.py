@@ -26,14 +26,19 @@ class Filesystem:
         self.Paths = []
         return
 
-    def extend(self, name, paths, method):
-        self.Tools[name] = Tool(paths, method)
+    def extend(self, name, paths, method=None):
+        if name in self.Tools:
+            self.Tools[name].paths.extend(paths)
+            if method is not None:
+                self.Tools[name].method = method
+        else:
+            self.Tools[name] = Tool(paths, method)
         self.Paths.extend(paths)
         return
 
-    def reduce(self, paths):
-        for path in paths:
-            self.Paths = [x for x in self.Paths if x != path]
+    def reduce(self, name, paths):
+        self.Tools[name].paths = [x for x in self.Tools[name].paths if x not in paths]
+        self.Paths = [x for x in self.Paths if x not in paths]
         return
 
     def remove(self, name):
@@ -86,7 +91,7 @@ class Filesystem:
                             # executor.submit(self.Tools[name].init.process, event)
                             self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
                         if name == "Cryptolocked" and target in tool.paths:
-                            print("Enable Cryptolocked..")
+                            # print("Enable Cryptolocked..")
                             # executor.submit(self.Tools[name].init.process, event)
                             self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
                         if name == "StealthCryptolocked" and target in tool.paths:

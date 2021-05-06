@@ -19,10 +19,10 @@ def load_blacklist(filename):
 
 def exists(file, ip_address):
     try:
-        with open(file, "wb") as f:
+        with open(file, "rb") as f:
             try:
                 s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
-                if s.find(format(b"{0}", ip_address)) != -1:
+                if s.find(ip_address) != -1:
                     return True
             except ValueError as e:
                 print(e)
