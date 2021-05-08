@@ -2,13 +2,12 @@ import select
 import socket
 import threading
 import concurrent.futures
-
 from services import log
-from tools.Endlessh import Endlessh
-from tools.Honeyports import Honeyports
-from tools.Invisiport import Invisiport
-from tools.Portspoof import Portspoof
-from tools.Tcprooter import Tcprooter
+from tools.Endlessh import run_endlessh
+from tools.Honeyports import run_honeyports
+from tools.Invisiport import run_invisiport
+from tools.Portspoof import run_portspoof
+from tools.Tcprooter import run_tcprooter
 
 SERVER = "192.168.41.129"  # socket.gethostbyname(socket.gethostname())
 MAX_WORKERS = 5
@@ -39,14 +38,12 @@ class Server:
         self.Ports.extend(ports)
         return
 
-    def reduce(self, name, ports):
-        # for port in ports:
-        self.Conns[name].ports = [x for x in self.Conns[name].ports if x not in ports]
-        self.Ports = [x for x in self.Ports if x not in ports]
-        return
-
-    def remove(self, name):
-        del self.Conns[name]
+    def reduce(self, name, ports=None):
+        if ports is not None:
+            self.Conns[name].ports = [x for x in self.Conns[name].ports if x not in ports]
+            self.Ports = [x for x in self.Ports if x not in ports]
+        else:
+            del self.Conns[name]
         return
 
     def initialization(self):
@@ -56,29 +53,24 @@ class Server:
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
             s.bind((SERVER, port))
-            # print("Serving port: {} on socket {}".format(port, s.fileno()))
             log.sintetic_write(log.INFO, "SERVER", "Serving port {} on socket {}".format(port, s.fileno()))
 
             s.listen()
             self.Servers.append(s)
         return
 
-    def run(self, shared):
+    def run(self):
         self.loop.run_until_complete(self.init())
 
     async def init(self):
         self.initialization()
 
-        # with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         while True:
             conn, addr = select.select(self.Servers, [], [])[0][0].accept()
             self.Sockets[addr[1]] = conn.dup()
-
             threading.Thread(target=self.handle_input, args=(conn, addr)).start()
-            # self.loop.run_in_executor(executor, self.handle_input(conn, addr))
 
     def handle_input(self, conn, addr):
-        # print("New Connection from", addr)
         log.sintetic_write(log.INFO, "SERVER", "New Connection from {}".format(addr))
 
         connected = True
@@ -95,36 +87,23 @@ class Server:
                     log.sintetic_write(log.WARNING, "SERVER", "Receive something..{} from {}:{} and we reply with {}:{}"
                                        .format(msg, mal_ip, out_port, my_ip, in_port))
 
-                    # print("Receive something..{} from {}:{} and we reply with {}:{}"
-                    #       .format(msg, mal_ip, out_port, my_ip, in_port))
                     for name, tool in self.Conns.items():
                         if name == "Endlessh" and in_port in tool.ports:
-                            # print("Enable Endlessh..")
-                            self.loop.run_in_executor(executor, Endlessh().run(ws, in_port, mal_ip, msg, tool.method))
-                            # threading.Thread(target=Endlessh().run(wsock, in_port, malicious_ip, msg, param[1])).start()
+                            self.loop.run_in_executor(executor, run_endlessh(ws, in_port, mal_ip, msg, tool.method))
                             break
                         if name == "Invisiport" and in_port in tool.ports:
-                            # print("Enable Invisiport..")
-                            self.loop.run_in_executor(executor, Invisiport().run(ws, in_port, mal_ip, msg, tool.method))
-                            # threading.Thread(target=Invisiport().run(wsock, in_port, malicious_ip, msg, param[1])).start()
+                            self.loop.run_in_executor(executor, run_invisiport(ws, in_port, mal_ip, msg, tool.method))
                             break
                         if name == "Honeyports" and in_port in tool.ports:
-                            # print("Enable Honeyports..")
-                            self.loop.run_in_executor(executor, Honeyports().run(ws, mal_ip, msg))
-                            # threading.Thread(Honeyports().run(wsock, malicious_ip, msg)).start()
+                            self.loop.run_in_executor(executor, run_honeyports(ws, mal_ip, msg))
                             break
                         if name == "Portspoof" and in_port in tool.ports:
-                            # print("Enable Portspoof..")
-                            self.loop.run_in_executor(executor, Portspoof(in_port).run(ws, mal_ip, msg))
-                            # threading.Thread(Portspoof(in_port).run(wsock, malicious_ip, msg)).start()
+                            self.loop.run_in_executor(executor, run_portspoof(ws, in_port, mal_ip, msg))
                             break
                         if name == "Tcprooter":
-                            # print("Enable Tcprooter..")
-                            self.loop.run_in_executor(executor, Tcprooter().run(ws, mal_ip, msg))
-                            # threading.Thread(Tcprooter().run(wsock, malicious_ip, msg)).start()
+                            self.loop.run_in_executor(executor, run_tcprooter(ws, mal_ip, msg))
                             break
                 else:
-                    # print('Closing connection to', addr)
                     log.sintetic_write(log.INFO, "SERVER", "Closing connection to {}".format(addr))
                     conn.close()
                     del self.Sockets[out_port]

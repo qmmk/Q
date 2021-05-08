@@ -3,11 +3,11 @@ import inotify.adapters
 import inotify.constants
 import concurrent.futures
 from inotify.calls import InotifyError
-from tools.ArtilleryIntegrity import ArtilleryIntegrity
-from tools.ArtillerySSHBFM import ArtillerySSHBFM
-from tools.Cryptolocked import Cryptolocked
-from tools.Honeyfile import Honeyfile
-from tools.StealthCryptolocked import StealthCryptolocked
+from tools.ArtilleryIntegrity import init_artillery_integrity, run_artillery_integrity
+from tools.ArtillerySSHBFM import run_artillery_sshbfm
+from tools.Cryptolocked import init_cryptolocked, run_cryptolocked
+from tools.Honeyfile import run_honeyfile, init_honeyfile
+from tools.StealthCryptolocked import init_stealth_cryptolocked, run_stealth_cryptolocked
 
 MAX_WORKERS = 5
 
@@ -36,38 +36,32 @@ class Filesystem:
         self.Paths.extend(paths)
         return
 
-    def reduce(self, name, paths):
-        self.Tools[name].paths = [x for x in self.Tools[name].paths if x not in paths]
-        self.Paths = [x for x in self.Paths if x not in paths]
-        return
-
-    def remove(self, name):
-        del self.Tools[name]
+    def reduce(self, name, paths=None):
+        if paths is not None:
+            self.Tools[name].paths = [x for x in self.Tools[name].paths if x not in paths]
+            self.Paths = [x for x in self.Paths if x not in paths]
+        else:
+            del self.Tools[name]
         return
 
     def initialization(self):
         for name, tool in self.Tools.items():
             if name == "Honeyfile":
-                self.Tools[name].init = Honeyfile(tool)
+                init_honeyfile(tool.paths)
             if name == "Cryptolocked":
-                self.Tools[name].init = Cryptolocked(tool)
-                p = self.Tools[name].init.initialization()
+                p = init_cryptolocked(tool.paths)
                 self.Paths.extend(p)
                 self.Tools[name].paths.extend(p)
             if name == "StealthCryptolocked":
-                self.Tools[name].init = StealthCryptolocked(tool)
-                p = self.Tools[name].init.initialization()
+                p = init_stealth_cryptolocked(tool.paths)
                 self.Paths.extend(p)
                 self.Tools[name].paths.extend(p)
             if name == "ArtilleryIntegrity":
-                self.Tools[name].init = ArtilleryIntegrity(tool)
-                p = self.Tools[name].init.initialization()
+                p = init_artillery_integrity(tool.paths)
                 self.Paths.extend(p)
                 self.Tools[name].paths.extend(p)
-            if name == "ArtillerySSHBFM":
-                self.Tools[name].init = ArtillerySSHBFM(tool)
 
-    def run(self, shared):
+    def run(self):
         self.loop.run_until_complete(self.init())
 
     async def init(self):
@@ -87,23 +81,13 @@ class Filesystem:
 
                     for name, tool in self.Tools.items():
                         if name == "Honeyfile" and target in tool.paths:
-                            print("Enable Honeyfile..")
-                            # executor.submit(self.Tools[name].init.process, event)
-                            self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
+                            self.loop.run_in_executor(executor, run_honeyfile(event, tool.method))
                         if name == "Cryptolocked" and target in tool.paths:
-                            # print("Enable Cryptolocked..")
-                            # executor.submit(self.Tools[name].init.process, event)
-                            self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
+                            self.loop.run_in_executor(executor, run_cryptolocked(event, tool.method))
                         if name == "StealthCryptolocked" and target in tool.paths:
-                            print("Enable StealthCryptolocked..")
-                            # executor.submit(self.Tools[name].init.process, event)
-                            self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
+                            self.loop.run_in_executor(executor, run_stealth_cryptolocked(event, tool.method))
                         if name == "ArtilleryIntegrity" and target in tool.paths:
-                            print("Enable ArtilleryIntegrity..")
-                            # executor.submit(self.Tools[name].init.process, event)
-                            self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
+                            self.loop.run_in_executor(executor, run_artillery_integrity(event, tool.method))
                         if name == "ArtillerySSHBFM" and target in tool.paths:
-                            print("Enable ArtillerySSHBFM..")
-                            # executor.submit(self.Tools[name].init.process, event)
-                            self.loop.run_in_executor(executor, self.Tools[name].init.process(event))
+                            self.loop.run_in_executor(executor, run_artillery_sshbfm(event))
         return

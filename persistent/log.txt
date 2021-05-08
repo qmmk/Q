@@ -25366,3 +25366,280 @@ Host: 192.168.41.129
 06/05/2021 06:20:56 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 1015)
 06/05/2021 06:20:56 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 520)
 06/05/2021 06:20:56 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 927)
+08/05/2021 05:40:10 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 05:40:10 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+08/05/2021 05:40:10 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+08/05/2021 05:40:10 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+08/05/2021 05:40:10 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:40:10 - [INFO] :: [kali]: HONEYFILE: finished initialization
+08/05/2021 05:41:29 - [DEBUG] :: [kali]: HONEYFILE: just_log called because of'/home/kali/Q_Testing/honey/' and mask 0x40000020 - [OPENED]
+08/05/2021 05:43:57 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 05:43:57 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+08/05/2021 05:43:57 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+08/05/2021 05:43:57 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+08/05/2021 05:43:57 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:43:57 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+08/05/2021 05:43:57 - [INFO] :: [kali]: HONEYFILE: finished initialization
+08/05/2021 05:44:03 - [DEBUG] :: [kali]: HONEYFILE: just_log called because of'/home/kali/Q_Testing/honey/' and mask 0x40000020 - [OPENED]
+08/05/2021 05:44:03 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:44:05 - [WARNING] :: [kali]: HONEYFILE: IN_OPEN - IN_ISDIR '/home/kali/Q_Testing/honey' has been OPENED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:12 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 05:52:12 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+08/05/2021 05:52:12 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+08/05/2021 05:52:12 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+08/05/2021 05:52:12 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:52:12 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+08/05/2021 05:52:12 - [INFO] :: [kali]: HONEYFILE: finished initialization
+08/05/2021 05:52:17 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000020 - [OPENED]
+08/05/2021 05:52:17 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:52:18 - [WARNING] :: [kali]: HONEYFILE: IN_OPEN - IN_ISDIR '/home/kali/Q_Testing/honey' has been OPENED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:18 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000001 - [ACCESSED]
+08/05/2021 05:52:18 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:52:20 - [WARNING] :: [kali]: HONEYFILE: IN_ACCESS - IN_ISDIR '/home/kali/Q_Testing/honey' has been ACCESSED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:20 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000010 - [CLOSED]
+08/05/2021 05:52:20 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:52:22 - [WARNING] :: [kali]: HONEYFILE: IN_CLOSE_NOWRITE - IN_ISDIR '/home/kali/Q_Testing/honey' has been CLOSED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:56 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.d1d' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:57 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.bb2' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:57 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.216d' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:58 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.487' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:52:59 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.2065' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:57:55 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 05:57:55 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+08/05/2021 05:57:55 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+08/05/2021 05:57:55 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+08/05/2021 05:57:55 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:57:55 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+08/05/2021 05:57:55 - [INFO] :: [kali]: HONEYFILE: finished initialization
+08/05/2021 05:57:59 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.1560' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:00 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.cf8' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:00 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.1f6d' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:01 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.230c' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:02 - [CRITICAL] :: [kali]: STEALTH CRYPTOLOCKED: file '/home/kali/Q_Testing/stealth/.b83' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:10 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000020 - [OPENED]
+08/05/2021 05:58:10 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:58:11 - [WARNING] :: [kali]: HONEYFILE: IN_OPEN - IN_ISDIR '/home/kali/Q_Testing/honey' has been OPENED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:11 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000001 - [ACCESSED]
+08/05/2021 05:58:11 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:58:13 - [WARNING] :: [kali]: HONEYFILE: IN_ACCESS - IN_ISDIR '/home/kali/Q_Testing/honey' has been ACCESSED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:13 - [DEBUG] :: [kali]: HONEYFILE: 1 called because of'/home/kali/Q_Testing/honey/' and mask 0x40000010 - [CLOSED]
+08/05/2021 05:58:13 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 05:58:15 - [WARNING] :: [kali]: HONEYFILE: IN_CLOSE_NOWRITE - IN_ISDIR '/home/kali/Q_Testing/honey' has been CLOSED! (last audit record: proctitle=Thunar | comm=pool-Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:45 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/b13' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:45 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been ACCESSED! (last audit record: proctitle=mousepad | comm=mousepad | exe=/usr/bin/mousepad | euid=kali | ppid=1)
+08/05/2021 05:58:46 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/194' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:47 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/74a' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:47 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/9f7' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:48 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been ACCESSED! (last audit record: proctitle=mousepad | comm=mousepad | exe=/usr/bin/mousepad | euid=kali | ppid=1)
+08/05/2021 05:58:49 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been ACCESSED! (last audit record: proctitle=mousepad | comm=mousepad | exe=/usr/bin/mousepad | euid=kali | ppid=1)
+08/05/2021 05:58:52 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been MODIFIED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:52 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been MODIFIED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:53 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been CLOSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:54 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 05:58:54 - [CRITICAL] :: [kali]: CRYPTOLOCKED: file '/home/kali/Q_Testing/data/998' has been ACCESSED! (last audit record: proctitle=Thunar | comm=Thunar | exe=/usr/bin/thunar | euid=kali | ppid=1098)
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:18:09 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:18:40 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48500)
+08/05/2021 06:18:44 - [WARNING] :: [kali]: SERVER: Receive something..eeeeeeee
+ from 192.168.41.129:48500 and we reply with 192.168.41.129:2511
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:20:41 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:20:49 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48502)
+08/05/2021 06:20:53 - [WARNING] :: [kali]: SERVER: Receive something..eeeeeeeee
+ from 192.168.41.129:48502 and we reply with 192.168.41.129:2511
+08/05/2021 06:20:53 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeeeeeee
+
+08/05/2021 06:21:17 - [WARNING] :: [kali]: SERVER: Receive something..eeeeee
+ from 192.168.41.129:48502 and we reply with 192.168.41.129:2511
+08/05/2021 06:21:17 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeeee
+
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:23:13 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:23:16 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48504)
+08/05/2021 06:23:19 - [WARNING] :: [kali]: SERVER: Receive something..eeeeeeee
+ from 192.168.41.129:48504 and we reply with 192.168.41.129:2511
+08/05/2021 06:23:19 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeeeeee
+
+08/05/2021 06:23:24 - [WARNING] :: [kali]: SERVER: Receive something..eeeee
+ from 192.168.41.129:48504 and we reply with 192.168.41.129:2511
+08/05/2021 06:23:24 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeee
+
+08/05/2021 06:23:35 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 50208)
+08/05/2021 06:23:38 - [WARNING] :: [kali]: SERVER: Receive something..SSH-
+ from 192.168.41.129:50208 and we reply with 192.168.41.129:2001
+08/05/2021 06:23:38 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 192.168.41.129 - content: SSH-
+
+08/05/2021 06:23:42 - [INFO] :: [kali]: ENDLESSH: IP 192.168.41.129 stopped activity after 3 seconds
+08/05/2021 06:23:42 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 50208)
+08/05/2021 06:24:01 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48508)
+08/05/2021 06:24:03 - [WARNING] :: [kali]: SERVER: Receive something..eeeee
+ from 192.168.41.129:48508 and we reply with 192.168.41.129:2511
+08/05/2021 06:24:03 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeee
+
+08/05/2021 06:24:06 - [WARNING] :: [kali]: SERVER: Receive something..fert
+ from 192.168.41.129:48508 and we reply with 192.168.41.129:2511
+08/05/2021 06:24:06 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: fert
+
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:24:33 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:24:36 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48510)
+08/05/2021 06:24:38 - [WARNING] :: [kali]: SERVER: Receive something..eeeeeeee
+ from 192.168.41.129:48510 and we reply with 192.168.41.129:2511
+08/05/2021 06:24:38 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeeeeee
+
+08/05/2021 06:24:38 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 48510)
+08/05/2021 06:24:57 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48512)
+08/05/2021 06:24:58 - [WARNING] :: [kali]: SERVER: Receive something..eeee
+ from 192.168.41.129:48512 and we reply with 192.168.41.129:2511
+08/05/2021 06:24:58 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeee
+
+08/05/2021 06:24:58 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 48512)
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:26:23 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:26:34 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 48514)
+08/05/2021 06:26:37 - [WARNING] :: [kali]: SERVER: Receive something..eeeee
+ from 192.168.41.129:48514 and we reply with 192.168.41.129:2511
+08/05/2021 06:26:37 - [WARNING] :: [kali]: PORTSPOOF: detected activity from IP 192.168.41.129 - content: eeeee
+
+08/05/2021 06:26:37 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 48514)
+08/05/2021 06:27:01 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 35218)
+08/05/2021 06:27:06 - [WARNING] :: [kali]: SERVER: Receive something..ibfvius
+ from 192.168.41.129:35218 and we reply with 192.168.41.129:1999
+08/05/2021 06:27:06 - [INFO] :: [kali]: HONEYPORTS: IP 192.168.41.129 has been blacklisted
+08/05/2021 06:27:06 - [WARNING] :: [kali]: HONEYPORTS: detected activity from IP 192.168.41.129 - content: ibfvius
+
+08/05/2021 06:28:25 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 35218)
+08/05/2021 06:28:27 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 35220)
+08/05/2021 06:28:29 - [WARNING] :: [kali]: SERVER: Receive something..dvwSV<
+ from 192.168.41.129:35220 and we reply with 192.168.41.129:1999
+08/05/2021 06:28:29 - [INFO] :: [kali]: HONEYPORTS: IP 192.168.41.129 has been blacklisted
+08/05/2021 06:28:29 - [WARNING] :: [kali]: HONEYPORTS: detected activity from IP 192.168.41.129 - content: dvwSV<
+
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:28:36 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:28:38 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 35222)
+08/05/2021 06:28:40 - [WARNING] :: [kali]: SERVER: Receive something..REVAF
+ from 192.168.41.129:35222 and we reply with 192.168.41.129:1999
+08/05/2021 06:28:40 - [WARNING] :: [kali]: HONEYPORTS: detected activity from IP 192.168.41.129 - content: REVAF
+
+08/05/2021 06:28:40 - [INFO] :: [kali]: HONEYPORTS: IP 192.168.41.129 has been blacklisted
+08/05/2021 06:28:40 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 35222)
+08/05/2021 06:29:01 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 50224)
+08/05/2021 06:29:08 - [WARNING] :: [kali]: SERVER: Receive something..SSH-
+ from 192.168.41.129:50224 and we reply with 192.168.41.129:2001
+08/05/2021 06:29:08 - [WARNING] :: [kali]: ENDLESSH: detected SSH connection from IP 192.168.41.129 - content: SSH-
+
+08/05/2021 06:29:13 - [INFO] :: [kali]: ENDLESSH: IP 192.168.41.129 stopped activity after 4 seconds
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 06:29:39 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 06:29:44 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 47224)
+08/05/2021 06:29:46 - [WARNING] :: [kali]: SERVER: Receive something..rrrr
+ from 192.168.41.129:47224 and we reply with 192.168.41.129:5401
+08/05/2021 06:29:46 - [WARNING] :: [kali]: INVISIPORT: detectected activity by the following IP: 192.168.41.129 - content: rrrr
+
+08/05/2021 06:29:46 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 47224)

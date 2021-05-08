@@ -15,6 +15,7 @@ from sqlite3 import Error
 from services.core import Core
 from services import log
 from collections import defaultdict
+from datetime import datetime, timedelta
 
 
 # <editor-fold desc="GENERAL">
@@ -189,7 +190,7 @@ def execute_action(toolname, action, ppid, user, source_filename):
             log.sintetic_write(log.CRITICAL, toolname, "killing user {}".format(user))
             try:
                 os.system("pkill -KILL -u {}".format(user))
-                # subprocess.run(['pkill', '-KILL -u {}'.format(user)], check = True)
+                subprocess.run(['pkill', '-KILL -u {}'.format(user)], check=True)
                 log.sintetic_write(log.INFO, toolname, "user {} killed!".format(user))
             except subprocess.CalledProcessError:
                 log.sintetic_write(log.ERROR, toolname, "can't kill user {}".format(user))
@@ -198,8 +199,8 @@ def execute_action(toolname, action, ppid, user, source_filename):
         if user is not None and user != "admin" and user != "root":  # insert your exceptions...
             log.sintetic_write(log.CRITICAL, toolname, "locking user {}".format(user))
             try:
-                # os.system("usermod --lock {}".format(user))
-                # scripts.userlocker.lockuser(user)
+                os.system("usermod --lock {}".format(user))
+                scripts.userlocker.lockuser(user)
                 log.sintetic_write(log.INFO, toolname, "user {} locked!".format(user))
             except subprocess.CalledProcessError:
                 log.sintetic_write(log.ERROR, toolname, "can't lock user {}".format(user))
@@ -331,6 +332,16 @@ def destroy_file(filename):
 
 def generate_digest(content):
     return hashlib.md5(content.encode('utf-8')).hexdigest()
+
+
+def restore_file(filename):
+    if file_exists(filename):
+        destroy_file(filename)
+    content = rand_data()
+    create_file(filename, content, None)
+    date = random_date(datetime.now() - timedelta(days=120), datetime.now(), random.random())
+    modTime = time.mktime(date.timetuple())
+    os.utime(filename, (modTime, modTime))
 
 
 # </editor-fold>

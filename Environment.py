@@ -17,7 +17,7 @@ class Environment:
         self.manager = Manager()
         self.conn = Server(self.loop)
         self.fs = Filesystem(self.loop)
-        self.shared = self.manager.dict()
+        # self.shared = self.manager.dict()
 
         self.p1 = None  # SERVER (P1)
         self.p2 = None  # FILESYSTEM (P2)
@@ -33,7 +33,7 @@ class Environment:
         # DUE MAIN PROCESS: SERVER (P1) & FILESYSTEM (P2)
         print("Start the net")
         self.start_net()
-        self.start_fs()
+        # self.start_fs()
 
         """
         
@@ -95,7 +95,7 @@ class Environment:
     def start_fs(self):
         if self.p2 is None or self.process_status(self.p2) != "started":
             try:
-                self.p2 = Process(target=self.fs.run, args=(self.shared,))
+                self.p2 = Process(target=self.fs.run, args=())
                 self.p2.start()
             except ValueError as e:
                 print(e)
@@ -139,7 +139,7 @@ class Environment:
     def start_net(self):
         if self.p1 is None or self.process_status(self.p1) != "started":
             try:
-                self.p1 = Process(target=self.conn.run, args=(self.shared,))
+                self.p1 = Process(target=self.conn.run, args=())
                 self.p1.start()
             except ValueError as e:
                 print(e)
