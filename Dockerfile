@@ -1,8 +1,10 @@
 FROM debian:latest
-COPY . /Q
 
-RUN apt update
-RUN apt install -y build-essential python3.9 python3.9-dev
-RUN chmod +x /Q/main.py
+WORKDIR /Q
 
-CMD ["python3", "main.py"]
+COPY . .
+
+RUN apt-get update && apt-get -y install build-essential python3-pip python3.7-dev
+RUN pip3 install -r requirements.txt
+
+CMD ["/bin/bash"]

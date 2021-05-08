@@ -3,8 +3,8 @@ import json
 import time
 import uvloop
 from multiprocessing import Manager, Process
-from services.filesystem import Filesystem
-from services.connection import Server
+from Environment.services.filesystem import Filesystem
+from Environment.services.connection import Server
 
 # LOOP
 uvloop.install()
@@ -22,7 +22,7 @@ class Environment:
         self.p1 = None  # SERVER (P1)
         self.p2 = None  # FILESYSTEM (P2)
 
-        with open('persistent/config.json') as c:
+        with open('Environment/persistent/config.json') as c:
             config = json.load(c)
         for i in config:
             if config[i]["type"] == "net":
@@ -33,7 +33,7 @@ class Environment:
         # DUE MAIN PROCESS: SERVER (P1) & FILESYSTEM (P2)
         print("Start the net")
         self.start_net()
-        # self.start_fs()
+        self.start_fs()
 
         """
         

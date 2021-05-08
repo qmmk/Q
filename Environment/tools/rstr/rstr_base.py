@@ -32,7 +32,7 @@ import random
 import string
 from copy import copy
 from functools import partial
-from tools.rstr.xeger import Xeger
+from Environment.tools.rstr.xeger import Xeger
 
 
 ALPHABETS = {'printable': string.printable,

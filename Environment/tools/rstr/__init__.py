@@ -1,5 +1,4 @@
-from tools.rstr.rstr_base import Rstr
-from tools.rstr.rstr_base import default_instance as _default_instance
+from Environment.tools.rstr.rstr_base import default_instance as _default_instance
 
 rstr = _default_instance.rstr
 xeger = _default_instance.xeger

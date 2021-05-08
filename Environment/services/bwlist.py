@@ -1,19 +1,17 @@
 import subprocess
 import mmap
-
-BLACKLIST = "persistent/blacklist.txt"
-WHITELIST = "persistent/whitelist.txt"
+from Environment.services import core
 
 
 def blacklist_element(ip_address):
     # TODO: validate input, also inside script
-    subprocess.call(['sh', './scripts/blacklist_element.sh', ip_address])
+    subprocess.call(['sh', './Environment/scripts/blacklist_element.sh', ip_address])
     return
 
 
 def load_blacklist(filename):
     # TODO: validate input, also inside script
-    subprocess.call(['sh', './scripts/load_blacklist_rules.sh', filename])
+    subprocess.call(['sh', './Environment/scripts/load_blacklist_rules.sh', filename])
     return
 
 
@@ -62,16 +60,16 @@ def write(file, ip_address):
 
 
 def add_to_blacklist(ip_address):
-    return add(BLACKLIST, ip_address)
+    return add(core.BLACKLIST, ip_address)
 
 
 def add_to_whitelist(ip_address):
-    return add(WHITELIST, ip_address)
+    return add(core.WHITELIST, ip_address)
 
 
 def is_blacklisted(ip_address):
-    return exists(BLACKLIST, ip_address.encode('utf-8'))
+    return exists(core.BLACKLIST, ip_address.encode(core.FORMAT))
 
 
 def is_whitelisted(ip_address):
-    return exists(WHITELIST, ip_address.encode('utf-8'))
+    return exists(core.WHITELIST, ip_address.encode(core.FORMAT))

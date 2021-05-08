@@ -1,26 +1,18 @@
 from datetime import datetime
 import socket
-
-LOG_FILE = "persistent/log.txt"
-
-# Log levels ---------------------
-DEBUG = 0
-INFO = 1
-WARNING = 2
-ERROR = 3
-CRITICAL = 4
+from Environment.services import core
 
 
 def translate_severity(lv):
-    if lv == DEBUG:
+    if lv == core.DEBUG:
         return "DEBUG"
-    if lv == ERROR:
+    if lv == core.ERROR:
         return "ERROR"
-    if lv == INFO:
+    if lv == core.INFO:
         return "INFO"
-    if lv == CRITICAL:
+    if lv == core.CRITICAL:
         return "CRITICAL"
-    if lv == WARNING:
+    if lv == core.WARNING:
         return "WARNING"
     return "DEFAULT"
 
@@ -31,7 +23,7 @@ def sintetic_write(lv, tool, s):
                                                     translate_severity(lv), hostname, tool, s)
     print(log.strip("\n"))
     try:
-        with open(LOG_FILE, "a") as f:
+        with open(core.LOG_FILE, "a") as f:
             f.write(log)
     except FileNotFoundError as e:
         print(e)
@@ -44,7 +36,7 @@ def detail_write(lv, ip, port, tool, s):
                                                             translate_severity(lv), hostname, ip, port, tool, s)
     print(log.strip("\n"))
     try:
-        with open(LOG_FILE, "a") as f:
+        with open(core.LOG_FILE, "a") as f:
             f.write(log)
     except FileNotFoundError as e:
         print(e)

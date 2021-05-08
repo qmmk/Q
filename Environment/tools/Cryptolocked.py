@@ -1,10 +1,6 @@
 import ntpath
 import os.path
-from services.utils import *
-
-N_TENTACTLES = 5
-MAX_WORKERS = 5
-DATABASE = "persistent/cryptolocked.db"
+from Environment.services.utils import *
 
 
 def init_cryptolocked(paths):
@@ -14,8 +10,8 @@ def init_cryptolocked(paths):
     # create a list of random filenames in the given paths
     for path in paths:
         if os.path.isdir(path):
-            log.sintetic_write(log.DEBUG, "CRYPTOLOCKED", "will monitor '{}'".format(path))
-            for i in range(N_TENTACTLES):
+            log.sintetic_write(core.DEBUG, "CRYPTOLOCKED", "will monitor '{}'".format(path))
+            for i in range(core.N_TENTACTLES):
                 # why while loop? we do not want to have duplicates in dict, so if duplicate do it again
                 while True:
                     name = str(hex(random.randint(1, 10000))[2:])
@@ -24,14 +20,14 @@ def init_cryptolocked(paths):
                         filenames[name] = filename
                         break
         else:
-            log.sintetic_write(log.ERROR, "CRYPTOLOCKED", "error, '{}' is not a directory".format(path))
+            log.sintetic_write(core.ERROR, "CRYPTOLOCKED", "error, '{}' is not a directory".format(path))
 
     # DB initialization
-    conn = create_connection(DATABASE)
+    conn = create_connection(core.DB_Cryptolocked)
     if conn is not None:
         create_table_files(conn)
     else:
-        log.sintetic_write(log.ERROR, "CRYPTOLOCKED", "error, cannot create the DB connection")
+        log.sintetic_write(core.ERROR, "CRYPTOLOCKED", "error, cannot create the DB connection")
 
     # Clean previous trip files and DB
     cryptolocked_clean(conn)
@@ -42,10 +38,10 @@ def init_cryptolocked(paths):
         try:
             subprocess.check_output("auditctl -w {} -p war".format(filename), shell=True)
         except subprocess.CalledProcessError as e:
-            log.sintetic_write(log.DEBUG, "CRYPTOLOCKED", "auditctl error: {}".format(e.output))
+            log.sintetic_write(core.DEBUG, "CRYPTOLOCKED", "auditctl error: {}".format(e.output))
         db_insert_file_entry(conn, filename)
         files.append(filename)
-    log.sintetic_write(log.INFO, "CRYPTOLOCKED", "finished initialization")
+    log.sintetic_write(core.INFO, "CRYPTOLOCKED", "finished initialization")
     return files
 
 
@@ -56,11 +52,11 @@ def run_cryptolocked(event, meth):
     action = get_action(mask)
     method = get_method(meth)
 
-    if not (mask & Core.IN_ISDIR):
+    if not (mask & core.IN_ISDIR):
         if check_mask(mask):
-            conn = create_connection(DATABASE)
+            conn = create_connection(core.DB_Cryptolocked)
             if conn is None:
-                log.sintetic_write(log.ERROR, "CRYPTOLOCKED", "error, cannot create the DB connection")
+                log.sintetic_write(core.ERROR, "CRYPTOLOCKED", "error, cannot create the DB connection")
 
             if len(name) == 0:
                 _, name = ntpath.split(target)
@@ -70,8 +66,8 @@ def run_cryptolocked(event, meth):
                 # TODO: check audit should look for path+name, but for unknown reasons sometimes
                 #  it doesn't work by providing the entire path
 
-                if method & Core.LOG_EVENT:
-                    log.sintetic_write(log.CRITICAL, "CRYPTOLOCKED", "file '{}' has been {}! {}"
+                if method & core.LOG_EVENT:
+                    log.sintetic_write(core.CRITICAL, "CRYPTOLOCKED", "file '{}' has been {}! {}"
                                        .format(target, action, audit_info))
                 # execute action only if the event was not caused by adarch itself
                 if comm != "adarch":

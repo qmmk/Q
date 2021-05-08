@@ -25643,3 +25643,82 @@ Host: 192.168.41.129
 08/05/2021 06:29:46 - [WARNING] :: [kali]: INVISIPORT: detectected activity by the following IP: 192.168.41.129 - content: rrrr
 
 08/05/2021 06:29:46 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 47224)
+08/05/2021 11:10:58 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 11:10:58 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, cannot create the DB connection
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 11:12:56 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 11:12:56 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 11:12:56 - [ERROR] :: [kali]: STEALTH CRYPTOLOCKED: error, cannot create the DB connection
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 11:14:08 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 11:14:08 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 11:14:08 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+08/05/2021 11:14:08 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+08/05/2021 11:14:08 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+08/05/2021 11:14:08 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 11:14:08 - [INFO] :: [kali]: HONEYFILE: finished initialization
+08/05/2021 11:14:22 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 42298)
+08/05/2021 11:14:24 - [WARNING] :: [kali]: SERVER: GET [rrrrrrrr
+] from 192.168.41.129:42298 and we reply with 192.168.41.129:5401
+08/05/2021 11:14:24 - [WARNING] :: [kali]: INVISIPORT: detectected activity by the following IP: 192.168.41.129 - content: rrrrrrrr
+
+08/05/2021 11:14:24 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 42298)
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1999 on socket 16
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1352 on socket 17
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1769 on socket 18
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1770 on socket 19
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 2009 on socket 20
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 2511 on socket 21
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 3711 on socket 22
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 5471 on socket 23
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1025 on socket 24
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1026 on socket 25
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1027 on socket 26
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 1351 on socket 27
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 2001 on socket 28
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 2223 on socket 29
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 5401 on socket 30
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 5403 on socket 31
+08/05/2021 11:15:16 - [INFO] :: [kali]: SERVER: Serving port 5404 on socket 32
+08/05/2021 11:15:16 - [DEBUG] :: [kali]: STEALTH CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/stealth'
+08/05/2021 11:15:16 - [INFO] :: [kali]: STEALTH CRYPTOLOCKED: finished initialization
+08/05/2021 11:15:16 - [DEBUG] :: [kali]: CRYPTOLOCKED: will monitor '/home/kali/Q_Testing/data'
+08/05/2021 11:15:16 - [INFO] :: [kali]: CRYPTOLOCKED: finished initialization
+08/05/2021 11:15:16 - [DEBUG] :: [kali]: HONEYFILE: Auditing /home/kali/Q_Testing/honey
+08/05/2021 11:15:16 - [DEBUG] :: [kali]: HONEYFILE: auditctl error: b'' for '/home/kali/Q_Testing/honey'
+08/05/2021 11:15:16 - [INFO] :: [kali]: HONEYFILE: finished initialization
+08/05/2021 11:15:23 - [INFO] :: [kali]: SERVER: New Connection from ('192.168.41.129', 42300)
+08/05/2021 11:15:25 - [WARNING] :: [kali]: SERVER: GET [] from 192.168.41.129:42300 and we reply with 192.168.41.129:5401
+08/05/2021 11:15:25 - [WARNING] :: [kali]: INVISIPORT: detectected activity by the following IP: 192.168.41.129 - content: 
+
+08/05/2021 11:15:25 - [INFO] :: [kali]: SERVER: Closing connection to ('192.168.41.129', 42300)

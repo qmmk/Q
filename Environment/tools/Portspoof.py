@@ -1,7 +1,5 @@
-from services.utils import *
-from tools.rstr import xeger
-
-SIGNATURES = "persistent/portspoof_signatures"
+from Environment.services.utils import *
+from Environment.tools.rstr import xeger
 
 
 class Signature:
@@ -42,14 +40,13 @@ class Signature:
 
 
 def run_portspoof(writer, port, malicious_ip, msg):
-    sig = Signature(SIGNATURES, port)
+    sig = Signature(core.SIGNATURES, port)
     answer = sig.get_signature()
     del sig
 
-    log.sintetic_write(log.WARNING, "PORTSPOOF",
+    log.sintetic_write(core.WARNING, "PORTSPOOF",
                        "detected activity from IP {} - content: {}".format(malicious_ip, msg))
-    writer.send(answer.encode(Core.FORMAT))
-    writer.shutdown(Core.SHUT_RDWR)
+    writer.send(answer.encode(core.FORMAT))
+    writer.shutdown(core.SHUT_RDWR)
     writer.close()
     return
-

@@ -2,15 +2,15 @@ import select
 import socket
 import threading
 import concurrent.futures
-from services import log
-from tools.Endlessh import run_endlessh
-from tools.Honeyports import run_honeyports
-from tools.Invisiport import run_invisiport
-from tools.Portspoof import run_portspoof
-from tools.Tcprooter import run_tcprooter
+from Environment.services import log, core
+from Environment.tools.Endlessh import run_endlessh
+from Environment.tools.Honeyports import run_honeyports
+from Environment.tools.Invisiport import run_invisiport
+from Environment.tools.Portspoof import run_portspoof
+from Environment.tools.Tcprooter import run_tcprooter
 
-SERVER = "192.168.41.129"  # socket.gethostbyname(socket.gethostname())
-MAX_WORKERS = 5
+# "192.168.41.129"
+SERVER = socket.gethostbyname(socket.gethostname())
 
 
 class Connection:
@@ -53,7 +53,7 @@ class Server:
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
             s.bind((SERVER, port))
-            log.sintetic_write(log.INFO, "SERVER", "Serving port {} on socket {}".format(port, s.fileno()))
+            log.sintetic_write(core.INFO, "SERVER", "Serving port {} on socket {}".format(port, s.fileno()))
 
             s.listen()
             self.Servers.append(s)
@@ -71,7 +71,7 @@ class Server:
             threading.Thread(target=self.handle_input, args=(conn, addr)).start()
 
     def handle_input(self, conn, addr):
-        log.sintetic_write(log.INFO, "SERVER", "New Connection from {}".format(addr))
+        log.sintetic_write(core.INFO, "SERVER", "New Connection from {}".format(addr))
 
         connected = True
         my_ip = conn.getsockname()[0]
@@ -80,12 +80,12 @@ class Server:
         out_port = addr[1]
         ws = self.Sockets[out_port]
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=core.MAX_WORKERS) as executor:
             while connected:
                 msg = conn.recv(1024).decode(encoding="utf-8", errors="replace")
                 if msg:
-                    log.sintetic_write(log.WARNING, "SERVER", "Receive something..{} from {}:{} and we reply with {}:{}"
-                                       .format(msg, mal_ip, out_port, my_ip, in_port))
+                    log.sintetic_write(core.WARNING, "SERVER", "GET [{}] from {}:{} and we reply with {}:{}"
+                                       .format(msg.strip("\n"), mal_ip, out_port, my_ip, in_port))
 
                     for name, tool in self.Conns.items():
                         if name == "Endlessh" and in_port in tool.ports:
@@ -104,7 +104,7 @@ class Server:
                             self.loop.run_in_executor(executor, run_tcprooter(ws, mal_ip, msg))
                             break
                 else:
-                    log.sintetic_write(log.INFO, "SERVER", "Closing connection to {}".format(addr))
+                    log.sintetic_write(core.INFO, "SERVER", "Closing connection to {}".format(addr))
                     conn.close()
                     del self.Sockets[out_port]
                     connected = False

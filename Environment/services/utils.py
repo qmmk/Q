@@ -9,11 +9,10 @@ import tarfile
 import os.path
 import calendar
 import time
-import scripts.userlocker
+import Environment.scripts.userlocker
 import inotify.constants
 from sqlite3 import Error
-from services.core import Core
-from services import log
+from Environment.services import log, core
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -22,21 +21,21 @@ from datetime import datetime, timedelta
 
 def get_method(method):
     if method == "save_data":
-        return Core.LOG_EVENT | Core.SAVE_DATA
+        return core.LOG_EVENT | core.SAVE_DATA
     if method == "shutdown_host":
-        return Core.LOG_EVENT | Core.SHUTDOWN_HOST
+        return core.LOG_EVENT | core.SHUTDOWN_HOST
     if method == "kill_pid":
-        return Core.LOG_EVENT | Core.KILL_PID
+        return core.LOG_EVENT | core.KILL_PID
     if method == "kill_user":
-        return Core.LOG_EVENT | Core.KILL_USER
+        return core.LOG_EVENT | core.KILL_USER
     if method == "lock_user":
-        return Core.LOG_EVENT | Core.LOCK_USER
+        return core.LOG_EVENT | core.LOCK_USER
     if method == "kill_pid_kill_user":
-        return Core.LOG_EVENT | Core.KILL_USER | Core.KILL_PID
+        return core.LOG_EVENT | core.KILL_USER | core.KILL_PID
     if method == "kill_pid_lock_user":
-        return Core.LOG_EVENT | Core.LOCK_USER | Core.KILL_USER | Core.KILL_PID
+        return core.LOG_EVENT | core.LOCK_USER | core.KILL_USER | core.KILL_PID
     if method == "just_log":
-        return Core.LOG_EVENT
+        return core.LOG_EVENT
 
 
 def get_action(mask):
@@ -71,8 +70,8 @@ def get_action(mask):
 
 
 def check_mask(mask):
-    return (mask & (Core.IN_MODIFY | Core.IN_ACCESS | Core.IN_CLOSE_WRITE | Core.IN_ATTRIB | Core.IN_DELETE |
-                    Core.IN_DELETE_SELF | Core.IN_MOVE))
+    return (mask & (core.IN_MODIFY | core.IN_ACCESS | core.IN_CLOSE_WRITE | core.IN_ATTRIB | core.IN_DELETE |
+                    core.IN_DELETE_SELF | core.IN_MOVE))
 
 
 # </editor-fold>
@@ -181,40 +180,40 @@ def db_get_file_digest(conn, filename):
 # <editor-fold desc="FIXED ACTION">
 
 def execute_action(toolname, action, ppid, user, source_filename):
-    if action & Core.SHUTDOWN_HOST:
-        log.sintetic_write(log.CRITICAL, toolname, "shutting down host...")
+    if action & core.SHUTDOWN_HOST:
+        log.sintetic_write(core.CRITICAL, toolname, "shutting down host...")
         os.system('systemctl poweroff')
 
-    if action & Core.KILL_USER:
+    if action & core.KILL_USER:
         if user is not None and user != "admin" and user != "root":  # insert your exceptions...
-            log.sintetic_write(log.CRITICAL, toolname, "killing user {}".format(user))
+            log.sintetic_write(core.CRITICAL, toolname, "killing user {}".format(user))
             try:
                 os.system("pkill -KILL -u {}".format(user))
                 subprocess.run(['pkill', '-KILL -u {}'.format(user)], check=True)
-                log.sintetic_write(log.INFO, toolname, "user {} killed!".format(user))
+                log.sintetic_write(core.INFO, toolname, "user {} killed!".format(user))
             except subprocess.CalledProcessError:
-                log.sintetic_write(log.ERROR, toolname, "can't kill user {}".format(user))
+                log.sintetic_write(core.ERROR, toolname, "can't kill user {}".format(user))
 
-    if action & Core.LOCK_USER:
+    if action & core.LOCK_USER:
         if user is not None and user != "admin" and user != "root":  # insert your exceptions...
-            log.sintetic_write(log.CRITICAL, toolname, "locking user {}".format(user))
+            log.sintetic_write(core.CRITICAL, toolname, "locking user {}".format(user))
             try:
                 os.system("usermod --lock {}".format(user))
-                scripts.userlocker.lockuser(user)
-                log.sintetic_write(log.INFO, toolname, "user {} locked!".format(user))
+                Environment.scripts.userlocker.lockuser(user)
+                log.sintetic_write(core.INFO, toolname, "user {} locked!".format(user))
             except subprocess.CalledProcessError:
-                log.sintetic_write(log.ERROR, toolname, "can't lock user {}".format(user))
+                log.sintetic_write(core.ERROR, toolname, "can't lock user {}".format(user))
 
-    if action & Core.SAVE_DATA:
+    if action & core.SAVE_DATA:
         title = source_filename.replace("/", "")
         output_filename = "/var/adarch/" + title + "-" + str(calendar.timegm(time.gmtime())) + ".tar.gz"
-        log.sintetic_write(log.DEBUG, toolname, "saving {}...".format(output_filename))
+        log.sintetic_write(core.DEBUG, toolname, "saving {}...".format(output_filename))
         with tarfile.open(output_filename, "w:gz") as tar:
             tar.add(source_filename, arcname=os.path.basename(source_filename))
             tar.close()
-            log.sintetic_write(log.INFO, toolname, "saved compressed file {}".format(output_filename))
+            log.sintetic_write(core.INFO, toolname, "saved compressed file {}".format(output_filename))
 
-    if action & Core.KILL_PID:
+    if action & core.KILL_PID:
         if ppid is not None:
             ppid = re.sub("[^0-9]", "", ppid)
             mypid = os.getpid()
@@ -230,23 +229,23 @@ def execute_action(toolname, action, ppid, user, source_filename):
                     clean.append(el)
             print("clean", clean)
 
-            log.sintetic_write(log.CRITICAL, toolname, "killing PID {} and its parents: {}".format(ppid, record))
+            log.sintetic_write(core.CRITICAL, toolname, "killing PID {} and its parents: {}".format(ppid, record))
             for r in clean:
                 malicious_pid = int(r)
                 try:
                     if int(r) != mypid:
                         print("check2", malicious_pid, mypid)
                         os.kill(int(r), signal.SIGKILL)  # or signal.SIGKILL
-                        log.sintetic_write(log.INFO, toolname, "Parent PID {} killed!".format(r))
+                        log.sintetic_write(core.INFO, toolname, "Parent PID {} killed!".format(r))
                 except Exception as e:
-                    log.sintetic_write(log.ERROR, toolname, "can't kill malicious parent process {}! {}".format(r, e))
+                    log.sintetic_write(core.ERROR, toolname, "can't kill malicious parent process {}! {}".format(r, e))
             try:
                 os.kill(int(ppid), signal.SIGKILL)  # or signal.SIGKILL
-                log.sintetic_write(log.INFO, toolname, "Original PPID {} killed!".format(ppid))
+                log.sintetic_write(core.INFO, toolname, "Original PPID {} killed!".format(ppid))
             except Exception as e:
-                log.sintetic_write(log.ERROR, toolname, "can't kill malicious parent process! {}".format(e))
+                log.sintetic_write(core.ERROR, toolname, "can't kill malicious parent process! {}".format(e))
         else:
-            log.sintetic_write(log.ERROR, toolname, "can't kill malicious process, no ppid available!")
+            log.sintetic_write(core.ERROR, toolname, "can't kill malicious process, no ppid available!")
 
 
 def check_audit(filename):

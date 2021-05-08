@@ -3,13 +3,12 @@ import inotify.adapters
 import inotify.constants
 import concurrent.futures
 from inotify.calls import InotifyError
-from tools.ArtilleryIntegrity import init_artillery_integrity, run_artillery_integrity
-from tools.ArtillerySSHBFM import run_artillery_sshbfm
-from tools.Cryptolocked import init_cryptolocked, run_cryptolocked
-from tools.Honeyfile import run_honeyfile, init_honeyfile
-from tools.StealthCryptolocked import init_stealth_cryptolocked, run_stealth_cryptolocked
-
-MAX_WORKERS = 5
+from Environment.tools.ArtilleryIntegrity import init_artillery_integrity, run_artillery_integrity
+from Environment.tools.ArtillerySSHBFM import run_artillery_sshbfm
+from Environment.tools.Cryptolocked import init_cryptolocked, run_cryptolocked
+from Environment.tools.Honeyfile import run_honeyfile, init_honeyfile
+from Environment.tools.StealthCryptolocked import init_stealth_cryptolocked, run_stealth_cryptolocked
+from Environment.services import core
 
 
 class Tool:
@@ -67,7 +66,7 @@ class Filesystem:
     async def init(self):
         self.initialization()
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=core.MAX_WORKERS) as executor:
             i = inotify.adapters.Inotify()
             for path in self.Paths:
                 try:
