@@ -1,10 +1,15 @@
 import asyncio
 import json
 import time
+
 import uvloop
-from multiprocessing import Manager, Process
+from multiprocessing import Process
+
+from Environment.services.bwlist import reset_all, access_host
 from Environment.services.filesystem import Filesystem
 from Environment.services.connection import Server
+
+# import gym
 
 # LOOP
 uvloop.install()
@@ -14,13 +19,14 @@ asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 class Environment:
     def __init__(self):
         self.loop = asyncio.get_event_loop()
-        self.manager = Manager()
         self.conn = Server(self.loop)
         self.fs = Filesystem(self.loop)
-        # self.shared = self.manager.dict()
 
         self.p1 = None  # SERVER (P1)
         self.p2 = None  # FILESYSTEM (P2)
+
+        # RESET
+        # reset_all()
 
         with open('Environment/persistent/config.json') as c:
             config = json.load(c)
@@ -30,46 +36,13 @@ class Environment:
             if config[i]["type"] == "fs":
                 self.fs.extend(config[i]["class"], config[i]["params"], config[i]["method"])
 
+        # MOUNT
+        access_host(self.fs.Paths)
+
+        time.sleep(10)
         # DUE MAIN PROCESS: SERVER (P1) & FILESYSTEM (P2)
-        print("Start the net")
         self.start_net()
         self.start_fs()
-
-        """
-        
-        time.sleep(60)
-        print("Start the filesystemn\n\n\n")
-        
-
-        # stoppo 30 per testare:
-        # la doppia connessione ssh
-        # il log su honey file
-
-        time.sleep(45)
-        print("Update the net with port 2005 for Endlessh in mode delayed_action\n\n\n")
-        self.extend_net("Endlessh", [2005], "delayed_action")
-        time.sleep(45)
-        print("Update the filesystem by removing auditing of honey directory from Honeyfile\n\n\n")
-        self.reduce_fs("Honeyfile", "/home/kali/Q_Testing/honey")
-
-        time.sleep(60)
-        print("Stopping the net\n\n\n")
-        self.stop_net()
-
-        time.sleep(5)
-        print("Stopping the filesystem\n\n\n")
-
-        self.stop_fs()
-
-        time.sleep(15)
-        print("Can restart all or single anytime \n\n\n")
-        self.start_net()
-        self.start_fs()
-        # testing
-        # self.testing()
-        
-        """
-
 
         return
 
@@ -77,7 +50,6 @@ class Environment:
         self.stop_fs()
         self.stop_net()
         self.loop.close()
-        self.manager.shutdown()
         return
 
     @staticmethod

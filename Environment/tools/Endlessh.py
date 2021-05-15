@@ -10,10 +10,10 @@ def run_endlessh(writer, port, malicious_ip, msg, mode):
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
         try:
             writer.send(core.MSG_endlessh.encode(core.FORMAT))
-            # writer.shutdown(core.SHUT_RDWR)
+            writer.shutdown(core.SHUT_RDWR)
             writer.close()
-        except BrokenPipeError as e:
             is_closing = True
+        except BrokenPipeError as e:
             print(e)
 
         if is_first_time(core.DB_Endlessh, malicious_ip, port):
@@ -35,8 +35,6 @@ def run_endlessh(writer, port, malicious_ip, msg, mode):
         if mode == core.WAIT and count == 0 and is_first_time(core.DB_Endlessh, malicious_ip, port):
             try:
                 writer.send(core.MSG_endlessh.encode(core.FORMAT))
-                # writer.shutdown(core.SHUT_RDWR)
-                writer.close()
             except BrokenPipeError as e:
                 is_closing = True
                 print(e)
@@ -53,7 +51,9 @@ def run_endlessh(writer, port, malicious_ip, msg, mode):
                 print(e)
 
         if is_closing:
+            writer.close()
             break
+
         event.wait(delay)  # wait before sending another message
 
         count = count + 1
@@ -66,6 +66,4 @@ def run_endlessh(writer, port, malicious_ip, msg, mode):
     elapsed_time = end - start - delay
     log.sintetic_write(core.INFO, "ENDLESSH",
                        "IP {} stopped activity after {} seconds".format(malicious_ip, int(elapsed_time)))
-    # writer.shutdown(core.SHUT_RDWR)
-    writer.close()
     return

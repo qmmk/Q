@@ -53,7 +53,7 @@ class Server:
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
             s.bind((SERVER, port))
-            log.sintetic_write(core.INFO, "SERVER", "Serving port {} on socket {}".format(port, s.fileno()))
+            log.sintetic_write(core.INFO, "SERVER", "Serving port {}:{} on socket {}".format(SERVER, port, s.fileno()))
 
             s.listen()
             self.Servers.append(s)
@@ -82,30 +82,32 @@ class Server:
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=core.MAX_WORKERS) as executor:
             while connected:
-                msg = conn.recv(1024).decode(encoding="utf-8", errors="replace")
-                if msg:
-                    log.sintetic_write(core.WARNING, "SERVER", "GET [{}] from {}:{} and we reply with {}:{}"
-                                       .format(msg.strip("\n"), mal_ip, out_port, my_ip, in_port))
-
-                    for name, tool in self.Conns.items():
-                        if name == "Endlessh" and in_port in tool.ports:
-                            self.loop.run_in_executor(executor, run_endlessh(ws, in_port, mal_ip, msg, tool.method))
-                            break
-                        if name == "Invisiport" and in_port in tool.ports:
-                            self.loop.run_in_executor(executor, run_invisiport(ws, in_port, mal_ip, msg, tool.method))
-                            break
-                        if name == "Honeyports" and in_port in tool.ports:
-                            self.loop.run_in_executor(executor, run_honeyports(ws, mal_ip, msg))
-                            break
-                        if name == "Portspoof" and in_port in tool.ports:
-                            self.loop.run_in_executor(executor, run_portspoof(ws, in_port, mal_ip, msg))
-                            break
-                        if name == "Tcprooter":
-                            self.loop.run_in_executor(executor, run_tcprooter(ws, mal_ip, msg))
-                            break
-                else:
-                    log.sintetic_write(core.INFO, "SERVER", "Closing connection to {}".format(addr))
-                    conn.close()
-                    del self.Sockets[out_port]
-                    connected = False
+                try:
+                    msg = conn.recv(1024).decode(encoding=core.FORMAT, errors="replace")
+                    if msg:
+                        log.sintetic_write(core.WARNING, "SERVER", "GET [{}] from {}:{} and we reply with {}:{}"
+                                           .format(msg.strip("\n"), mal_ip, out_port, my_ip, in_port))
+                        for name, tool in self.Conns.items():
+                            if name == "Endlessh" and in_port in tool.ports:
+                                self.loop.run_in_executor(executor, run_endlessh(ws, in_port, mal_ip, msg, tool.method))
+                                break
+                            if name == "Invisiport" and in_port in tool.ports:
+                                self.loop.run_in_executor(executor,
+                                                          run_invisiport(ws, in_port, mal_ip, msg, tool.method))
+                                break
+                            if name == "Honeyports" and in_port in tool.ports:
+                                self.loop.run_in_executor(executor, run_honeyports(ws, mal_ip, msg))
+                                break
+                            if name == "Portspoof" and in_port in tool.ports:
+                                self.loop.run_in_executor(executor, run_portspoof(ws, in_port, mal_ip, msg))
+                                break
+                            if name == "Tcprooter":
+                                self.loop.run_in_executor(executor, run_tcprooter(ws, mal_ip, msg))
+                                break
+                except ConnectionError as e:
+                    print(e)
+                connected = False
+        log.sintetic_write(core.INFO, "SERVER", "Closing connection to {}".format(addr))
+        conn.close()
+        del self.Sockets[out_port]
         return

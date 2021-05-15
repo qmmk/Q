@@ -1,10 +1,21 @@
-FROM debian:latest
+FROM ubuntu:latest
 
-WORKDIR /Q
+RUN apt update
+RUN apt-get update 
+RUN apt-get install auditd -y
+RUN apt-get install iptables sudo -y
 
-COPY . .
+RUN apt install -y build-essential python3 python3-dev
 
-RUN apt-get update && apt-get -y install build-essential python3-pip python3.7-dev
-RUN pip3 install -r requirements.txt
+COPY . /project
 
-CMD ["/bin/bash"]
+RUN python3 project/get-pip.py
+RUN python3 -m pip install -r project/requirements.txt
+
+RUN rm project/get-pip.py
+
+RUN chmod +x project/main.py
+
+WORKDIR /project
+
+ENTRYPOINT ["python3", "main.py"]

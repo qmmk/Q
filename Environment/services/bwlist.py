@@ -1,5 +1,6 @@
 import subprocess
 import mmap
+from nsenter import Namespace
 from Environment.services import core
 
 
@@ -12,6 +13,39 @@ def blacklist_element(ip_address):
 def load_blacklist(filename):
     # TODO: validate input, also inside script
     subprocess.call(['sh', './Environment/scripts/load_blacklist_rules.sh', filename])
+    return
+
+
+def reset_all():
+    subprocess.call(['sh', './Environment/scripts/reset_all.sh'])
+    return
+
+
+def access_host(paths):
+    for p in paths:
+        with Namespace(1, 'mnt'):
+            rp = subprocess.check_output('readlink --canonicalize {}'.format(p), shell=True) \
+                .decode(core.FORMAT).strip("\n")
+            fs = subprocess.check_output('df -P {} | tail -n 1 | awk {}'.format(rp, "'{print $6}'"), shell=True) \
+                .decode(core.FORMAT).strip("\n")
+
+            dev = subprocess.check_output(
+                'while read DEV MOUNT JUNK; do [ $MOUNT = {} ] && break; done </proc/mounts; [ $MOUNT = {} ]; echo $DEV'
+                .format(fs, fs), shell=True).decode("utf-8")
+
+            if subprocess.check_output('while read A B C SUBROOT MOUNT JUNK; do [ $MOUNT = {} ] && break; done < '
+                                       '/proc/self/mountinfo; [ $MOUNT = {} ] '
+               .format(fs, fs), shell=True).decode(core.FORMAT) == '':
+                sp = subprocess.check_output('echo {} | sed s,^{},,'.format(rp, fs), shell=True)\
+                    .decode(core.FORMAT).strip("\n")
+                dd = subprocess.check_output('printf "%d %d" $(stat --format "0x%t 0x%T" {})'
+                                             .format(dev), shell=True).decode(core.FORMAT).strip("\n")
+        bind_mount(dev, dd, sp, p)
+    return
+
+
+def bind_mount(d, c, sp, o):
+    subprocess.call(['sh', '{}'.format(core.BIND_MOUNT), d, c, sp, o])
     return
 
 

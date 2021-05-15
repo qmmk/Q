@@ -68,6 +68,9 @@ N_TENTACTLES = 5
 PORTS = [21, 80, 445]
 SIGNATURES = "Environment/persistent/portspoof_signatures"
 
+# Filename
+BIND_MOUNT = "project/Environment/scripts/bind_mount.sh"
+
 PAYLOADS = [
     #               linux/x86/shell_bind_tcp - 78 bytes
     #               http://www.metasploit.com
