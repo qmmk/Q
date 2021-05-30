@@ -1,5 +1,7 @@
-from datetime import datetime
+
 import socket
+import psutil
+from datetime import datetime
 from Environment.services import core
 
 
@@ -30,14 +32,18 @@ def sintetic_write(lv, tool, s):
     return
 
 
-def detail_write(lv, ip, port, tool, s):
-    hostname = socket.gethostname()
-    log = "{0} - [{1}] :: [{2} {3}:{4}]: {5}: {6}\n".format(datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                                                            translate_severity(lv), hostname, ip, port, tool, s)
-    print(log.strip("\n"))
+def detail_write(tool_id, lv, t_exec):
+    # CSV format --> DATE, TOOL ID, STATUS, SEC LVL, RES. USAGE, T.EXEC
+    info = "{0},{1},{2},{3},{4},{5}\n".format(
+        datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+        tool_id,
+        0,
+        lv,
+        psutil.getloadavg()[0],
+        t_exec)
     try:
-        with open(core.LOG_FILE, "a") as f:
-            f.write(log)
+        with open(core.CSV_FILE, "a") as f:
+            f.write(info)
     except FileNotFoundError as e:
         print(e)
     return

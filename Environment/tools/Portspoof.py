@@ -46,7 +46,10 @@ def run_portspoof(writer, port, malicious_ip, msg):
 
     log.sintetic_write(core.WARNING, "PORTSPOOF",
                        "detected activity from IP {} - content: {}".format(malicious_ip, msg))
-    writer.send(answer.encode(core.FORMAT))
-    writer.shutdown(core.SHUT_RDWR)
-    writer.close()
+    try:
+        writer.send(answer.encode(core.FORMAT))
+        writer.shutdown(core.SHUT_RDWR)
+        writer.close()
+    except BrokenPipeError as e:
+        print(e)
     return

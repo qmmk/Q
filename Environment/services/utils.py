@@ -74,6 +74,22 @@ def check_mask(mask):
                     core.IN_DELETE_SELF | core.IN_MOVE))
 
 
+def list_duplicates(seq):
+    tally = defaultdict(list)
+    for i, item in enumerate(seq):
+        tally[item].append(i)
+
+    min_locs = 100
+    l_final = []
+    for key, locs in tally.items():
+        if len(locs) > 1:
+            v_tot = sum(locs)
+            if v_tot < min_locs:
+                min_locs = v_tot
+                l_final = locs[:2]
+    return l_final
+
+
 # </editor-fold>
 
 # <editor-fold desc="DATABASE">

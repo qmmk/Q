@@ -13,8 +13,10 @@ from Environment.services.utils import *
 # sock, port, active_sock, ip, malicious_ip
 
 
-def run_invisiport(writer, port, malicious_ip, msg, mode):
-    mode = core.WAIT if mode == "delayed_action" else core.IMMEDIATE
+def run_invisiport(writer, port, malicious_ip, msg, tool):
+    start = time.time()
+    mode = core.WAIT if tool.method == "delayed_action" else core.IMMEDIATE
+    print(mode)
     log.sintetic_write(core.WARNING, "INVISIPORT",
                        "detectected activity by the following IP: {} - content: {}".format(malicious_ip, msg))
     try:
@@ -23,6 +25,9 @@ def run_invisiport(writer, port, malicious_ip, msg, mode):
         writer.close()
     except BrokenPipeError as e:
         print(e)
+
+    print(bwlist.is_whitelisted(malicious_ip))
+    print(bwlist.is_blacklisted(malicious_ip))
 
     if mode == core.WAIT:
         if not bwlist.is_whitelisted(malicious_ip) and not bwlist.is_blacklisted(malicious_ip):
@@ -51,4 +56,7 @@ def run_invisiport(writer, port, malicious_ip, msg, mode):
             except subprocess.CalledProcessError as e:
                 print(e)
             log.sintetic_write(core.INFO, "INVISIPORT", "added 'prerouting rule' for {}".format(malicious_ip))
+    end = time.time()
+    elapsed_time = end - start - 3  # delay
+    log.detail_write(tool.id, core.EXPLOIT, elapsed_time)
     return

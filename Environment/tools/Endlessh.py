@@ -2,9 +2,10 @@ import threading
 from Environment.services.utils import *
 
 
-def run_endlessh(writer, port, malicious_ip, msg, mode):
+def run_endlessh(writer, port, malicious_ip, msg, tool):
+    start = time.time()
     is_closing = False
-    mode = core.WAIT if mode == "delayed_action" else core.IMMEDIATE
+    mode = core.WAIT if tool.method == "delayed_action" else core.IMMEDIATE
     if msg[0:4] != "SSH-":
         log.sintetic_write(core.WARNING, "ENDLESSH",
                            "detected activity from IP {} - content: {}".format(malicious_ip, msg))
@@ -26,8 +27,6 @@ def run_endlessh(writer, port, malicious_ip, msg, mode):
 
     delay = 1  # how many seconds before two consecutive garbage messages
     count = 0  # keep track of how many messages had been sent..
-
-    start = time.time()
     event = threading.Event()
 
     while not is_closing:
@@ -66,4 +65,5 @@ def run_endlessh(writer, port, malicious_ip, msg, mode):
     elapsed_time = end - start - delay
     log.sintetic_write(core.INFO, "ENDLESSH",
                        "IP {} stopped activity after {} seconds".format(malicious_ip, int(elapsed_time)))
+    log.detail_write(tool.id, core.BRUTE, elapsed_time)
     return

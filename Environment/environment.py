@@ -1,15 +1,12 @@
 import asyncio
 import json
 import time
-
 import uvloop
 from multiprocessing import Process
-
-from Environment.services.bwlist import reset_all, access_host
+from Environment.services import core
+from Environment.services.bwlist import reset_all, access_host, load_blacklist, bwlist_init
 from Environment.services.filesystem import Filesystem
 from Environment.services.connection import Server
-
-# import gym
 
 # LOOP
 uvloop.install()
@@ -25,21 +22,19 @@ class Environment:
         self.p1 = None  # SERVER (P1)
         self.p2 = None  # FILESYSTEM (P2)
 
-        # RESET
+        # RESET & INIT & LOAD
         # reset_all()
+        # bwlist_init()
+        # load_blacklist()
 
-        with open('Environment/persistent/config.json') as c:
-            config = json.load(c)
-        for i in config:
-            if config[i]["type"] == "net":
-                self.conn.extend(config[i]["class"], config[i]["params"], config[i]["method"])
-            if config[i]["type"] == "fs":
-                self.fs.extend(config[i]["class"], config[i]["params"], config[i]["method"])
+        # CONFIGURATION
+        self.init_config()
 
         # MOUNT
-        access_host(self.fs.Paths)
+        # access_host(self.fs.Paths)
 
-        time.sleep(10)
+        # time.sleep(10)
+
         # DUE MAIN PROCESS: SERVER (P1) & FILESYSTEM (P2)
         self.start_net()
         self.start_fs()
@@ -51,6 +46,15 @@ class Environment:
         self.stop_net()
         self.loop.close()
         return
+
+    def init_config(self):
+        with open(core.CONFIG) as c:
+            config = json.load(c)
+        for i in config:
+            if config[i]["type"] == "net":
+                self.conn.extend(config[i]["id"], config[i]["class"], config[i]["params"], config[i]["method"])
+            if config[i]["type"] == "fs":
+                self.fs.extend(config[i]["id"], config[i]["class"], config[i]["params"], config[i]["method"])
 
     @staticmethod
     def process_status(p):

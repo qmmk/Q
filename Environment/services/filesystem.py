@@ -12,10 +12,11 @@ from Environment.services import core
 
 
 class Tool:
-    def __init__(self, paths, method):
-        self.init = ""
+    def __init__(self, tool_id, paths, method):
+        self.id = tool_id
         self.paths = paths
         self.method = method
+        return
 
 
 class Filesystem:
@@ -25,13 +26,13 @@ class Filesystem:
         self.Paths = []
         return
 
-    def extend(self, name, paths, method=None):
+    def extend(self, tool_id, name, paths, method=None):
         if name in self.Tools:
             self.Tools[name].paths.extend(paths)
             if method is not None:
                 self.Tools[name].method = method
         else:
-            self.Tools[name] = Tool(paths, method)
+            self.Tools[name] = Tool(tool_id, paths, method)
         self.Paths.extend(paths)
         return
 

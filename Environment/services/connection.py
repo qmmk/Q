@@ -9,14 +9,15 @@ from Environment.tools.Invisiport import run_invisiport
 from Environment.tools.Portspoof import run_portspoof
 from Environment.tools.Tcprooter import run_tcprooter
 
-# "192.168.41.129"
 SERVER = socket.gethostbyname(socket.gethostname())
 
 
 class Connection:
-    def __init__(self, ports, method):
+    def __init__(self, tool_id, ports, method):
+        self.id = tool_id
         self.ports = ports
         self.method = method
+        return
 
 
 class Server:
@@ -28,13 +29,13 @@ class Server:
         self.Ports = []
         return
 
-    def extend(self, name, ports, method=None):
+    def extend(self, tool_id, name, ports, method=None):
         if name in self.Conns:
             self.Conns[name].ports.extend(ports)
             if method is not None:
                 self.Conns[name].method = method
         else:
-            self.Conns[name] = Connection(ports, method)
+            self.Conns[name] = Connection(tool_id, ports, method)
         self.Ports.extend(ports)
         return
 
@@ -89,11 +90,12 @@ class Server:
                                            .format(msg.strip("\n"), mal_ip, out_port, my_ip, in_port))
                         for name, tool in self.Conns.items():
                             if name == "Endlessh" and in_port in tool.ports:
-                                self.loop.run_in_executor(executor, run_endlessh(ws, in_port, mal_ip, msg, tool.method))
+                                self.loop.run_in_executor(executor,
+                                                          run_endlessh(ws, in_port, mal_ip, msg, tool))
                                 break
                             if name == "Invisiport" and in_port in tool.ports:
                                 self.loop.run_in_executor(executor,
-                                                          run_invisiport(ws, in_port, mal_ip, msg, tool.method))
+                                                          run_invisiport(ws, in_port, mal_ip, msg, tool))
                                 break
                             if name == "Honeyports" and in_port in tool.ports:
                                 self.loop.run_in_executor(executor, run_honeyports(ws, mal_ip, msg))

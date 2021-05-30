@@ -43,12 +43,32 @@ MAX_WORKERS = 5
 # LOG Information
 LOG_FILE = "Environment/persistent/log.txt"
 
+# CSV Analysis
+CSV_FILE = "Environment/persistent/info.csv"
+
 # Log levels ---------------------
 DEBUG = 0
 INFO = 1
 WARNING = 2
 ERROR = 3
 CRITICAL = 4
+
+# Attack levels --------------------
+# Security range [0, 10]
+AUTH = 1
+BROADCAST = 1
+BRUTE = 9
+DEFAULT = 2
+DISCOVERY = 4
+DOS = 8
+EXPLOIT = 9
+EXTERNAL = 3
+FUZZER = 1
+INTRUSIVE = 5
+MALWARE = 8
+SAFE = 1
+VERSION = 1
+VULN = 1
 
 # DATABASE
 DB_Artillery = "Environment/persistent/artillery_integrity.db"
@@ -67,9 +87,14 @@ FILELOG = "/var/log/auth.log"
 N_TENTACTLES = 5
 PORTS = [21, 80, 445]
 SIGNATURES = "Environment/persistent/portspoof_signatures"
+RANGE_OBS = 90  # minutes
 
 # Filename
-BIND_MOUNT = "project/Environment/scripts/bind_mount.sh"
+BIND_MOUNT = "Environment/scripts/bind_mount.sh"
+BL_ELEMENT = "Environment/scripts/blacklist_element.sh"
+LOAD_BL = "Environment/scripts/load_blacklist_rules.sh"
+RESET_ALL = "Environment/scripts/reset_all.sh"
+CONFIG = "Environment/persistent/config.json"
 
 PAYLOADS = [
     #               linux/x86/shell_bind_tcp - 78 bytes

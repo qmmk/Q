@@ -9,5 +9,11 @@ redis==3.5.3
 selenium==4.0.0a1
 smmap==3.0.4
 uvloop==0.14.0
-nsenter
+nsenter~=0.2
 
+
+torch~=1.8.1
+gym~=0.18.0
+torchvision~=0.9.1
+scipy~=1.6.3
+tensorflow~=2.5.0
