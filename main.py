@@ -2,19 +2,20 @@ import sys
 import time
 from Agent.agent import Agent
 from Environment.environment import Environment
-from Environment.services.bwlist import load_obs_data
 
 
 def main():
-    # env = Environment()
+    env = Environment()
     agent = Agent()
 
     while True:
-        obs = load_obs_data()
-        action, _ = agent.model.predict(obs)
-        obs, rewards, dones, info = agent.env.step(action)
-        # update_state
-        time.sleep(10)
+        time.sleep(15)
+
+        # PREDICT ACTION
+        action = agent.predict()
+
+        # UPDATE STATE
+        env.update_state(action)
 
 
 if __name__ == '__main__':

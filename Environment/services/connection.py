@@ -13,8 +13,10 @@ SERVER = socket.gethostbyname(socket.gethostname())
 
 
 class Connection:
-    def __init__(self, tool_id, ports, method):
+    def __init__(self, tool_id, name, state, ports, method):
         self.id = tool_id
+        self.name = name
+        self.state = state
         self.ports = ports
         self.method = method
         return
@@ -26,38 +28,28 @@ class Server:
         self.Conns = {}
         self.Sockets = {}
         self.Servers = []
-        self.Ports = []
         return
 
-    def extend(self, tool_id, name, ports, method=None):
-        if name in self.Conns:
-            self.Conns[name].ports.extend(ports)
-            if method is not None:
-                self.Conns[name].method = method
+    def update(self, tool_id, name=None, ports=None, method=None, state=None):
+        if state is None:
+            self.Conns[tool_id] = Connection(tool_id, name, 0, ports, method)
         else:
-            self.Conns[name] = Connection(tool_id, ports, method)
-        self.Ports.extend(ports)
-        return
-
-    def reduce(self, name, ports=None):
-        if ports is not None:
-            self.Conns[name].ports = [x for x in self.Conns[name].ports if x not in ports]
-            self.Ports = [x for x in self.Ports if x not in ports]
-        else:
-            del self.Conns[name]
+            self.Conns[tool_id].state = state
         return
 
     def initialization(self):
         self.Servers = []
-        for port in self.Ports:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
-            s.bind((SERVER, port))
-            log.sintetic_write(core.INFO, "SERVER", "Serving port {}:{} on socket {}".format(SERVER, port, s.fileno()))
+        for tool in self.Conns.values():
+            if tool.state == 0:
+                for port in tool.ports:
+                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+                    s.bind((SERVER, port))
+                    log.sintetic_write(core.INFO, "SERVER", "Serving port {}:{} on socket {}".format(SERVER, port, s.fileno()))
 
-            s.listen()
-            self.Servers.append(s)
+                    s.listen()
+                    self.Servers.append(s)
         return
 
     def run(self):
@@ -88,22 +80,22 @@ class Server:
                     if msg:
                         log.sintetic_write(core.WARNING, "SERVER", "GET [{}] from {}:{} and we reply with {}:{}"
                                            .format(msg.strip("\n"), mal_ip, out_port, my_ip, in_port))
-                        for name, tool in self.Conns.items():
-                            if name == "Endlessh" and in_port in tool.ports:
+                        for tool in self.Conns.values():
+                            if tool.name == "Endlessh" and in_port in tool.ports:
                                 self.loop.run_in_executor(executor,
                                                           run_endlessh(ws, in_port, mal_ip, msg, tool))
                                 break
-                            if name == "Invisiport" and in_port in tool.ports:
+                            if tool.name == "Invisiport" and in_port in tool.ports:
                                 self.loop.run_in_executor(executor,
                                                           run_invisiport(ws, in_port, mal_ip, msg, tool))
                                 break
-                            if name == "Honeyports" and in_port in tool.ports:
+                            if tool.name == "Honeyports" and in_port in tool.ports:
                                 self.loop.run_in_executor(executor, run_honeyports(ws, mal_ip, msg))
                                 break
-                            if name == "Portspoof" and in_port in tool.ports:
+                            if tool.name == "Portspoof" and in_port in tool.ports:
                                 self.loop.run_in_executor(executor, run_portspoof(ws, in_port, mal_ip, msg))
                                 break
-                            if name == "Tcprooter":
+                            if tool.name == "Tcprooter":
                                 self.loop.run_in_executor(executor, run_tcprooter(ws, mal_ip, msg))
                                 break
                 except ConnectionError as e:

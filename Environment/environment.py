@@ -18,6 +18,7 @@ class Environment:
         self.loop = asyncio.get_event_loop()
         self.conn = Server(self.loop)
         self.fs = Filesystem(self.loop)
+        self.state = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         self.p1 = None  # SERVER (P1)
         self.p2 = None  # FILESYSTEM (P2)
@@ -52,9 +53,24 @@ class Environment:
             config = json.load(c)
         for i in config:
             if config[i]["type"] == "net":
-                self.conn.extend(config[i]["id"], config[i]["class"], config[i]["params"], config[i]["method"])
+                self.conn.update(config[i]["id"], config[i]["class"], config[i]["params"], config[i]["method"])
             if config[i]["type"] == "fs":
-                self.fs.extend(config[i]["id"], config[i]["class"], config[i]["params"], config[i]["method"])
+                self.fs.update(config[i]["id"], config[i]["class"], config[i]["params"], config[i]["method"])
+        return
+
+    def update_state(self, action):
+        self.stop_net()
+        self.stop_fs()
+        for idx, x in enumerate(action):
+            if x != 2 and self.state[idx] != x:
+                self.state[idx] = x
+                if idx < 5:
+                    self.conn.update(tool_id=idx, state=x)
+                else:
+                    self.fs.update(tool_id=idx, state=x)
+        self.start_net()
+        self.start_fs()
+        return
 
     @staticmethod
     def process_status(p):
@@ -91,23 +107,6 @@ class Environment:
             print("Filesystem already stopped.")
         return
 
-    def extend_fs(self, name, paths, method):
-        self.stop_fs()
-        self.fs.extend(name, paths, method)
-        self.start_fs()
-        return
-
-    def reduce_fs(self, name, paths):
-        self.stop_fs()
-        self.fs.reduce(name, paths)
-        self.start_fs()
-        return
-
-    def remove_fs(self, name):
-        self.stop_fs()
-        self.fs.remove(name)
-        self.start_fs()
-
     # </editor-fold>
 
     # <editor-fold desc="SERVER">
@@ -133,24 +132,6 @@ class Environment:
                 print("Server already stopped.")
         else:
             print("Server already stopped.")
-        return
-
-    def extend_net(self, name, ports, method):
-        self.stop_net()
-        self.conn.extend(name, ports, method)
-        self.start_net()
-        return
-
-    def reduce_net(self, name, ports):
-        self.stop_net()
-        self.conn.reduce(name, ports)
-        self.start_net()
-        return
-
-    def remove_net(self, name):
-        self.stop_net()
-        self.conn.remove(name)
-        self.start_net()
         return
 
     # </editor-fold>

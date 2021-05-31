@@ -1,5 +1,7 @@
 from stable_baselines3 import A2C
 from stable_baselines3.common.vec_env import DummyVecEnv
+
+from Agent.common.utils import load_obs_data
 from Agent.common.wrappers import SystemEnv
 from Agent.common.callbacks import SummaryWriterCallback
 
@@ -21,6 +23,11 @@ class Agent:
     def laod(self, filename):
         self.model = A2C.load(filename)
         return
+
+    def predict(self):
+        obs = load_obs_data()
+        action, _ = self.model.predict(obs)
+        return action
 
     def test(self):
         obs = self.env.reset()

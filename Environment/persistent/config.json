@@ -1,6 +1,6 @@
 {
     "tool_1": {
-        "id": 1,
+        "id": 0,
         "file": "Honeyports",
         "class": "Honeyports",
         "type": "net",
@@ -9,7 +9,7 @@
     },
 
     "tool_2": {
-        "id": 2,
+        "id": 1,
         "file": "Portspoof",
         "class": "Portspoof",
         "type": "net",
@@ -18,7 +18,7 @@
     },
 
     "tool_3": {
-        "id": 3,
+        "id": 2,
         "file": "Endlessh",
         "class": "Endlessh",
         "type": "net",
@@ -27,7 +27,7 @@
     },
 
     "tool_4": {
-        "id": 4,
+        "id": 3,
         "file": "Invisiport",
         "class": "Invisiport",
         "type": "net",
@@ -36,6 +36,15 @@
     },
 
     "tool_5": {
+        "id": 4,
+        "file": "Tcprooter",
+        "class": "Tcprooter",
+        "type": "net",
+        "method": "start",
+        "params": [2003]
+    },
+
+    "tool_6": {
         "id": 5,
         "file": "StealthCryptolocked",
         "class": "StealthCryptolocked",
@@ -44,7 +53,7 @@
         "params": ["/home/test/Q_Testing/stealth"]
     },
 
-    "tool_6": {
+    "tool_7": {
         "id": 6,
         "file": "Cryptolocked",
         "class": "Cryptolocked",
@@ -53,7 +62,7 @@
         "params": ["/home/test/Q_Testing/data"]
     },
 
-    "tool_7": {
+    "tool_8": {
         "id": 7,
         "file": "Honeyfile",
         "class": "Honeyfile",
@@ -62,12 +71,21 @@
         "params": ["/home/test/Q_Testing/honey"]
     },
 
-    "tool_8": {
+    "tool_9": {
         "id": 8,
         "file": "ArtillerySSHBFM",
         "class": "ArtillerySSHBFM",
         "type": "fs",
         "method": "just_log",
         "params": ["/home/test/Q_Testing/sshbfm"]
+    },
+
+    "tool_10": {
+        "id": 9,
+        "file": "ArtilleryIntegrity",
+        "class": "ArtilleryIntegrity",
+        "type": "fs",
+        "method": "just_log",
+        "params": ["/home/test/Q_Testing/ai"]
     }
 }

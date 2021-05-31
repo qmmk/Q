@@ -9644,3 +9644,241 @@ Accept: application/sdp
 30/05/2021 08:12:38 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
 30/05/2021 08:12:38 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
 30/05/2021 08:12:38 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 10:15:56 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 10:15:56 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:18:57 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 11:18:57 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 11:18:57 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 11:18:57 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 11:21:20 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 11:21:20 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:27:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 11:27:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 11:27:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 11:27:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:37 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:37 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:27:37 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 11:27:37 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 11:27:37 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 11:27:37 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:29:25 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 11:29:25 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 11:29:25 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 11:29:25 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:25 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:25 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:26 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 11:29:26 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 11:29:26 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 11:29:26 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:29:40 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 14
+31/05/2021 11:29:40 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 15
+31/05/2021 11:29:40 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 16
+31/05/2021 11:29:40 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 11:29:40 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:29:41 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 11:29:41 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 11:29:41 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 18
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 11:34:36 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 11:34:36 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 18
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 11:36:43 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: will monitor '/home/test/Q_Testing/ai'
+31/05/2021 11:36:43 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: finished initialization
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 18
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 12:18:33 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: will monitor '/home/test/Q_Testing/ai'
+31/05/2021 12:18:33 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: finished initialization
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 18
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 12:19:26 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: will monitor '/home/test/Q_Testing/ai'
+31/05/2021 12:19:26 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: finished initialization
+31/05/2021 12:19:41 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 12:19:41 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 12:19:41 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2002 on socket 16
+31/05/2021 12:19:41 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 17
+31/05/2021 12:19:41 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 18
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: will monitor '/home/test/Q_Testing/stealth'
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: STEALTH CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:41 - [INFO] :: [q-vm]: STEALTH CRYPTOLOCKED: finished initialization
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:41 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:42 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:42 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:42 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:42 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 12:19:42 - [DEBUG] :: [q-vm]: HONEYFILE: Auditing /home/test/Q_Testing/honey
+31/05/2021 12:19:42 - [DEBUG] :: [q-vm]: HONEYFILE: auditctl error: b'' for '/home/test/Q_Testing/honey'
+31/05/2021 12:19:42 - [INFO] :: [q-vm]: HONEYFILE: finished initialization
+31/05/2021 12:19:42 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: will monitor '/home/test/Q_Testing/ai'
+31/05/2021 12:19:42 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: finished initialization
+31/05/2021 12:19:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2000 on socket 14
+31/05/2021 12:19:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2001 on socket 15
+31/05/2021 12:19:56 - [INFO] :: [q-vm]: SERVER: Serving port 127.0.1.1:2003 on socket 16
+31/05/2021 12:19:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: will monitor '/home/test/Q_Testing/data'
+31/05/2021 12:19:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:56 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:57 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:57 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:57 - [DEBUG] :: [q-vm]: CRYPTOLOCKED: auditctl error: b''
+31/05/2021 12:19:57 - [INFO] :: [q-vm]: CRYPTOLOCKED: finished initialization
+31/05/2021 12:19:57 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: will monitor '/home/test/Q_Testing/ai'
+31/05/2021 12:19:57 - [INFO] :: [q-vm]: ARTILLERY INTEGRITY: finished initialization

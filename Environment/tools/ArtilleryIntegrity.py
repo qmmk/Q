@@ -18,7 +18,7 @@ def init_artillery_integrity(paths):
     # Create digests for each file in path
     for path in paths:
         if os.path.isdir(path):
-            log.sintetic_write(core.INFO, "ARTILLERY INTEGRITY will monitor '{}'".format(path))
+            log.sintetic_write(core.INFO, "ARTILLERY INTEGRITY", "will monitor '{}'".format(path))
             onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
             for name in onlyfiles:
                 filename = path + '/' + name
