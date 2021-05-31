@@ -68,13 +68,13 @@ class Filesystem:
 
                     for tool in self.Tools.values():
                         if tool.name == "Honeyfile" and target in tool.paths:
-                            self.loop.run_in_executor(executor, run_honeyfile(event, tool.method))
+                            self.loop.run_in_executor(executor, run_honeyfile(event, tool.method, tool.id))
                         if tool.name == "Cryptolocked" and target in tool.paths:
-                            self.loop.run_in_executor(executor, run_cryptolocked(event, tool.method))
+                            self.loop.run_in_executor(executor, run_cryptolocked(event, tool.method, tool.id))
                         if tool.name == "StealthCryptolocked" and target in tool.paths:
-                            self.loop.run_in_executor(executor, run_stealth_cryptolocked(event, tool.method))
+                            self.loop.run_in_executor(executor, run_stealth_cryptolocked(event, tool.method, tool.id))
                         if tool.name == "ArtilleryIntegrity" and target in tool.paths:
-                            self.loop.run_in_executor(executor, run_artillery_integrity(event, tool.method))
+                            self.loop.run_in_executor(executor, run_artillery_integrity(event, tool.method, tool.id))
                         if tool.name == "ArtillerySSHBFM" and target in tool.paths:
-                            self.loop.run_in_executor(executor, run_artillery_sshbfm(event))
+                            self.loop.run_in_executor(executor, run_artillery_sshbfm(event, tool.id))
         return

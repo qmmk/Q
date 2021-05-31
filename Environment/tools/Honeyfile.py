@@ -12,7 +12,8 @@ def init_honeyfile(paths):
     return
 
 
-def run_honeyfile(event, meth):
+def run_honeyfile(event, meth, tool_id):
+    start = time.time()
     (header, types, target, name) = event
 
     mask = header.mask
@@ -42,10 +43,14 @@ def run_honeyfile(event, meth):
                                "{} '{}' has been {}! {}".format(type, target, action, audit_info))
             filename = target
 
-        if method == core.SAVE_DATA:  # we save data only when the file has been closed
+        # we save data only when the file has been closed
+        if method == core.SAVE_DATA:
             # and when it's not the entire directory
             if action == "CLOSED" and (not mask & core.IN_ISDIR):
                 execute_action("HONEYFILE", method, ppid, user, filename)
         else:
             execute_action("HONEYFILE", method, ppid, user, filename)
+        end = time.time()
+        elapsed_time = end - start
+        log.detail_write(tool_id, core.EXTERNAL, elapsed_time)
     return

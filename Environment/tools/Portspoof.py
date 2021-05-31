@@ -39,7 +39,8 @@ class Signature:
         return self.__signature
 
 
-def run_portspoof(writer, port, malicious_ip, msg):
+def run_portspoof(writer, port, malicious_ip, msg, tool_id):
+    start = time.time()
     sig = Signature(core.SIGNATURES, port)
     answer = sig.get_signature()
     del sig
@@ -52,4 +53,8 @@ def run_portspoof(writer, port, malicious_ip, msg):
         writer.close()
     except BrokenPipeError as e:
         print(e)
+
+    end = time.time()
+    elapsed_time = end - start
+    log.detail_write(tool_id, core.DISCOVERY, elapsed_time)
     return

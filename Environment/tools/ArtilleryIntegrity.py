@@ -35,7 +35,8 @@ def init_artillery_integrity(paths):
     return files
 
 
-def run_artillery_integrity(event, meth):
+def run_artillery_integrity(event, meth, tool_id):
+    start = time.time()
     (header, types, target, name) = event
     mask = header.mask
 
@@ -55,10 +56,13 @@ def run_artillery_integrity(event, meth):
                 # TODO: check audit should look for path+name, but for unknown reasons sometimes it doesn't work
                 #  by providing the entire path
 
-                log.sintetic_write(core.CRITICAL, "ARTILLERY INTEGRITY",
-                                   "file '{}/{}' has been {}! {}".format(target, name, action, audit_info))
                 if comm != "adarch":  # execute action only if the event was not caused by adarch itself
+                    log.sintetic_write(core.CRITICAL, "ARTILLERY INTEGRITY",
+                                       "file '{}/{}' has been {}! {}".format(target, name, action, audit_info))
                     execute_action("ARTILLERY INTEGRITY", method, ppid, user, filename)
+                    end = time.time()
+                    elapsed_time = end - start
+                    log.detail_write(tool_id, core.INTRUSIVE, elapsed_time)
 
             if mask & core.IN_CREATE:
                 audit_info, ppid = check_audit(name)  # TODO: same as above
@@ -67,4 +71,7 @@ def run_artillery_integrity(event, meth):
                 # TODO: da verificare che azione effettuava
                 # self.execute_action(ppid, filename)
                 execute_action("ARTILLERY INTEGRITY", method, ppid, None, filename)
+                end = time.time()
+                elapsed_time = end - start
+                log.detail_write(tool_id, core.INTRUSIVE, elapsed_time)
     return

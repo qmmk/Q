@@ -2,7 +2,8 @@ from Environment.services import bwlist
 from Environment.services.utils import *
 
 
-def run_honeyports(writer, malicious_ip, msg):
+def run_honeyports(writer, malicious_ip, msg, tool_id):
+    start = time.time()
     if core.MSG_honeyports != "":
         try:
             writer.send(core.MSG_honeyports.encode(core.FORMAT))
@@ -18,4 +19,7 @@ def run_honeyports(writer, malicious_ip, msg):
         # TODO: the original version REJECTS instead of DROPPING
         bwlist.add_to_blacklist(malicious_ip.encode(core.FORMAT))
         log.sintetic_write(core.INFO, "HONEYPORTS", "IP {} has been blacklisted".format(malicious_ip))
+    end = time.time()
+    elapsed_time = end - start
+    log.detail_write(tool_id, core.DISCOVERY, elapsed_time)
     return

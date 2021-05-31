@@ -45,7 +45,8 @@ def init_cryptolocked(paths):
     return files
 
 
-def run_cryptolocked(event, meth):
+def run_cryptolocked(event, meth, tool_id):
+    start = time.time()
     (header, types, target, name) = event
     mask = header.mask
 
@@ -72,4 +73,7 @@ def run_cryptolocked(event, meth):
                 # execute action only if the event was not caused by adarch itself
                 if comm != "adarch":
                     execute_action("CRYPTOLOCKED", method, ppid, user, target)
+                    end = time.time()
+                    elapsed_time = end - start
+                    log.detail_write(tool_id, core.EXPLOIT, elapsed_time)
     return
